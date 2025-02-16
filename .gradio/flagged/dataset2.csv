@@ -1,0 +1,39 @@
+Upload PDF,output,timestamp
+.gradio\flagged\Upload PDF\39143878fd58fa195286\Aula 01  Introdução a Banco de Dados.pdf,"1. Qual é a estrutura de dados utilizada no JSON?
+      - Array
+      - Object (Dictionary em alguns idiomas)
+      - String
+      - Number
+      - Boolean
+
+2. O JSON é um formato de texto baseado em qual linguagem de programação?
+      - JavaScript
+      - Java
+      - Python
+      - PHP
+      - Ruby
+
+3. Qual deles não é uma função comum que pode ser realizada no JSON?
+      - Manipular e acessar objetos de dados
+      - Converter objetos em texto e voltar para objeto usando parse
+      - Comprimi e descomprime arquivos JSON
+      - Criar funções recursivas dentro do JSON
+      - Transformar JSON em XML ou outros formatos
+
+4. Qual deles é um recurso para gerenciar os dados no JSON?
+      - Chave
+      - Valor
+      - Matriz
+      - Função
+      - Atributo
+
+5. O seguinte código representa um objeto JavaScript que pode ser convertido em JSON:
+    ```javascript
+    const car = {make: ""Toyota"", model: ""Corolla"", year: 2019};
+    ```
+    O que é necessário para transformar o objeto JavaScript em JSON?
+      - A função `JSON.stringify(car);`
+      - A função `JSON.parse(car);`
+      - A chamada de função `car.toJSON();`
+      - A chamada de função `car.toString();`
+      - Nenhuma das acima é necessária, pois o objeto já é JSON.",2025-02-15 23:08:08.803189
