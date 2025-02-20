@@ -1,3 +1,5 @@
+## Por enquanto estou tentando fazer o modelo extrair o JSON corretamente apenas, sem a elaboração de questões
+
 import json
 import os
 import re
