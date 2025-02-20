@@ -1,9 +1,14 @@
 import json
-import ollama
-import re
 import os
+import re
+import ollama
 import gradio as gr
 from langchain_community.document_loaders import PyMuPDFLoader
+import unicodedata
+
+MAX_INPUT_SIZE = 4000
+MAX_NEW_TOKENS = 6000
+OVERLAP = 128
 
 def load_template():
     template_path = "E:/TCC/Local-Gradio-APP-for-RAG/Local-Gradio-App-for-RAG/json/template.json"
@@ -12,135 +17,148 @@ def load_template():
 
 def process_pdf(pdf_file_path):
     if not os.path.exists(pdf_file_path):
-        print("Arquivo PDF não encontrado:", pdf_file_path)
-        return None
+        raise FileNotFoundError(f"Arquivo PDF não encontrado: {pdf_file_path}")
     
     loader = PyMuPDFLoader(pdf_file_path)
     data = loader.load()
-    extracted_text = "\n".join([doc.page_content for doc in data])
     
-    print(extracted_text[:500])  # Debug: Verifica extração
-    return extracted_text
+    extracted_data = {
+        "titulo": "",
+        "autor": "",
+        "ementa": [],
+        "conteudo": [],
+        "referencias": []
+    }
+    
+    for doc in data:
+        page_number = doc.metadata.get("page", 0)  # Garante que page_number tenha um valor padrão
+        text = doc.page_content.strip()
+
+        # Verifica título, autor e ementa na primeira página
+        if page_number == 1:
+            lines = text.split("\n")
+            if len(lines) > 2:
+                extracted_data["titulo"] = lines[0].strip()
+                extracted_data["autor"] = lines[1].strip()
+                extracted_data["ementa"] = [line.strip() for line in lines[2:5] if line.strip()]
+        
+        # Estruturar conteúdo por página
+        topicos = [line.strip() for line in text.split("\n") if line.strip()]  # Remove linhas vazias
+        
+        extracted_data["conteudo"].append({
+            "página": page_number,
+            "secao": "",  # Poderia ser extraído automaticamente caso existam seções no texto
+            "topicos": topicos
+        })
+        
+        # Identificar referências bibliográficas
+        if "Referências" in text:
+            extracted_data["referencias"].extend(topicos)  # Adiciona tudo como referência
+    
+    return extracted_data
+
 
 def save_to_file(content, file_name, folder="outputs"):
     os.makedirs(folder, exist_ok=True)
     file_path = os.path.join(folder, file_name)
     with open(file_path, "w", encoding="utf-8") as file:
-        file.write(content)
+        file.write(json.dumps(content, indent=2, ensure_ascii=False))
     print(f"Arquivo salvo em: {file_path}")
     return file_path
 
+def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
+    # Apenas dividir o documento sem tokenização explícita
+    chunks = []
+    if len(document) > window_size:
+        for i in range(0, len(document), window_size - overlap):
+            chunk = document[i:i + window_size]
+            chunks.append(chunk)
+            if i + len(document[i:i + window_size]) >= len(document):
+                break
+    else:
+        chunks.append(document)
+    print(f"\tSplit into {len(chunks)} chunks")
+    return chunks
+
 def clean_text(text):
-    text = re.sub(r"[^a-zA-Z0-9À-ÿ\s,;.-]", " ", text)  # Remove caracteres especiais
-    text = re.sub(r"\s+", " ", text).strip()  # Remove múltiplos espaços
-    return text
+    # Remover caracteres não-ASCII e inválidos
+    text = re.sub(r'[^\x00-\x7F]+', ' ', text)
+    text = re.sub(r'[\ufffd\u219f\u014d\u03b2\u2026]', ' ', text)
+    text = re.sub(r'\s+', ' ', text)  # Substituir múltiplos espaços por um único
+    return text.strip()
 
-def extract_json_from_response(response_text):
-    match = re.search(r"\{.*\}", response_text, re.DOTALL)
-    if match:
+def predict_nuextract(text, template, model_name="nuextract"):
+    template_json = json.dumps(template, indent=4)
+    chunks = split_document(text, MAX_INPUT_SIZE, OVERLAP)
+    
+    prev = template_json
+    for i, chunk in enumerate(chunks):
+        print(f"Processing chunk {i}...")
+        prompt = f"""
+        <|input|>
+        ### Template:
+        {prev}
+        ### Text:
+        {chunk}
+        
+        <|output|>
+        """
+        
+        response = ollama.chat(model=model_name, messages=[{"role": "user", "content": prompt}])
+        output_text = response["message"]["content"].strip()
+
+        print(f"Output text from Ollama: {output_text}")  # Para depuração
+
+        if not output_text:
+            print("Resposta vazia do modelo.")
+            continue
+        
+        # Pegando o texto antes de <|end-output|>
+        if "<|end-output|>" in output_text:
+            output_text = output_text.split("<|end-output|>")[0].strip()
+
+        # Tenta limpar e converter JSON
         try:
-            return json.loads(match.group(0))
-        except json.JSONDecodeError:
-            return {}
-    return {}
+            cleaned_text = clean_text(output_text)
+            parsed_json = json.loads(cleaned_text)
 
-def clean_json_response(response_text):
-    """
-    Extrai e limpa um JSON de uma resposta do modelo.
-    - Remove qualquer texto antes/depois do JSON.
-    - Garante que o JSON esteja bem formado.
-    """
-    try:
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            json_str = json_match.group(0)
-            json_str = json_str.replace("\n", "").replace("\r", "").strip()  # Removendo quebras de linha desnecessárias
+            # Se JSON estiver vazio ou inválido, mantém a versão anterior
+            if not parsed_json or all([(v in ["", []]) for v in parsed_json.values()]):
+                print("JSON vazio ou inválido, mantendo a versão anterior.")
+                continue
             
-            # Valida e tenta carregar o JSON
-            json_data = json.loads(json_str)
-            return json_data
-        else:
-            print("Nenhum JSON válido encontrado na resposta!")
-            return None
-    except json.JSONDecodeError as e:
-        print(f"Erro ao carregar JSON: {e}")
-        return None
-  
-
-def fill_template_with_nuextract(extracted_text, template):
-    prompt = f"""Preencha este JSON APENAS com as informações extraídas do texto abaixo.  
-**IMPORTANTE:**
-- Respeite exatamente a estrutura do JSON fornecido.
-- NÃO crie novas chaves ou altere o formato.
-- Se não houver informações para um campo, deixe-o vazio, mas NÃO REMOVA a chave.
-- Certifique-se de que todas as seções do JSON estejam bem formatadas e completas.
-
-**Template JSON:**
-{json.dumps(template, indent=2, ensure_ascii=False)}
-
-**Texto extraído:**  
-{clean_text(extracted_text)}
-
-**Responda apenas com o JSON preenchido e nada mais.**
-"""
-
+            prev = parsed_json  # Atualiza JSON processado
+        except json.JSONDecodeError as e:
+            print(f"Erro ao decodificar JSON extraído: {e}")
+            continue
     
-    try:
-        response = ollama.chat(model="nuextract", messages=[{"role": "user", "content": prompt}])
-        response_text = response["message"]["content"]
-        print("Raw Model Response:", response_text[:500])  # DEBUG: Ver resposta bruta
-        filled_json = clean_json_response(response_text)  
-        return filled_json
-    except Exception as e:
-        print(f"Erro ao interagir com o modelo: {e}")
-        return {}
+    return prev
 
-def generate_questions(filled_json):
-    prompt = f"""Com base no seguinte JSON estruturado, gere 5 perguntas de múltipla escolha relevantes.
-    
-    **Conteúdo:**
-    {json.dumps(filled_json, indent=2, ensure_ascii=False)}
-    
-    **Formato esperado:**
-    - Pergunta
-        - Alternativa A
-        - Alternativa B
-        - Alternativa C
-        - Alternativa D
-    """
-    
-    response = ollama.chat(model="mistral", messages=[{"role": "user", "content": prompt}])
-    response_content = response["message"]["content"]
-    final_questions = re.sub(r"<think>.*?</think>", "", response_content, flags=re.DOTALL).strip()
-    
-    return final_questions
 
 def process_and_generate(pdf_file):
     pdf_path = pdf_file.name
     file_name_base = re.sub(r"[^\w\-_\.]+", "_", os.path.splitext(os.path.basename(pdf_path))[0])
     
-    extracted_text = process_pdf(pdf_path)
-    if extracted_text is None:
+    extracted_data = process_pdf(pdf_path)
+    if extracted_data is None:
         return "Falha ao processar o PDF."
     
-    save_to_file(extracted_text, f"extracted_text_{file_name_base}.txt")
+    save_to_file(extracted_data, f"extracted_json_{file_name_base}.json")
     
     template = load_template()
-    filled_json = fill_template_with_nuextract(extracted_text, template)
-    json_content = json.dumps(filled_json, indent=2, ensure_ascii=False)
-    save_to_file(json_content, f"filled_json_{file_name_base}.json")
+    filled_json = predict_nuextract(json.dumps(extracted_data, ensure_ascii=False), template)
     
-    questions = generate_questions(filled_json)
-    save_to_file(questions, f"questions_{file_name_base}.txt")
+    save_to_file(filled_json, f"filled_json_{file_name_base}.json")
     
-    return questions
+    return json.dumps(filled_json, indent=2, ensure_ascii=False)
+
 
 interface = gr.Interface(
     fn=process_and_generate,
     inputs=gr.File(label="Upload PDF"),
     outputs="text",
-    title="Gerador de Perguntas com NuExtract",
-    description="Extrai informações do PDF, preenche um modelo JSON e gera perguntas sobre o conteúdo."
+    title="Gerador de JSON com NuExtract e Ollama",
+    description="Extrai informações estruturadas do PDF e preenche um modelo JSON usando o NuExtract via Ollama."
 )
 
 interface.launch()
