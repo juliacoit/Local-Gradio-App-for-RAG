@@ -1,3 +1,5 @@
+## Por enquanto o codigo esta tentando fazer apenas a extralçao
+
 import json
 import os
 import re
