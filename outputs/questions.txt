@@ -1,0 +1,24 @@
+1. Qual é o título do livro?
+       a) Untitled (A)
+       b) Unnamed (B)
+       c) Title Not Provided (C)
+
+  2. Qual é o nome do autor do livro?
+       a) Author Not Provided (A)
+       b) Unknown Author (B)
+       c) Name Not Specified (C)
+
+  3. Quantos temas há no conteúdo do livro?
+       a) 0 (Zero) (A)
+       b) 1 (Um) (B)
+       c) Varia de livro para livro (C)
+
+  4. Qual é o primeiro tópico do conteúdo do livro?
+       a) Topic Not Specified (A)
+       b) Content Topic 1 (B)
+       c) First Topic Unknown (C)
+
+  5. Quantas referências há no livro?
+       a) 0 (Zero) (A)
+       b) 1 (Um) (B)
+       c) Varia de livro para livro (C)

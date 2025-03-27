@@ -1,12 +1,11 @@
 {
     "titulo": "",
     "autor": "",
-    "ementa": [],
     "conteudo": [
       {
-        "página": "",
+        "pagina": "",
         "secao": "",
-        "topicos": []
+        "conteudo": []
       }
     ],
     "referencias": []
