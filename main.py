@@ -9,8 +9,9 @@ import unicodedata
 # Constantes
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
-TEMPLATE_PATH = "E:/TCC/Local-Gradio-APP-for-RAG/Local-Gradio-App-for-RAG/json/template.json"
-MODEL_NAME = "nuextract"  # Certifique-se de que o modelo está carregado no Ollama
+TEMPLATE_PATH = "E:/TCC/Local-Gradio-APP-for-RAG/Local-Gradio-App-for-RAG/json/template.json" 
+
+list_slms = ["phi3", "llama3", "mistral"]
 
 # Função para carregar o template JSON
 def load_template():
@@ -108,7 +109,7 @@ def fix_json(output_text):
         return output_text
 
 # Função para enviar chunk para o Ollama com template estruturado
-def predict_chunk(text, template, current):
+def predict_chunk(text, template, current, model_name):
     current = clean_json_text(current)
 
     input_llm = (
@@ -116,27 +117,25 @@ def predict_chunk(text, template, current):
     )
 
     response = ollama.chat(
-        model=MODEL_NAME,
+        model=model_name,
         messages=[{"role": "user", "content": input_llm}],
         options={"num_ctx": 4000}
     )
 
     output_text = response["message"]["content"]
 
-    # 🔍 Debug: Mostrar saída bruta do modelo
-    print("======= RAW OUTPUT FROM OLLAMA =======")
+    print(f"\n======= RAW OUTPUT FROM {model_name.upper()} =======")
     print(output_text)
-    print("======================================")
+    print("===================================================")
 
-    # Remove o marcador "<|end-output|>" se ele existir
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
     try:
-        # Tenta carregar diretamente como JSON
         return json.dumps(json.loads(output_text_cleaned), indent=2, ensure_ascii=False)
     except json.JSONDecodeError:
-        print("⚠️ WARNING: Invalid JSON output. Returning raw text.")
+        print(f"⚠️ WARNING: Invalid JSON output from {model_name}. Returning raw text.")
         return clean_json_text(output_text_cleaned)
+
 
 # Função principal para processar PDF e enviar ao modelo
 def process_and_generate(pdf_file):
@@ -146,31 +145,38 @@ def process_and_generate(pdf_file):
     if not extracted_text:
         return "Falha ao extrair texto do PDF."
 
-    # Aplica a estruturação antes de enviar para o modelo
     structured_data = structure_text(extracted_text)
-
-    # Serializa para JSON e envia para o modelo
-    template = json.dumps(load_template(), ensure_ascii=False)  # Template inicial
-    current = json.dumps(structured_data, ensure_ascii=False)  # Estado inicial estruturado
-
+    template = json.dumps(load_template(), ensure_ascii=False)
+    current_json = json.dumps(structured_data, ensure_ascii=False)
     chunks = split_document(extracted_text)
 
-    for i, chunk in enumerate(chunks):
-        print(f"Processando chunk {i}...")
-        current = predict_chunk(chunk, template, current)
+    # Lista de modelos que você quer testar
+    list_slms = ["phi3", "llama3", "mistral"]
 
-    return json.dumps(json.loads(current), indent=2, ensure_ascii=False)
+    resultados = {}
+
+    for modelo in list_slms:
+        print(f"\n========= 🔁 Processando com modelo: {modelo} =========")
+        current = current_json
+        for i, chunk in enumerate(chunks):
+            print(f"🧩 Chunk {i+1}/{len(chunks)} com modelo {modelo}...")
+            current = predict_chunk(chunk, template, current, modelo)
+
+        try:
+            resultados[modelo] = json.dumps(json.loads(current), indent=2, ensure_ascii=False)
+        except json.JSONDecodeError:
+            resultados[modelo] = current
+
+    return resultados
 
 # Interface Gradio
 interface = gr.Interface(
     fn=process_and_generate,
     inputs=gr.File(label="Upload PDF"),
-    outputs="text",
-    title="Extração de Dados com NuExtract via Ollama",
-    description="Extrai texto de PDFs e envia ao NuExtract via Ollama para processamento estruturado."
+    outputs=gr.JSON(label="Resultados por Modelo"),
+    title="Extração de Dados com Múltiplos Modelos via Ollama",
+    description="Processa PDFs com diferentes LLMs via Ollama e compara os resultados."
 )
-
-interface.launch()
 
 
 
