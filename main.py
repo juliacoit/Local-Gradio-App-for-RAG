@@ -109,12 +109,50 @@ def fix_json(output_text):
         return output_text
 
 # Função para enviar chunk para o Ollama com template estruturado
-def predict_chunk(text, template, current, model_name):
-    current = clean_json_text(current)
+def generate_prompt(model_name, template, current, text):
+    if model_name == "phi3":
+        return f"""<|system|>
+Você é um modelo que extrai informações estruturadas com base em um template.
+<|end|>
+<|user|>
+### Template:
+{template}
+### Current:
+{current}
+### Text:
+{text}
+<|end|>
+<|assistant|>"""
+    
+    elif model_name == "llama3":
+        return f"""<|start_header_id|>system<|end_header_id|>
+Você é um modelo que extrai informações estruturadas com base em um template.<|eot_id|>
+<|start_header_id|>user<|end_header_id|>
+### Template:
+{template}
+### Current:
+{current}
+### Text:
+{text}
+<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>"""
 
-    input_llm = (
-        f"<|input|>\n### Template:\n{template}\n### Current:\n{current}\n### Text:\n{text}\n\n<|output|>" + "{"
-    )
+    elif model_name == "mistral":
+        return f"""[INST] Você é um modelo que extrai informações estruturadas com base em um template.
+
+### Template:
+{template}
+### Current:
+{current}
+### Text:
+{text} [/INST]"""
+    
+    else:
+        raise ValueError(f"Modelo {model_name} não suportado.")
+
+def predict_chunk(text, template, current, model_name="phi3"):
+    current = clean_json_text(current)
+    input_llm = generate_prompt(model_name, template, current, text)
 
     response = ollama.chat(
         model=model_name,
@@ -124,16 +162,16 @@ def predict_chunk(text, template, current, model_name):
 
     output_text = response["message"]["content"]
 
-    print(f"\n======= RAW OUTPUT FROM {model_name.upper()} =======")
+    print("======= RAW OUTPUT FROM OLLAMA =======")
     print(output_text)
-    print("===================================================")
+    print("======================================")
 
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
     try:
         return json.dumps(json.loads(output_text_cleaned), indent=2, ensure_ascii=False)
     except json.JSONDecodeError:
-        print(f"⚠️ WARNING: Invalid JSON output from {model_name}. Returning raw text.")
+        print("⚠️ WARNING: Invalid JSON output. Returning raw text.")
         return clean_json_text(output_text_cleaned)
 
 
