@@ -173,7 +173,7 @@ def predict_chunk(text, template, current, model_name="phi3"):
     try:
         return json.dumps(json.loads(output_text_cleaned), indent=2, ensure_ascii=False)
     except json.JSONDecodeError:
-        print("⚠️ WARNING: Invalid JSON output. Returning raw text.")
+        print("WARNING: Invalid JSON output. Returning raw text.")
         return clean_json_text(output_text_cleaned)
 
 
@@ -196,10 +196,10 @@ def process_and_generate(pdf_file):
     resultados = {}
 
     for modelo in list_slms:
-        print(f"\n========= 🔁 Processando com modelo: {modelo} =========")
+        print(f"\n========= Processando com modelo: {modelo} =========")
         current = current_json
         for i, chunk in enumerate(chunks):
-            print(f"🧩 Chunk {i+1}/{len(chunks)} com modelo {modelo}...")
+            print(f"Chunk {i+1}/{len(chunks)} com modelo {modelo}...")
             current = predict_chunk(chunk, template, current, modelo)
 
         try:
