@@ -9,9 +9,11 @@ import unicodedata
 # Constantes
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
-TEMPLATE_PATH = "E:/TCC/Local-Gradio-APP-for-RAG/Local-Gradio-App-for-RAG/json/template.json" 
+TEMPLATE_PATH = "E:/IFBA/TCC/Local-GRadio-App-for_RAG/json/template.json"
 
 list_slms = ["phi3", "llama3", "mistral"]
+
+print("Iniciando Scripts...")
 
 # Função para carregar o template JSON
 def load_template():
@@ -215,6 +217,9 @@ interface = gr.Interface(
     title="Extração de Dados com Múltiplos Modelos via Ollama",
     description="Processa PDFs com diferentes LLMs via Ollama e compara os resultados."
 )
+
+print("Iniciando interface do Gradio...")
+interface.launch(share=True, debug=True)
 
 
 
