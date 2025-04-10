@@ -11,7 +11,7 @@ MAX_INPUT_SIZE = 4000
 OVERLAP = 128
 TEMPLATE_PATH = "E:/IFBA/TCC/Local-GRadio-App-for_RAG/json/template.json"
 
-list_slms = ["phi3", "llama3", "mistral"]
+list_slms = ["phi3:mini", "llama3", "mistral"]
 
 print("Iniciando Scripts...")
 
@@ -55,21 +55,21 @@ def structure_text(text):
     }
 
     current_section = None
+    candidate_titles = []
 
-    for line in lines:
+    for i, line in enumerate(lines):
         line = line.strip()
 
-        # Detecta títulos prováveis (primeiras linhas, letras maiúsculas, tamanho grande)
-        if not structured_data["titulo"] and len(line) > 5 and line.istitle():
-            structured_data["titulo"] = line
-            continue
-
-        # Detecta possíveis autores (normalmente perto do título, contém nome e sobrenome)
-        if not structured_data["autor"] and re.search(r"\b[A-Z][a-z]+ [A-Z][a-z]+", line):
+        # Identificar possível autor com base em "Prof." ou "Professor"
+        if not structured_data["autor"] and re.search(r"(Prof\.|Professor[a]?)", line, re.IGNORECASE):
             structured_data["autor"] = line
             continue
 
-        # Detecta cabeçalhos de seção (geralmente curtos, sem pontuação, em negrito ou maiúsculas)
+        # Guardar possíveis títulos nas primeiras linhas
+        if i < 5 and 10 < len(line) < 100 and not re.search(r"(prof\.|instituto|ifba|ifma|ifrn|campus|colegio|escola)", line, re.IGNORECASE):
+            candidate_titles.append(line)
+
+        # Detectar seção por linha em maiúsculas curtas
         if len(line) < 60 and line.isupper():
             current_section = {
                 "secao": line,
@@ -78,9 +78,24 @@ def structure_text(text):
             structured_data["conteudo"].append(current_section)
             continue
 
-        # Adiciona conteúdo dentro da seção correta
+        # Detectar linha com marcador de tópico (•)
+        if line.startswith("•") or line.startswith("- "):
+            if not current_section:
+                current_section = {
+                    "secao": "Tópicos",
+                    "conteudo": []
+                }
+                structured_data["conteudo"].append(current_section)
+            current_section["conteudo"].append(line)
+            continue
+
+        # Conteúdo normal dentro da seção
         if current_section:
             current_section["conteudo"].append(line)
+
+    # Seleciona o título mais provável (o mais longo entre os candidatos)
+    if candidate_titles and not structured_data["titulo"]:
+        structured_data["titulo"] = max(candidate_titles, key=len)
 
     return structured_data
 
@@ -95,24 +110,32 @@ def normalize_text(text):
     return unicodedata.normalize("NFC", text)
 
 def fix_json(output_text):
-    """Corrige erros no JSON gerado pelo modelo."""
+    """Corrige erros comuns e valida JSON, retornando como string formatada ou None."""
     # Remover qualquer coisa após <|end-output|>
     output_text = re.split(r"<\|end-output\|>", output_text)[0].strip()
-
-    # Normalizar caracteres acentuados
     output_text = normalize_text(output_text)
 
+    # Tentativa direta
     try:
-        # Tentar carregar JSON diretamente
-        parsed_json = json.loads(output_text)
-        return json.dumps(parsed_json, indent=2, ensure_ascii=False)
-    except json.JSONDecodeError as e:
-        print("⚠️ Erro ao corrigir JSON:", e)
-        return output_text
+        parsed = json.loads(output_text)
+        return json.dumps(parsed, indent=2, ensure_ascii=False)
+    except:
+        pass
+
+    # Correções comuns: remover vírgulas a mais antes de } ou ]
+    output_text = re.sub(r",\s*([}\]])", r"\1", output_text)
+
+    try:
+        parsed = json.loads(output_text)
+        return json.dumps(parsed, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print("❌ JSON ainda inválido após tentativas de correção:", e)
+        return None  # agora retornamos None explicitamente
+
 
 # Função para enviar chunk para o Ollama com template estruturado
 def generate_prompt(model_name, template, current, text):
-    if model_name == "phi3":
+    if model_name == "phi3:mini":
         return f"""<|system|>
 Você é um modelo que extrai informações estruturadas com base em um template.
 <|end|>
@@ -152,7 +175,7 @@ Você é um modelo que extrai informações estruturadas com base em um template
     else:
         raise ValueError(f"Modelo {model_name} não suportado.")
 
-def predict_chunk(text, template, current, model_name="phi3"):
+def predict_chunk(text, template, current, model_name="phi3:mini"):
     current = clean_json_text(current)
     input_llm = generate_prompt(model_name, template, current, text)
 
@@ -176,50 +199,135 @@ def predict_chunk(text, template, current, model_name="phi3"):
         print("WARNING: Invalid JSON output. Returning raw text.")
         return clean_json_text(output_text_cleaned)
 
+def gerar_questoes(json_path, modelo_deepseek="deepseek-r1:8b"):
+    with open(json_path, "r", encoding="utf-8") as f:
+        json_data = json.load(f)
 
-# Função principal para processar PDF e enviar ao modelo
-def process_and_generate(pdf_file):
+    topicos = ""
+    for sec in json_data.get("conteudo", []):
+        nome_secao = sec.get("secao", "Seção")
+        conteudo = ", ".join(sec.get("conteudo", []))
+        topicos += f"- {nome_secao}: {conteudo}\n"
+
+    prompt = f"""
+<｜User｜>Você é um professor criando questões educacionais com base nos seguintes tópicos:
+
+{topicos}
+
+Gere 5 questões de múltipla escolha com:
+- 4 alternativas (a, b, c, d)
+- Marque a resposta correta
+- Dê uma explicação para a resposta
+
+Formato:
+1. Pergunta?
+   a) ...
+   b) ...
+   c) ...
+   d) ...
+   Resposta correta: ...
+   ℹExplicação: ...<｜Assistant｜>"""
+
+    resposta = ollama.chat(
+        model=modelo_deepseek,
+        messages=[{"role": "user", "content": prompt}]
+    )
+
+    return resposta["message"]["content"]
+
+
+def processar_tudo(pdf_file):
     pdf_path = pdf_file.name
-    extracted_text = extract_text_from_pdf(pdf_path)
+    nome_base = os.path.splitext(os.path.basename(pdf_path))[0]
+    os.makedirs("resultados", exist_ok=True)
 
-    if not extracted_text:
-        return "Falha ao extrair texto do PDF."
+    texto = extract_text_from_pdf(pdf_path)
+    with open(f"resultados/{nome_base}_texto.txt", "w", encoding="utf-8") as f:
+        f.write(texto)
 
-    structured_data = structure_text(extracted_text)
+    estrutura_inicial = structure_text(texto)
+    current_json = json.dumps(estrutura_inicial, ensure_ascii=False)
     template = json.dumps(load_template(), ensure_ascii=False)
-    current_json = json.dumps(structured_data, ensure_ascii=False)
-    chunks = split_document(extracted_text)
+    chunks = split_document(texto)
 
-    # Lista de modelos que você quer testar
-    list_slms = ["phi3", "llama3", "mistral"]
-
-    resultados = {}
+    jsons_gerados = {}
+    questoes_geradas = {}
+    arquivos_json = {}
+    arquivos_questoes = {}
 
     for modelo in list_slms:
         print(f"\n========= Processando com modelo: {modelo} =========")
         current = current_json
-        for i, chunk in enumerate(chunks):
-            print(f"Chunk {i+1}/{len(chunks)} com modelo {modelo}...")
+        for chunk in chunks:
             current = predict_chunk(chunk, template, current, modelo)
+        json_final = fix_json(current)
+        if not json_final:
+            print(f"⚠️ JSON inválido mesmo após fix_json para modelo {modelo}")
+            json_final = json.dumps({"erro": "JSON inválido mesmo após correção"}, indent=2, ensure_ascii=False)
 
+
+        jsons_gerados[modelo] = json_final
+
+        # Salvar JSON
+        path_json = f"resultados/{nome_base}_saida_{modelo.replace(':', '_')}.json"
+        with open(path_json, "w", encoding="utf-8") as f:
+            f.write(json_final)
+        arquivos_json[modelo] = path_json
+
+        # Gerar questões
         try:
-            resultados[modelo] = json.dumps(json.loads(current), indent=2, ensure_ascii=False)
-        except json.JSONDecodeError:
-            resultados[modelo] = current
+            questoes = gerar_questoes(path_json)
+        except Exception as e:
+            questoes = f"Erro ao gerar questões com Deepseek: {e}"
 
-    return resultados
+        questoes_geradas[modelo] = questoes
 
-# Interface Gradio
+        # Salvar questões
+        path_q = f"resultados/{nome_base}_questoes_{modelo.replace(':', '_')}.txt"
+        with open(path_q, "w", encoding="utf-8") as f:
+            f.write(questoes)
+        arquivos_questoes[modelo] = path_q
+
+    return (
+        jsons_gerados.get("phi3:mini", ""),
+        jsons_gerados.get("llama3", ""),
+        jsons_gerados.get("mistral", ""),
+        questoes_geradas.get("phi3:mini", ""),
+        questoes_geradas.get("llama3", ""),
+        questoes_geradas.get("mistral", ""),
+        arquivos_json.get("phi3:mini", ""),
+        arquivos_json.get("llama3", ""),
+        arquivos_json.get("mistral", ""),
+        arquivos_questoes.get("phi3:mini", ""),
+        arquivos_questoes.get("llama3", ""),
+        arquivos_questoes.get("mistral", "")
+    )
+
+# Gradio Interface
 interface = gr.Interface(
-    fn=process_and_generate,
-    inputs=gr.File(label="Upload PDF"),
-    outputs=gr.JSON(label="Resultados por Modelo"),
-    title="Extração de Dados com Múltiplos Modelos via Ollama",
-    description="Processa PDFs com diferentes LLMs via Ollama e compara os resultados."
+    fn=processar_tudo,
+    inputs=gr.File(label="Upload do PDF"),
+    outputs=[
+        gr.JSON(label="JSON - phi3"),
+        gr.JSON(label="JSON - llama3"),
+        gr.JSON(label="JSON - mistral"),
+        gr.Textbox(label="Questões - phi3", lines=10),
+        gr.Textbox(label="Questões - llama3", lines=10),
+        gr.Textbox(label="Questões - mistral", lines=10),
+        gr.File(label="Download JSON - phi3"),
+        gr.File(label="Download JSON - llama3"),
+        gr.File(label="Download JSON - mistral"),
+        gr.File(label="Download Questões - phi3"),
+        gr.File(label="Download Questões - llama3"),
+        gr.File(label="Download Questões - mistral")
+    ],
+    title="Extração + Questões Educacionais com 3 Modelos + Deepseek",
+    description="Faça upload de um PDF, gere JSONs estruturados com phi3, llama3 e mistral e compare as questões geradas com Deepseek."
 )
 
-print("Iniciando interface do Gradio...")
-interface.launch(share=True, debug=True)
+if __name__ == "__main__":
+    print("Iniciando interface do Gradio...")
+    interface.launch(share=True, debug=True)
 
 
 

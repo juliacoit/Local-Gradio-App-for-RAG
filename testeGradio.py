@@ -1,7 +1,8 @@
-import gradio as gr
+import ollama
 
-def saudacao(nome):
-    return f"Olá, {nome}!"
+response = ollama.chat(
+    model="phi3:mini",
+    messages=[{"role": "user", "content": "Explique o que é aprendizado supervisionado."}]
+)
 
-demo = gr.Interface(fn=saudacao, inputs="text", outputs="text")
-demo.launch()
+print(response["message"]["content"])
