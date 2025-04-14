@@ -60,80 +60,62 @@ def structure_text(text):
     for i, line in enumerate(lines):
         line = line.strip()
 
-        # Identificar possível autor com base em "Prof." ou "Professor"
-        if not structured_data["autor"] and re.search(r"(Prof\.|Professor[a]?)", line, re.IGNORECASE):
+        if not structured_data["autor"] and re.search(r"(Prof\\.|Professor[a]?)", line, re.IGNORECASE):
             structured_data["autor"] = line
             continue
 
-        # Guardar possíveis títulos nas primeiras linhas
-        if i < 5 and 10 < len(line) < 100 and not re.search(r"(prof\.|instituto|ifba|ifma|ifrn|campus|colegio|escola)", line, re.IGNORECASE):
+        if i < 5 and 10 < len(line) < 100 and not re.search(r"(prof\\.|instituto|ifba|ifma|ifrn|campus|colegio|escola)", line, re.IGNORECASE):
             candidate_titles.append(line)
 
-        # Detectar seção por linha em maiúsculas curtas
         if len(line) < 60 and line.isupper():
-            current_section = {
-                "secao": line,
-                "conteudo": []
-            }
+            current_section = {"secao": line, "conteudo": []}
             structured_data["conteudo"].append(current_section)
             continue
 
-        # Detectar linha com marcador de tópico (•)
-        if line.startswith("•") or line.startswith("- "):
+        if line.startswith("\u2022") or line.startswith("- "):
             if not current_section:
-                current_section = {
-                    "secao": "Tópicos",
-                    "conteudo": []
-                }
+                current_section = {"secao": "Tópicos", "conteudo": []}
                 structured_data["conteudo"].append(current_section)
             current_section["conteudo"].append(line)
             continue
 
-        # Conteúdo normal dentro da seção
         if current_section:
             current_section["conteudo"].append(line)
 
-    # Seleciona o título mais provável (o mais longo entre os candidatos)
     if candidate_titles and not structured_data["titulo"]:
         structured_data["titulo"] = max(candidate_titles, key=len)
 
     return structured_data
 
-# Função para limpar JSON mal formatado
+# Normaliza e limpa JSON
 def clean_json_text(text):
-    text = re.sub(r'[^\x00-\x7F]+', ' ', text)  # Remove caracteres não ASCII
-    text = re.sub(r'\s+', ' ', text)  # Remove múltiplos espaços
+    text = re.sub(r'[\x00-\x1F]+', '', text)
+    text = re.sub(r'\s+', ' ', text)
     return text.strip()
 
 def normalize_text(text):
-    """Normaliza caracteres acentuados malformados no texto."""
     return unicodedata.normalize("NFC", text)
 
+# Corrige o JSON gerado
 def fix_json(output_text):
-    """Corrige erros comuns e valida JSON, retornando como string formatada ou None."""
-    # Remover qualquer coisa após <|end-output|>
+    """Tenta corrigir JSON com vírgulas finais inválidas e normaliza o texto."""
+    # Remover qualquer coisa após o marcador
     output_text = re.split(r"<\|end-output\|>", output_text)[0].strip()
-    output_text = normalize_text(output_text)
+    
+    # Normalizar acentuação
+    output_text = unicodedata.normalize("NFC", output_text)
 
-    # Tentativa direta
-    try:
-        parsed = json.loads(output_text)
-        return json.dumps(parsed, indent=2, ensure_ascii=False)
-    except:
-        pass
-
-    # Correções comuns: remover vírgulas a mais antes de } ou ]
+    # Tenta corrigir vírgulas finais antes de chave/colchete
     output_text = re.sub(r",\s*([}\]])", r"\1", output_text)
 
     try:
         parsed = json.loads(output_text)
         return json.dumps(parsed, indent=2, ensure_ascii=False)
     except Exception as e:
-        print("❌ JSON ainda inválido após tentativas de correção:", e)
-        return None  # agora retornamos None explicitamente
+        print("JSON ainda inválido mesmo após tentativas de correção:", str(e).encode("utf-8", errors="replace"))
+        return output_text  # retorna o texto bruto se não conseguir corrigir
 
 
-# Função para enviar chunk para o Ollama com template estruturado
 def generate_prompt(model_name, template, current, text):
     if model_name == "phi3:mini":
         return f"""<|system|>
@@ -148,7 +130,6 @@ Você é um modelo que extrai informações estruturadas com base em um template
 {text}
 <|end|>
 <|assistant|>"""
-    
     elif model_name == "llama3":
         return f"""<|start_header_id|>system<|end_header_id|>
 Você é um modelo que extrai informações estruturadas com base em um template.<|eot_id|>
@@ -158,10 +139,8 @@ Você é um modelo que extrai informações estruturadas com base em um template
 ### Current:
 {current}
 ### Text:
-{text}
-<|eot_id|>
+{text}<|eot_id|>
 <|start_header_id|>assistant<|end_header_id|>"""
-
     elif model_name == "mistral":
         return f"""[INST] Você é um modelo que extrai informações estruturadas com base em um template.
 
@@ -171,7 +150,6 @@ Você é um modelo que extrai informações estruturadas com base em um template
 {current}
 ### Text:
 {text} [/INST]"""
-    
     else:
         raise ValueError(f"Modelo {model_name} não suportado.")
 
@@ -186,18 +164,9 @@ def predict_chunk(text, template, current, model_name="phi3:mini"):
     )
 
     output_text = response["message"]["content"]
-
-    print("======= RAW OUTPUT FROM OLLAMA =======")
-    print(output_text)
-    print("======================================")
-
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
-    try:
-        return json.dumps(json.loads(output_text_cleaned), indent=2, ensure_ascii=False)
-    except json.JSONDecodeError:
-        print("WARNING: Invalid JSON output. Returning raw text.")
-        return clean_json_text(output_text_cleaned)
+    return output_text_cleaned
 
 def gerar_questoes(json_path, modelo_deepseek="deepseek-r1:8b"):
     with open(json_path, "r", encoding="utf-8") as f:
@@ -235,7 +204,6 @@ Formato:
 
     return resposta["message"]["content"]
 
-
 def processar_tudo(pdf_file):
     pdf_path = pdf_file.name
     nome_base = os.path.splitext(os.path.basename(pdf_path))[0]
@@ -260,11 +228,14 @@ def processar_tudo(pdf_file):
         current = current_json
         for chunk in chunks:
             current = predict_chunk(chunk, template, current, modelo)
-        json_final = fix_json(current)
-        if not json_final:
-            print(f"⚠️ JSON inválido mesmo após fix_json para modelo {modelo}")
-            json_final = json.dumps({"erro": "JSON inválido mesmo após correção"}, indent=2, ensure_ascii=False)
 
+        try:
+            json_final = fix_json(current)
+            if json_final is None:
+                json_final = current  # salva bruto se ainda inválido
+        except Exception as e:
+            print("Erro ao aplicar fix_json:", e)
+            json_final = current
 
         jsons_gerados[modelo] = json_final
 
@@ -274,7 +245,6 @@ def processar_tudo(pdf_file):
             f.write(json_final)
         arquivos_json[modelo] = path_json
 
-        # Gerar questões
         try:
             questoes = gerar_questoes(path_json)
         except Exception as e:
@@ -282,7 +252,6 @@ def processar_tudo(pdf_file):
 
         questoes_geradas[modelo] = questoes
 
-        # Salvar questões
         path_q = f"resultados/{nome_base}_questoes_{modelo.replace(':', '_')}.txt"
         with open(path_q, "w", encoding="utf-8") as f:
             f.write(questoes)
@@ -328,6 +297,5 @@ interface = gr.Interface(
 if __name__ == "__main__":
     print("Iniciando interface do Gradio...")
     interface.launch(share=True, debug=True)
-
 
 
