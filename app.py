@@ -5,6 +5,7 @@ import re
 import gradio as gr
 from langchain_community.document_loaders import PyMuPDFLoader
 import unicodedata
+from json_repair import repair_json
 
 # Constantes
 MAX_INPUT_SIZE = 4000
@@ -96,30 +97,10 @@ def clean_json_text(text):
 def normalize_text(text):
     return unicodedata.normalize("NFC", text)
 
-# Corrige o JSON gerado
-def fix_json(output_text):
-    """Tenta corrigir JSON com vírgulas finais inválidas e normaliza o texto."""
-    # Remover qualquer coisa após o marcador
-    output_text = re.split(r"<\|end-output\|>", output_text)[0].strip()
-    
-    # Normalizar acentuação
-    output_text = unicodedata.normalize("NFC", output_text)
-
-    # Tenta corrigir vírgulas finais antes de chave/colchete
-    output_text = re.sub(r",\s*([}\]])", r"\1", output_text)
-
-    try:
-        parsed = json.loads(output_text)
-        return json.dumps(parsed, indent=2, ensure_ascii=False)
-    except Exception as e:
-        print("JSON ainda inválido mesmo após tentativas de correção:", str(e).encode("utf-8", errors="replace"))
-        return output_text  # retorna o texto bruto se não conseguir corrigir
-
-
 def generate_prompt(model_name, template, current, text):
     if model_name == "phi3:mini":
         return f"""<|system|>
-Você é um modelo que extrai informações estruturadas com base em um template.
+Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:
 <|end|>
 <|user|>
 ### Template:
@@ -132,7 +113,7 @@ Você é um modelo que extrai informações estruturadas com base em um template
 <|assistant|>"""
     elif model_name == "llama3":
         return f"""<|start_header_id|>system<|end_header_id|>
-Você é um modelo que extrai informações estruturadas com base em um template.<|eot_id|>
+Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:<|eot_id|>
 <|start_header_id|>user<|end_header_id|>
 ### Template:
 {template}
@@ -142,7 +123,7 @@ Você é um modelo que extrai informações estruturadas com base em um template
 {text}<|eot_id|>
 <|start_header_id|>assistant<|end_header_id|>"""
     elif model_name == "mistral":
-        return f"""[INST] Você é um modelo que extrai informações estruturadas com base em um template.
+        return f"""[INST] Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:
 
 ### Template:
 {template}
@@ -152,6 +133,51 @@ Você é um modelo que extrai informações estruturadas com base em um template
 {text} [/INST]"""
     else:
         raise ValueError(f"Modelo {model_name} não suportado.")
+
+# Corrige o JSON gerado
+def fix_json(output_text):
+    """Tenta corrigir JSON com vírgulas finais inválidas e normaliza o texto, usando também json-repair."""
+    output_text = re.split(r"<\|end-output\|>", output_text)[0].strip()
+    output_text = unicodedata.normalize("NFC", output_text)
+
+    # Captura apenas o primeiro JSON válido
+    try:
+        # Tenta localizar o primeiro JSON com pilha de chaves
+        stack = []
+        start = None
+        for i, char in enumerate(output_text):
+            if char == '{':
+                if start is None:
+                    start = i
+                stack.append('{')
+            elif char == '}':
+                if stack:
+                    stack.pop()
+                    if not stack:
+                        json_chunk = output_text[start:i+1]
+                        break
+        else:
+            json_chunk = output_text  # fallback
+    except Exception as e:
+        print("Erro ao isolar JSON:", e)
+        json_chunk = output_text
+
+    # Remove vírgulas finais inválidas
+    json_chunk = re.sub(r",\s*([}\]])", r"\1", json_chunk)
+
+    # Tenta carregar com json normal
+    try:
+        parsed = json.loads(json_chunk)
+        return json.dumps(parsed, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print("JSON inválido, tentando corrigir com json-repair...")
+        try:
+            repaired = repair_json(json_chunk)
+            parsed = json.loads(repaired)
+            return json.dumps(parsed, indent=2, ensure_ascii=False)
+        except Exception as e2:
+            print("Falha ao corrigir com json-repair também:", str(e2).encode("utf-8", errors="replace"))
+            return json_chunk  # retorna o texto bruto se não conseguir corrigir
 
 def predict_chunk(text, template, current, model_name="phi3:mini"):
     current = clean_json_text(current)
@@ -164,19 +190,24 @@ def predict_chunk(text, template, current, model_name="phi3:mini"):
     )
 
     output_text = response["message"]["content"]
+    print(f"\n===== RAW OUTPUT from {model_name} =====\n{output_text}\n")
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
-    return output_text_cleaned
+    # Corrigir o JSON antes de retornar
+    json_corrigido = fix_json(output_text_cleaned)
 
-def gerar_questoes(json_path, modelo_deepseek="deepseek-r1:8b"):
-    with open(json_path, "r", encoding="utf-8") as f:
+    return json_corrigido
+
+def gerar_questoes(json_corrigido, modelo_deepseek="deepseek-r1:8b"):
+    with open(json_corrigido, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
     topicos = ""
     for sec in json_data.get("conteudo", []):
         nome_secao = sec.get("secao", "Seção")
-        conteudo = ", ".join(sec.get("conteudo", []))
-        topicos += f"- {nome_secao}: {conteudo}\n"
+        topicos += f"\n## {nome_secao}\n"
+        for item in sec.get("conteudo", []):
+            topicos += f"- {item}\n"
 
     prompt = f"""
 <｜User｜>Você é um professor criando questões educacionais com base nos seguintes tópicos:
