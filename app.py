@@ -6,11 +6,17 @@ import gradio as gr
 from langchain_community.document_loaders import PyMuPDFLoader
 import unicodedata
 from json_repair import repair_json
+import sys
+import io
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Constantes
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
-TEMPLATE_PATH = "E:/IFBA/TCC/Local-GRadio-App-for_RAG/json/template.json"
+TEMPLATE_PATH = os.environ.get("TEMPLATE_PATH", "/app/json/template.json")
+output_dir = os.environ.get("OUTPUT_DIR", "resultados")
+os.makedirs(output_dir, exist_ok=True)
 
 list_slms = ["phi3:mini", "llama3", "mistral"]
 
@@ -183,6 +189,7 @@ def predict_chunk(text, template, current, model_name="phi3:mini"):
     current = clean_json_text(current)
     input_llm = generate_prompt(model_name, template, current, text)
 
+    ollama.base_url = "http://host.docker.internal:11434"
     response = ollama.chat(
         model=model_name,
         messages=[{"role": "user", "content": input_llm}],
@@ -238,10 +245,10 @@ Formato:
 def processar_tudo(pdf_file):
     pdf_path = pdf_file.name
     nome_base = os.path.splitext(os.path.basename(pdf_path))[0]
-    os.makedirs("resultados", exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
 
     texto = extract_text_from_pdf(pdf_path)
-    with open(f"resultados/{nome_base}_texto.txt", "w", encoding="utf-8") as f:
+    with open(f"{output_dir}/{nome_base}_texto.txt", "w", encoding="utf-8") as f:
         f.write(texto)
 
     estrutura_inicial = structure_text(texto)
@@ -271,7 +278,7 @@ def processar_tudo(pdf_file):
         jsons_gerados[modelo] = json_final
 
         # Salvar JSON
-        path_json = f"resultados/{nome_base}_saida_{modelo.replace(':', '_')}.json"
+        path_json = os.path.join(output_dir, f"{nome_base}_saida_{modelo.replace(':', '_')}.json")
         with open(path_json, "w", encoding="utf-8") as f:
             f.write(json_final)
         arquivos_json[modelo] = path_json
@@ -283,7 +290,7 @@ def processar_tudo(pdf_file):
 
         questoes_geradas[modelo] = questoes
 
-        path_q = f"resultados/{nome_base}_questoes_{modelo.replace(':', '_')}.txt"
+        path_q = os.path.join(output_dir, f"{nome_base}_questoes_{modelo.replace(':', '_')}.txt")
         with open(path_q, "w", encoding="utf-8") as f:
             f.write(questoes)
         arquivos_questoes[modelo] = path_q
@@ -327,6 +334,10 @@ interface = gr.Interface(
 
 if __name__ == "__main__":
     print("Iniciando interface do Gradio...")
-    interface.launch(share=True, debug=True)
+    interface.launch(
+        server_name="0.0.0.0",  # <- isso permite acesso externo (fora do container)
+        server_port=7860,       # <- mesma porta que você mapeou no docker-compose
+        debug=True
+    )
 
 

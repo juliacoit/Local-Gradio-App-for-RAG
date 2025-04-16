@@ -1,0 +1,56 @@
+```json
+{
+  "titulo": "Diagrama de Componentes",
+  "autor": "",
+  "disciplina": "",
+  "data": "",
+  "ementa": [
+    "• Identifica componentes de um sistema, subsistemas e até classes internas.",
+    "O diagrama facilita o reuso de código por identificar claramente os componentes do sistema."
+  ],
+  "topicos": [
+    {
+      "secao": "Tópicos",
+      "subsecoes": [
+        {
+          "titulo": "",
+          "conteudo": [
+            "• Identifica componentes de um sistema, subsistemas e até classes internas.",
+            "O diagrama facilita o reuso de código por identificar claramente os componentes do sistema."
+          ]
+        }
+      ],
+      "conteudo": []
+    },
+    {
+      "secao": "ASTAH",
+      "conteudo": []
+    },
+    {
+      "secao": "LIVRO",
+      "conteudo": [
+        "- Executável: o componente é um arquivo compilado que pode ser executado.",
+        "- Biblioteca: contém funções e subrotinas compartilhadas entre executáveis.",
+        "- Tabela: refere-se a repositórios físicos de dados.",
+        "– Documento: são os arquivos de texto (help).",
+        "Arquivo: qualquer tipo de arquivo (fonte)"
+      ]
+    },
+    {
+      "secao": "Classes e  Componentes Internos",
+      "conteudo": [
+        "• Um componente pode ter classes internas ou outros componentes internos."
+      ],
+      "subsecoes": []
+    }
+  ],
+  "exemplos": [],
+  "referencias": [
+    {
+      "titulo": "UML2: Uma Abordagem Prática",
+      "autores": ["Gilleanes T. A. Guedes"],
+      "edicao": "3ª Ed. 2curso de Janeiro a Junho de 2018"
+    }
+  ]
+}
+```
