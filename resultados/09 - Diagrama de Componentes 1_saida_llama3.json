@@ -1,0 +1,96 @@
+### Template:
+{"titulo": "string", "autor": "string", "disciplina": "string", "data": "string", "ementa": ["string"], "topicos": [{"secao": "string", "subsecoes": [{"titulo": "string", "conteudo": ["string"]}], "conteudo": ["string"]}], "exemplos": [{"descricao": "string", "codigo": "string", "explicacao": "string"}], "referencias": ["string"]}
+### Current:
+{
+    "titulo": "• Identifica componentes de um sistema,",
+    "autor": "",
+    "disciplina": "",
+    "data": "",
+    "ementa": [
+        "• Identifica componentes de um sistema, subsistemas e até classes internas",
+        "• Um componente pode ser – Lógico: regra de negócio – Físico: arquivos, bibliotecas",
+        "• Este diagrama facilita o reuso de código por identificar claramente os componentes de um sistema"
+    ],
+    "topicos": [
+        {
+            "secao": "Tópicos",
+            "subsecoes": [
+                {
+                    "titulo": "Componente",
+                    "conteudo": [
+                        "• É uma unidade autônoma dentro do sistema",
+                        "• Pode conter interfaces fornecidas e requeridas, que são expostas via portas",
+                        "• Representação de um componente: 3"
+                    ]
+                },
+                {
+                    "titulo": "ASTAH",
+                    "conteudo": []
+                },
+                {
+                    "titulo": "LIVRO",
+                    "conteudo": [
+                        "Estereótipos",
+                        "• Executável: o componente é um arquivo compilado que pode ser executado",
+                        "• Biblioteca: contém funções e subrotinas que podem ser compartilhadas entre executáveis",
+                        "• Tabela: refere-se a repositórios físicos de dados",
+                        "• Documento: são os arquivos de texto (help)",
+                        "• Arquivo: qualquer tipo de arquivo (fonte) 4"
+                    ]
+                }
+            ],
+            "conteudo": [
+                "• Representa a comunicação entre os componentes:",
+                "• Neste exemplo, Gerenciador de Contas tem uma interface requerida e SGBD tem uma interface fornecida",
+                "• Não confundir com os arquivos de interface gráfica, estamos falando de ‘implements’ 5"
+            ]
+        },
+        {
+            "secao": "ASTAH",
+            "conteudo": []
+        },
+        {
+            "secao": "LIVRO",
+            "conteudo": [
+                "Estereótipos",
+                "• Classes e Componentes Internos",
+                "• Um componente pode ter classes internas ou outros componentes internos",
+                "• Quando os componentes externos não são exibidos, chama-se essa representação de Caixa Preta",
+                "• Quando o são, é uma Caixa Branca",
+                "• Nos próximos slides veremos as formas de representação em Caixa Branca 6"
+            ]
+        },
+        {
+            "secao": "PORTA",
+            "conteudo": [
+                "Interfaces Fornecidas e Requeridas",
+                "• No Diagrama ao lado temos as interfaces requeridas e as interfaces fornecidas 10"
+            ]
+        },
+        {
+            "secao": "EXERCÍCIO",
+            "conteudo": ["11"]
+        },
+        {
+            "secao": "• SISTEMA DE CONTROLE DE HOTEL",
+            "conteudo": [
+                "- É necessário haver um módulo de manutenção responsável por CRUD de funcionários, quartos etc",
+                "- Também é essencial o módulo de reservas de quartos por parte dos hóspedes",
+                "- Por parte do hotel, deverá haver um módulo para gerenciar o aluguel dos quartos",
+                "- Cada quarto pode requerer serviços, como limpeza, lençol, toalha, compra de alimentos e etc, o que exige um módulo específico pra isso",
+                "• Crie as interfaces e portas necessárias",
+                "• Represente 1 componente em Caixa Branca"
+            ]
+        }
+    ],
+    "exemplos": [
+        {
+            "descricao": "",
+            "codigo": "",
+            "explicacao": ""
+        }
+    ],
+    "referencias": [
+        "12 • UML2: Uma Abordagem Prática 3ª Ed. 2018 Gilleanes T. A. Guedes Perguntas? 13"
+    ]
+}

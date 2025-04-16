@@ -1,0 +1,49 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados",
+  "autor": "Prof. Marcos Brito",
+  "disciplina": "Modelagem e gerenciamento de bancos de dados - MGDB",
+  "data": "",
+  "ementa": [
+    "Definição de Banco de Dados;",
+    "Terminologia básica;",
+    "Usuários de Banco de Dados;",
+    "Aplicações;",
+    "Abstração de dados Esquema;",
+    "Instância."
+  ],
+  "topicos": [
+    {
+      "secao": "Aula 01 – Introdução a Banco \nde Dados",
+      "conteudo": [
+        "Conceitos Básicos de Banco de Dados: ",
+        "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
+      ],
+      "topico": [
+        {
+          "secao": "",
+          "subsecoes": []
+        }
+      ]
+    },
+    {
+      "titulo": "Bancos de Dados",
+      "conteudo": [
+        "“Coleção organizada de informações - ou dados - estruturados, normalmente armazenados eletronicamente em um sistema de computador. ” (Oracle, 2024)"
+      ],
+      "topico": [
+        {
+          "secao": "",
+          "subsecoes": []
+        }
+      ]
+    }
+  ],
+  "exemplos": [],
+  "referencias": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006.",
+    "[Oracle] Banco de Dados. Oracle Disponível em <www.oracle.com>. Acesso em: 03/2024."
+  ],
+  "PPA": [
+    "Referências"
+  ]
+}
