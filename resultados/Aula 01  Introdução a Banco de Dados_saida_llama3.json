@@ -25,46 +25,68 @@
       "secao": "Tópicos",
       "subsecoes": [
         {
-          "titulo": "O que é um banco de dados?",
+          "titulo": "Processos seletivos;",
           "conteudo": [
-            "\"Coleção organizada de informações - ou dados - estruturados, normalmente armazenados eletronicamente em um sistema de computador.\"",
-            "Oracle, 2024)"
+            "• Processos seletivos;"
           ]
         },
         {
-          "titulo": "Aplicações",
+          "titulo": "Operações bancárias;",
           "conteudo": [
-            "• Processos seletivos;",
-            "• Operações bancárias;",
-            "• Sistemas aéreo;",
-            "• Bibliotecas;",
-            "• Mercados;",
-            "• Hospitais;",
-            "• E muitas outras áreas."
+            "• Operações bancárias;"
           ]
+        },
+        {
+          "titulo": "Sistemas aéreo;",
+          "conteudo": [
+            "• Sistemas aéreo;"
+          ]
+        },
+        {
+          "titulo": "Bibliotecas;",
+          "conteudo": [
+            "• Bibliotecas;"
+          ]
+        },
+        {
+          "titulo": "Mercados;",
+          "conteudo": [
+            "• Mercados;"
+          ]
+        },
+        {
+          "titulo": "Hospitais;",
+          "conteudo": [
+            "• Hospitais;"
+          ]
+        },
+        {
+          "titulo": "E muitas outras áreas.",
+          "conteúdo": []
         }
       ],
       "conteudo": [
-        "Tipos de Banco de Dados",
-        "• Relacionais: O mais utilizado atualmente, a organização dos dados é feita em tabelas no formato linha e coluna;",
-        "• Orientado a objetos: Informações armazenadas em formato de objeto;",
-        "• Distribuído: permite que as informações sejam armazenadas em diferentes computadores;",
-        "• Documentos: informações salvas em formato de documentos. Está em uma grande ascensão devido ao crescimento no desenvolvimento de aplicações web e mobile.",
+        "• Relacionais: O mais utilizado atualmente, a",
+        "organização dos dados é feita em tabelas no",
+        "formato linha e coluna;",
+        "• Orientado a objetos: Informações armazenadas",
+        "em formato de objeto;",
+        "• Distribuído: permite que as informações sejam",
+        "armazenadas em diferentes computadores;",
+        "• Documentos: informações salvas em formato de",
+        "documentos. Está em uma grande ascensão",
+        "devido ao crescimento no desenvolvimento de",
+        "aplicações web e mobile.",
         "Structured Query Language (SQL)",
         "• Linguagem de consulta estruturada;",
         "• Linguagem dos bancos de dados relacionais;",
-        "• A linguagem mais utilizada nos bancos de dados relacionais;",
+        "• A linguagem mais utilizada nos bancos de",
+        "dados relacionais;",
+        "",
         "Ex.: SELECT * FROM tabela;",
         "• NoSQL",
+        "",
         "Ex.: db.minhaColecao.find({})"
-      ]
-    },
-    {
-      "secao": "Tipos de Usuários",
-      "conteudo": [
-        "• Administrados de banco de dados (DBA): responsável pela administração e gerenciamento do banco de dados;",
-        "• Analista de sistemas: é quem faz o levantamento de requisitos e projeta o banco de dados;",
-        "• Programador: interage com o banco de dados através de linguagens de programação."
       ]
     },
     {
@@ -76,17 +98,25 @@
     {
       "secao": "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.",
       "conteudo": [
-        "Sistemas de banco de dados. São Paulo: Campus, 2006.",
-        "HEUSER, C. A. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman, 2010.",
-        "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
+        "Sistemas de banco de dados. São Paulo:",
+        "Campus, 2006.",
+        "HEUSER, C. A. Projeto de banco de dados. 6. ed.",
+        "Porto Alegre: Bookman, 2010.",
+        "[Oracle] Banco de Dados. Oracle. Disponível em:",
+        "<www.oracle.com>. Acesso em: 03/2024."
       ]
-    },
-    ", \"exemplos\": [{\"descricao\": ",
-    ", \"codigo\": ",
-    ", \"explicacao\": ",
-    "}], \"referencias\": [",
-    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006.",
-    "HEUSER, C. A. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman, 2010.",
-    "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ],
+  "referências": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.",
+    "HEUSER, C. A. Projeto de banco de dados. 6. ed.",
+    "[Oracle] Banco de Dados. Oracle."
   ]
 }

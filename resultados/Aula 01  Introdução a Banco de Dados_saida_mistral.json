@@ -1,98 +1,103 @@
 {
   "titulo": "Conceitos Básicos de Banco de Dados:",
   "autor": "",
-  "disciplina": "Banco de Dados",
+  "disciplina": "",
   "data": "",
   "ementa": [
-    "Definição de Banco de Dados",
-    "Terminologia básica",
-    "Usuários de Banco de Dados",
-    "Aplicações",
-    "Abstração de dados Esquema",
-    "Instância"
+    "• Definição de Banco de Dados;",
+    "• Terminologia básica;",
+    "• Usuários de Banco de Dados;",
+    "• Aplicações;",
+    "• Abstração de dados Esquema;",
+    "• Instância.",
+    "",
+    "Conceito de SGBD;",
+    "Vantagens do SGBD;",
+    "Comparação com o Sistema de Arquivos.",
+    "",
+    "Aspectos de modelagem de dados:",
+    "Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;",
+    "Métodos e técnicas;  Objetivo da modelagem;",
+    "Abstração; Coleta de requisitos;",
+    "Análise de requisitos; Categorias de modelos.",
+    "",
+    "Ementa da Disciplina",
+    "Modelo Conceitual de dados:",
+    "Abordagem entidade-relacionamento (ER);  ",
+    "Entidades;Atributos; Relacionamentos;  ",
+    "Cardinalidade de relacionamentos;",
+    "Diagrama entidade-relacionamento (DER).",
+    "",
+    "Modelo Relacional:",
+    "Nomenclatura do Modelo Relacional;",
+    "Domínio;",
+    "Relações;",
+    "Chaves;",
+    "Restrições de Integridade;",
+    "Esquemas de Relação.",
+    "",
+    "Mapeamento entre modelos de dados:",
+    "Equivalência entre os Modelos Entidade-Relacionamento e Relacional;",
+    "Regras para o mapeamento.",
+    "",
+    "Ementa da Disciplina",
+    "Álgebra Relacional:",
+    "Conceito de Álgebra Relacional;",
+    "Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano.",
+    "Renomear;",
+    "Junção.",
+    "",
+    "Linguagem de Definição de Dados (DDL):",
+    "Tipo de Dados em SQL;",
+    "Comandos: Create, Drop, Alter;",
+    "Restrições: Integridade de Domínio, Integridade de entidade, Integridade de  Chave, Integridade Referencial.",
+    "",
+    "Linguagem de Manipulação de Dados (DML):",
+    "Comandos: Insert, Delete, Update, Select;",
+    "Visões.",
+    "",
+    "Projeto e implementação de um Banco de Dados:",
+    "Criação de um Banco de Dados a partir de um minimundo real escolhido"
   ],
   "topicos": [
     {
-      "secao": "Tópicos",
+      "secao": "Banco de Dados",
       "subsecoes": [
         {
-          "titulo": "Sistemas de Gerenciamento de Banco de Dado (SGBD)",
+          "titulo": "",
           "conteudo": [
-            "- Conceito de SGBD",
-            "- Vantagens do SGBD",
-            "- Comparação com o Sistema de Arquivos"
+            "O que é um banco de dados?",
+            "Aplicações"
           ]
         },
         {
-          "titulo": "Aspectos de modelagem de dados",
+          "titulo": "Tipos de Banco de Dado",
           "conteudo": [
-            "- Conceito de Modelo de Dados",
-            "- Métodos e técnicas",
-            "- Abstração",
-            "- Coleta de requisitos",
-            "- Análise de requisitos",
-            "- Categorias de modelos"
+            "• Relacionais:",
+            "• Orientado a objetos:",
+            "• Distribuído:",
+            "• Documentos"
           ]
         },
         {
-          "titulo": "Modelo Conceitual de dados",
+          "titulo": "Structured Query Language (SQL)",
           "conteudo": [
-            "- Abordagem entidade-relacionamento (ER)",
-            "- Entidades",
-            "-Atributos",
-            "- Relacionamentos",
-            "- Cardinalidade de relacionamentos",
-            "- Diagrama entidade-relacionamento (DER)"
+            "• Linguagem de consulta estruturada;",
+            "",
+            "Ex.: SELECT * FROM tabela;"
           ]
         },
         {
-          "titulo": "Modelo Relacional",
+          "titulo": "NoSQL",
           "conteudo": [
-            "- Nomenclatura do Modelo Relacional",
-            "- Domínio",
-            "- Relações",
-            "- Chaves",
-            "- Restrições de Integridade",
-            "- Esquemas de Relação"
-          ]
-        },
-        {
-          "titulo": "Mapeamento entre modelos de dado",
-          "conteudo": [
-            "- Equivalência entre os Modelos Entidade-Relacionamento e Relacional",
-            "- Regras para o mapeamento"
-          ]
-        },
-        {
-          "titulo": "Álgebra Relacional",
-          "conteudo": [
-            "- Conceito de Álgebra Relacional",
-            "- Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano",
-            "- Renomear",
-            "- Junção"
-          ]
-        },
-        {
-          "titulo": "Linguagem de Definição de Dados (DDL)",
-          "conteudo": [
-            "- Tipo de Dados em SQL",
-            "- Comandos: Create, Drop, Alter",
-            "- Restrições: Integridade de Domínio, Integridade de entidade, Integridade de chave, Integridade Referencial"
-          ]
-        },
-        {
-          "titulo": "Linguagem de Manipulação de Dados (DML)",
-          "conteudo": [
-            "- Comandos: Insert, Delete, Update, Select",
-            "- Visões"
-          ]
-        },
-        {
-          "titulo": "Projeto e implementação de um Banco de Dado",
-          "conteudo": [
-            "- Criação de um banco de dados a partir de um minimundo real escolhido"
+            ""
           ]
         }
+      ],
+      "conteudo": [
+        "• Linguagem dos bancos de dados relacionais;",
+        "",
+        "Ex.: db.minhaColecao.find({})"
       ]
     },
     {
@@ -104,18 +109,18 @@
   ],
   "exemplos": [
     {
-      "descricao": "Ex.: SELECT * FROM tabela;",
-      "codigo": "",
+      "descricao": "",
+      "codigo": "SELECT * FROM tabela;",
       "explicacao": ""
     },
     {
-      "descricao": "Ex.: db.minhaColecao.find({})",
-      "codigo": "",
+      "descricao": "",
+      "codigo": "db.minhaColecao.find({})",
       "explicacao": ""
     }
   ],
   "referencias": [
-    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006.",
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.  São Paulo: Campus, 2006.",
     "HEUSER, C. A. Projeto de banco de dado. 6. ed. Porto Alegre: Bookman, 2010.",
     "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
   ]
