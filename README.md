@@ -1,100 +1,83 @@
-# Gerador de Perguntas a partir de PDFs com Gradio e Modelos de IA
+# 🧠 Local RAG App com Gradio + Ollama + PDF
 
-Este projeto utiliza o Gradio para criar uma interface de upload de PDFs, extrair o conteúdo, estruturar os dados em um JSON e, com o auxílio dos modelos *nuextract* e *mistral*, gerar perguntas baseadas no conteúdo extraído.
-
-## **Visão Geral**
-
-1. **Upload de um PDF**: O usuário carrega o arquivo.
-2. **Extração de Texto**: O texto é extraído usando o `PyMuPDFLoader`.
-3. **Preenchimento do Template JSON**: O modelo *nuextract* organiza as informações no formato JSON.
-4. **Geração de Perguntas**: O modelo *mistral* cria perguntas sobre o conteúdo.
-5. **Exibição das Perguntas**: As perguntas geradas são mostradas na interface Gradio.
-
-## **Estrutura de Arquivos**
-
-```
-Local-Gradio-App-for-RAG/
-    ├── final.py               # Código principal
-    ├── json/
-    │   └── template.json      # Estrutura inicial para o preenchimento
-    └── README.md              # Documento atual
-```
-
-### **template.json**
-```json
-{
-    "titulo": "",
-    "autor": "",
-    "ementa": [],
-    "conteudo": [
-      {
-        "página": "",
-        "secao": "",
-        "topicos": []
-      }
-    ],
-    "referencias": []
-}
-```
-
-## **Explicação do Código**
-
-### 1. **Bibliotecas Utilizadas**
-- `gradio`: Interface gráfica.
-- `json`: Manipulação de arquivos JSON.
-- `ollama`: Comunicação com os modelos de IA.
-- `re`: Limpeza das respostas geradas.
-- `langchain_community.document_loaders`: Extração de texto do PDF.
-- `os`: Operações de sistema.
-
-### 2. **Funções Principais**
-
-#### 2.1. `load_template()`
-Carrega o template JSON predefinido. Se estiver vazio, retorna um dicionário vazio.
-
-#### 2.2. `process_pdf(pdf_bytes)`
-Recebe o arquivo PDF, extrai o texto de todas as páginas e imprime os primeiros 500 caracteres para depuração.
-
-#### 2.3. `fill_template_with_nuextract(extracted_text, template)`
-Envia o texto extraído junto ao template para o modelo *nuextract*, que estrutura as informações no JSON.
-
-#### 2.4. `generate_questions(filled_json)`
-Utiliza o modelo *mistral* para criar perguntas baseadas no conteúdo estruturado.
-
-#### 2.5. `process_and_generate(pdf_bytes)`
-Fluxo principal que integra as etapas anteriores.
-
-### **Exemplo de Execução**
-
-1. Certifique-se de ter o Python e as bibliotecas necessárias instaladas.
-2. Execute o comando:
-
-```bash
-python final.py
-```
-
-3. Acesse a interface no navegador pelo endereço:
-
-```
-http://127.0.0.1:7860
-```
-
-4. Faça o upload de um PDF e aguarde as perguntas geradas.
-
-## **Possíveis Problemas e Soluções**
-
-### **1. Erro de Decodificação JSON**
-- Certifique-se de que o `template.json` não está vazio.
-- Verifique o caminho do arquivo.
-
-### **2. Link de Compartilhamento Não Gerado**
-- Verifique sua conexão com a internet.
-- Execute o Gradio com `share=False` caso não precise de um link público.
-
-### **3. Respostas Incompletas**
-- Verifique a estrutura do PDF.
-- Ajuste o prompt enviado ao modelo para maior clareza.
+Este projeto é uma aplicação local para extração de dados educacionais estruturados a partir de arquivos PDF, utilizando modelos LLM hospedados localmente via [Ollama](https://ollama.com/), com interface feita em [Gradio](https://gradio.app/). O sistema também gera automaticamente questões de múltipla escolha com base no conteúdo extraído.
 
 ---
-**Desenvolvido com Python, Gradio e IA para facilitar a criação de questões educacionais.**
 
+## 🚀 Funcionalidades
+
+- Extração de texto limpo a partir de arquivos PDF.
+- Estruturação inicial do conteúdo (título, autor, seções).
+- Uso de modelos LLM locais (Phi-3, LLaMA 3, Mistral) para gerar JSON estruturado.
+- Correção automática de erros de formatação JSON usando `json-repair`.
+- Geração de questões educacionais com o modelo **Deepseek-R1**.
+- Salvamento automático de saídas (JSON e TXT) por modelo.
+
+---
+
+## 🛠️ Requisitos
+
+- Python 3.10+
+- [Ollama](https://ollama.com) instalado e rodando localmente
+- Modelos LLM baixados no Ollama (`phi3:mini`, `llama3`, `mistral`, `deepseek-r1:8b`)
+- Dependências Python:
+
+```bash
+pip install gradio langchain-community pymupdf json-repair
+```
+🧱 Estrutura do Projeto
+
+📁 resultados/
+    └─ arquivos gerados (JSON e TXT)
+📄 app.py
+📄 template.json  ← modelo de estrutura esperado para os dados extraídos
+
+▶️ Como Executar
+
+    Execute o Ollama e certifique-se de que os modelos estão disponíveis localmente:
+
+ollama run phi3:mini
+ollama run llama3
+ollama run mistral
+ollama run deepseek-r1:8b
+
+    Execute o script principal com:
+
+python app.py
+
+    A interface será carregada via Gradio. Carregue um PDF educacional e aguarde o processamento.
+
+🧠 Modelos Suportados
+Nome	Finalidade
+phi3:mini	Extração estruturada de texto para JSON
+llama3	Mesma função com outro modelo de LLM
+mistral	Idem
+deepseek	Geração de questões com base no conteúdo
+🧪 Pipeline de Processamento
+
+    Extração de texto: Conversão de PDF para texto puro.
+
+    Estruturação inicial: Título, autor e seções são estimados.
+
+    Chunking: Divisão do texto em blocos com sobreposição.
+
+    Geração de JSON estruturado: Cada chunk é processado por um LLM via Ollama.
+
+    Correção de JSON: Aplicação de heurísticas + json-repair.
+
+    Geração de questões: Utilizando modelo Deepseek com base no conteúdo.
+
+📂 Saídas
+
+Os arquivos gerados ficam na pasta resultados/ com nomes no formato:
+
+NOME_DO_PDF_saida_phi3_mini.json
+NOME_DO_PDF_questoes_phi3_mini.txt
+
+💡 Observações
+
+    O template usado para guiar os modelos está no arquivo template.json.
+
+    Certifique-se de que o caminho para template.json está correto no código.
+
+    É possível adaptar a lógica para processar outros tipos de conteúdo não educacional.
