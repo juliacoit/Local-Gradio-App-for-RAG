@@ -43,18 +43,18 @@ pip install gradio langchain-community pymupdf json-repair
 
 ▶️ Como Executar
 
-    Inicie o Ollama e certifique-se de que os modelos estão disponíveis localmente:
+Inicie o Ollama e certifique-se de que os modelos estão disponíveis localmente:
 
-ollama run phi3:mini
-ollama run llama3
-ollama run mistral
-ollama run deepseek-r1:8b
+    ollama run phi3:mini
+    ollama run llama3
+    ollama run mistral
+    ollama run deepseek-r1:8b
 
-    Execute o script principal:
+Execute o script principal:
 
-python app.py
+    python app.py
 
-    A interface será carregada via Gradio. Faça upload de um PDF educacional e aguarde o processamento.
+A interface será carregada via Gradio. Faça upload de um PDF educacional e aguarde o processamento.
 
 🧠 Modelos Suportados
 Modelo	Finalidade
@@ -64,61 +64,61 @@ mistral	Alternativa de modelo para extração estruturada
 deepseek-r1	Geração de questões com base no conteúdo
 🧪 Pipeline de Processamento
 
-    Extração de texto: Conversão do PDF para texto puro.
+Extração de texto: Conversão do PDF para texto puro.
 
-    Estruturação inicial: Estimativa de título, autor e seções.
+Estruturação inicial: Estimativa de título, autor e seções.
 
-    Chunking: Divisão do texto em blocos com sobreposição.
+Chunking: Divisão do texto em blocos com sobreposição.
 
-    Geração de JSON estruturado: Cada chunk é processado por um LLM via Ollama.
+Geração de JSON estruturado: Cada chunk é processado por um LLM via Ollama.
 
-    Correção de JSON: Heurísticas + json-repair para garantir estrutura válida.
+Correção de JSON: Heurísticas + json-repair para garantir estrutura válida.
 
-    Geração de questões: Com o modelo Deepseek, baseado no conteúdo extraído.
+Geração de questões: Com o modelo Deepseek, baseado no conteúdo extraído.
 
 📂 Saídas
 
 Os arquivos gerados são salvos na pasta resultados/ com nomes no formato:
 
-NOME_DO_PDF_saida_phi3_mini.json
-NOME_DO_PDF_questoes_phi3_mini.txt
+    NOME_DO_PDF_saida_phi3_mini.json
+    NOME_DO_PDF_questoes_phi3_mini.txt
 
 📄 Modelo de JSON Estruturado
 
 O conteúdo extraído é salvo com a seguinte estrutura:
 
-{
-  "titulo": "string",
-  "autor": "string",
-  "disciplina": "string",
-  "data": "string",
-  "ementa": ["string"],
-  "topicos": [
     {
-      "secao": "string",
-      "subsecoes": [
+      "titulo": "string",
+      "autor": "string",
+      "disciplina": "string",
+      "data": "string",
+      "ementa": ["string"],
+      "topicos": [
         {
-          "titulo": "string",
+          "secao": "string",
+          "subsecoes": [
+            {
+              "titulo": "string",
+              "conteudo": ["string"]
+            }
+          ],
           "conteudo": ["string"]
         }
       ],
-      "conteudo": ["string"]
+      "exemplos": [
+        {
+          "descricao": "string",
+          "codigo": "string",
+          "explicacao": "string"
+        }
+      ],
+      "referencias": ["string"]
     }
-  ],
-  "exemplos": [
-    {
-      "descricao": "string",
-      "codigo": "string",
-      "explicacao": "string"
-    }
-  ],
-  "referencias": ["string"]
-}
 
 💡 Observações
 
-    O template utilizado pelos modelos está em template.json.
+O template utilizado pelos modelos está em template.json.
 
-    Verifique se o caminho para o template.json está correto no código.
+Verifique se o caminho para o template.json está correto no código.
 
-    A lógica pode ser adaptada para processar outros tipos de conteúdo além do educacional.
+A lógica pode ser adaptada para processar outros tipos de conteúdo além do educacional.
