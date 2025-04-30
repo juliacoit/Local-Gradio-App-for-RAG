@@ -3,9 +3,13 @@ import ollama
 import os
 import re
 import gradio as gr
+import sys
+import io
 from langchain_community.document_loaders import PyMuPDFLoader
 import unicodedata
 from json_repair import repair_json
+
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 # Constantes
 MAX_INPUT_SIZE = 4000
@@ -174,6 +178,7 @@ def fix_json(output_text):
         try:
             repaired = repair_json(json_chunk)
             parsed = json.loads(repaired)
+            print("JSON corrigido com json-repair.")
             return json.dumps(parsed, indent=2, ensure_ascii=False)
         except Exception as e2:
             print("Falha ao corrigir com json-repair também:", str(e2).encode("utf-8", errors="replace"))
@@ -195,38 +200,32 @@ def predict_chunk(text, template, current, model_name="phi3:mini"):
 
     # Corrigir o JSON antes de retornar
     json_corrigido = fix_json(output_text_cleaned)
+    print(f"\n===== JSON de  {model_name} CORRIGIDO =====\n{json_corrigido}\n")
 
     return json_corrigido
 
 def gerar_questoes(json_corrigido, modelo_deepseek="deepseek-r1:8b"):
+    import json
+
     with open(json_corrigido, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
-    topicos = ""
-    for sec in json_data.get("conteudo", []):
-        nome_secao = sec.get("secao", "Seção")
-        topicos += f"\n## {nome_secao}\n"
-        for item in sec.get("conteudo", []):
-            topicos += f"- {item}\n"
+
 
     prompt = f"""
-<｜User｜>Você é um professor criando questões educacionais com base nos seguintes tópicos:
-
-{topicos}
+<｜User｜>Você é um professor criando questões educacionais com base na estrutura de aula abaixo (em formato JSON). 
 
 Gere 5 questões de múltipla escolha com:
 - 4 alternativas (a, b, c, d)
 - Marque a resposta correta
 - Dê uma explicação para a resposta
 
-Formato:
-1. Pergunta?
-   a) ...
-   b) ...
-   c) ...
-   d) ...
-   Resposta correta: ...
-   ℹExplicação: ...<｜Assistant｜>"""
+JSON da aula:
+
+json
+{json.dumps(json_data, indent=2, ensure_ascii=False)}
+
+<｜Assistant｜>"""
 
     resposta = ollama.chat(
         model=modelo_deepseek,
@@ -234,6 +233,7 @@ Formato:
     )
 
     return resposta["message"]["content"]
+
 
 def processar_tudo(pdf_file):
     pdf_path = pdf_file.name
@@ -328,5 +328,3 @@ interface = gr.Interface(
 if __name__ == "__main__":
     print("Iniciando interface do Gradio...")
     interface.launch(share=True, debug=True)
-
-
