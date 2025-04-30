@@ -1,0 +1,97 @@
+Diagrama de Componentes
+• Identifica componentes de um sistema, 
+subsistemas e até classes internas
+• Um componente pode ser
+– Lógico: regra de negócio
+– Físico: arquivos, bibliotecas
+• Este diagrama facilita o reuso de código por 
+identificar claramente os componentes de 
+um sistema
+2
+Componente
+• É uma unidade autônoma dentro do sistema
+• Pode conter interfaces fornecidas e 
+requeridas, que são expostas via portas
+• Representação de um componente:
+3
+ASTAH
+LIVRO
+Estereótipos
+• Executável: o componente é um arquivo 
+compilado que pode ser executado
+• Biblioteca: contém funções e subrotinas 
+que podem ser compartilhadas entre 
+executáveis 
+• Tabela: refere-se a repositórios físicos de 
+dados
+• Documento: são os arquivos de texto (help)
+• Arquivo: qualquer tipo de arquivo (fonte)
+4
+Interfaces 
+Fornecidas e Requeridas
+• Representa a comunicação entre os 
+componentes:
+• Neste exemplo, Gerenciador de Contas tem 
+uma interface requerida e SGBD tem uma 
+interface fornecida
+• Não confundir com os arquivos de interface 
+gráfica, estamos falando de ‘implements’ 5
+Classes e 
+Componentes Internos
+• Um componente pode ter classes internas 
+ou outros componentes internos
+• Quando os componentes externos não são 
+exibidos, chama-se essa representação de 
+Caixa Preta
+• Quando o são, é uma Caixa Branca
+• Nos próximos slides veremos as formas de 
+representação em Caixa Branca
+6
+Representação de 
+Classes Internas
+• Representação em Caixa Branca de um 
+componente com Classes Internas:
+7
+Representação por 
+Dependência
+• Na figura abaixo, temos o mesmo 
+componente, com suas classes, porém a 
+representação é feita por dependências
+8
+Portas
+• São utilizadas para comunicar os elementos 
+internos de um componente com o 
+ambiente externo
+9
+PORTA
+Interfaces 
+Fornecidas e Requeridas
+• No Diagrama
+ao lado temos
+as interfaces 
+requeridas
+e as interfaces
+fornecidas
+10
+EXERCÍCIO
+11
+• SISTEMA DE CONTROLE DE HOTEL
+– É necessário haver um módulo de manutenção responsável 
+por CRUD de funcionários, quartos etc
+– Também é essencial o módulo de reservas de quartos por 
+parte dos hóspedes
+– Por parte do hotel, deverá haver um módulo para gerenciar 
+o aluguel dos quartos
+– Cada quarto pode requerer serviços, como limpeza, lençol, 
+toalha, compra de alimentos e etc, o que exige um módulo 
+específico pra isso
+• Crie as interfaces e portas necessárias
+• Represente 1 componente em Caixa Branca
+Referências
+12
+• UML2: Uma Abordagem
+Prática
+3ª Ed. 2018
+Gilleanes T. A. Guedes
+Perguntas?
+13

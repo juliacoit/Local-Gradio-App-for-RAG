@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - .:/app
+      - E:/IFBA/TCC/Local-GRadio-App-for_RAG/resultados:/app/resultados  # Mapeando o diretório "resultados"
+    environment:
+      - TEMPLATE_PATH=/app/json/template.json
+      - OUTPUT_DIR=/app/resultados  # Usando o diretório mapeado dentro do contêiner
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    stdin_open: true
+    tty: true
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

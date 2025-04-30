@@ -1,0 +1,100 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados",
+  "autor": "Prof. Marcos Brito",
+  "disciplina": "Aula 01 – Introdução a Banco de Dados",
+  "data": null,
+  "ementa": [
+    "Definição de Banco de Dados;",
+    "Terminologia básica;",
+    "Usuários de Banco de Dados;",
+    "Aplicações;",
+    "Abstração de dados Esquema;",
+    "Instância."
+  ],
+  "topicos": [
+    {
+      "secao": "Bancos de Dados em Aplicações \nDiversas:",
+      "subsecoes": []
+    },
+    {
+      "titulo": "Tipos de Banco de Dados;",
+      "conteudo": [
+        {
+          "secao": "",
+          "conteudo": [
+            "Relacionais: O mais utilizado atualmente, a \norganização dos dados é feita em tabelas no formato linha e coluna;"
+          ]
+        },
+        {
+          "secao": "",
+          "conteudo": [
+            "Orientado a objetos: Informações armazenadas \nem formato de objeto;",
+            null,
+            null
+          ]
+        }
+      ],
+      "exemplos": []
+    },
+    {
+      "titulo": "SQL e NoSQL",
+      "conteudo": [
+        {
+          "secao": "",
+          "conteudo": [
+            "Ex.: SELECT * FROM tabela;"
+          ]
+        },
+        {
+          "secao": "Exemplo:",
+          "conteudo": [
+            null,
+            null
+          ],
+          "codigo": null,
+          "explicacao": null
+        }
+      ],
+      "subsecoes": [
+        {
+          "titulo": "SQL",
+          "conteudo": [
+            "SELECT * FROM tabela;"
+          ]
+        },
+        {
+          "titulo": "NoSQL",
+          "conteudo": [
+            "Ex.: db.minhaColecao.find({})"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Tipos de Usuários",
+      "subsecoes": [
+        {
+          "titulo": "Administradores: responsáveis \npela administração e gerenciamento do banco de dados;"
+        },
+        {
+          "titulo": "Analista de Sistemas",
+          "conteudo": [
+            "é quem faz o levantamento de requisitos e projeta o banco de dados."
+          ]
+        },
+        null,
+        null
+      ]
+    },
+    {
+      "secao": "(PPA)",
+      "conteudo": [
+        "Referências"
+      ]
+    }
+  ],
+  "referencias": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. \nSistemas de banco de dados. São Paulo: Campus, 2006.",
+    "HEUSER, C. A. Projeto de banco de dados. 6 ed. Porto Alegre: Bookman, 2010."
+  ]
+}

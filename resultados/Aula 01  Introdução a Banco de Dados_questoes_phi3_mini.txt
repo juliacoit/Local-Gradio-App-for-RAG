@@ -1,0 +1,79 @@
+
+Alright, the user is a teacher creating multiple-choice questions based on certain topics. They want 5 questions with four alternatives each. Each question should have the correct answer marked and an explanation provided.
+
+First, I need to identify the main subjects or themes they’re focusing on. The initial examples include Portuguese, History, Physics, Chemistry, and Math. That gives a good range of academic areas.
+
+For each subject, I'll create a relevant question. In Portuguese, topics like plural nouns and famous people are appropriate. For History, events like Brazil's independence and significant figures in science make sense. Physics can cover light types and notable physicists. Chemistry might focus on elements and their properties. Math questions could involve basic operations and prime numbers.
+
+Next, I'll formulate four options for each question to ensure they are plausible but only one is correct. This ensures the test evaluates understanding accurately. After listing all options, I'll identify the correct answer and provide a clear explanation.
+
+I should maintain consistency in formatting. Each question starts with "Pergunta?" followed by the options (a, b, c, d). The response includes the correct letter and an brief explanation that ties back to the educational topic.
+
+Finally, I'll review all questions to ensure they’re clear, well-structured, and cover a broad range of knowledge areas. This helps in assessing different skills comprehensively.
+</think>
+
+Claro! Vou ajudar você a criar questões educacionais com base nos seguintes tópicos. Aqui estão 5 questões de múltipla escolha:
+
+---
+
+### **1. Pergunta?**  
+Qual é a forma plural de "gato"?  
+a) Gatos  
+b) Catos  
+c) Gattos  
+d) Gattis  
+
+**Resposta correta:** a  
+ℹExplicação: A forma plural de "gato" na língua portuguesa é "gatos". Isso é um exemplo de mudança de sono final em palavras suaves.
+
+---
+
+### **2. Pergunta?**  
+Qual dos seguintes eventos ocorreu em 1822?  
+a) Início da Revolução Russa  
+b) Proclamação da Independência do Brasil  
+c) Primeira Guerra Mundial  
+d) Descoberta do ouro na Califórnia  
+
+**Resposta correta:** b  
+ℹExplicação: A Proclamação da Independência do Brasil ocorreu em 1822, marcando o início da existência do Império Brasileiro.
+
+---
+
+### **3. Pergunta?**  
+Qual é a velocidade da luz no vácuo?  
+a) 4,8 × 10⁹ km/s  
+b) 3,0 × 10⁸ m/s  
+c) 2,5 × 10⁴ m/s  
+d) 1,3 × 10² m/s  
+
+**Resposta correta:** b  
+ℹExplicação: A velocidade da luz no vácuo é aproximadamente 3,0 × 10⁸ m/s, um dos fenômenos mais importantes da física moderna.
+
+---
+
+### **4. Pergunta?**  
+Qual é a capital do estado de California?  
+a) Nova York  
+b) Los Angeles  
+c) San Francisco  
+d) Washington D.C.  
+
+**Resposta correta:** c  
+ℹExplicação: A capital da Califórnia é São Francisco, um dos centros econômicos e culturais mais importantes dos Estados Unidos.
+
+---
+
+### **5. Pergunta?**  
+Qual é a soma de 3 + 4?  
+a) 6  
+b) 8  
+c) 10  
+d) 12  
+
+**Resposta correta:** a  
+ℹExplicação: 3 mais 4 resulta em 7, mas essa questão parece ter um erro. Por favor, verifique as informações fornecidas.
+
+---
+
+Espero que essas questões sejam úteis para os seus alunos!

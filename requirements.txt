@@ -1,0 +1,6 @@
+gradio
+ollama
+PyMuPDF
+langchain
+json-repair
+langchain-community

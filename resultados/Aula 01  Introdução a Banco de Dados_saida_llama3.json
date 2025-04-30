@@ -1,0 +1,122 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "autor": "",
+  "disciplina": "Aula 01 – Introdução a Banco de Dados",
+  "data": "",
+  "ementa": [
+    "Definição de Banco de Dados;",
+    "Terminologia básica;",
+    "Usuários de Banco de Dados;",
+    "Aplicações;",
+    "Abstração de dados Esquema;",
+    "Instância.",
+    "Sistemas de Gerenciamento de Banco de Dados (SGBD):",
+    "Aspectos de modelagem de dados:",
+    "Modelo Conceitual de dados:",
+    "Modelo Relacional:",
+    "Mapeamento entre modelos de dados:",
+    "Álgebra Relacional:",
+    "Linguagem de Definição de Dados (DDL):",
+    "Linguagem de Manipulação de Dados (DML):",
+    "Projeto e implementação de um Banco de Dados:"
+  ],
+  "topicos": [
+    {
+      "secao": "Tópicos",
+      "subsecoes": [
+        {
+          "titulo": "Processos seletivos;",
+          "conteudo": [
+            "• Processos seletivos;"
+          ]
+        },
+        {
+          "titulo": "Operações bancárias;",
+          "conteudo": [
+            "• Operações bancárias;"
+          ]
+        },
+        {
+          "titulo": "Sistemas aéreo;",
+          "conteudo": [
+            "• Sistemas aéreo;"
+          ]
+        },
+        {
+          "titulo": "Bibliotecas;",
+          "conteudo": [
+            "• Bibliotecas;"
+          ]
+        },
+        {
+          "titulo": "Mercados;",
+          "conteudo": [
+            "• Mercados;"
+          ]
+        },
+        {
+          "titulo": "Hospitais;",
+          "conteudo": [
+            "• Hospitais;"
+          ]
+        },
+        {
+          "titulo": "E muitas outras áreas.",
+          "conteúdo": []
+        }
+      ],
+      "conteudo": [
+        "• Relacionais: O mais utilizado atualmente, a",
+        "organização dos dados é feita em tabelas no",
+        "formato linha e coluna;",
+        "• Orientado a objetos: Informações armazenadas",
+        "em formato de objeto;",
+        "• Distribuído: permite que as informações sejam",
+        "armazenadas em diferentes computadores;",
+        "• Documentos: informações salvas em formato de",
+        "documentos. Está em uma grande ascensão",
+        "devido ao crescimento no desenvolvimento de",
+        "aplicações web e mobile.",
+        "Structured Query Language (SQL)",
+        "• Linguagem de consulta estruturada;",
+        "• Linguagem dos bancos de dados relacionais;",
+        "• A linguagem mais utilizada nos bancos de",
+        "dados relacionais;",
+        "",
+        "Ex.: SELECT * FROM tabela;",
+        "• NoSQL",
+        "",
+        "Ex.: db.minhaColecao.find({})"
+      ]
+    },
+    {
+      "secao": "(PPA)",
+      "conteudo": [
+        "Referências"
+      ]
+    },
+    {
+      "secao": "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.",
+      "conteudo": [
+        "Sistemas de banco de dados. São Paulo:",
+        "Campus, 2006.",
+        "HEUSER, C. A. Projeto de banco de dados. 6. ed.",
+        "Porto Alegre: Bookman, 2010.",
+        "[Oracle] Banco de Dados. Oracle. Disponível em:",
+        "<www.oracle.com>. Acesso em: 03/2024."
+      ]
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ],
+  "referências": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.",
+    "HEUSER, C. A. Projeto de banco de dados. 6. ed.",
+    "[Oracle] Banco de Dados. Oracle."
+  ]
+}

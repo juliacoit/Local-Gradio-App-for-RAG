@@ -1,0 +1,30 @@
+
+Okay, I need to create 5 multiple-choice questions based on the given topics. Each question should have 4 alternatives (a, b, c, d), and I'll mark the correct answer. After each question, I'll provide an explanation for the correct choice.
+
+First, let me think about the subjects provided: Portuguese, History, Biology, Chemistry, and Mathematics. For each subject, I can formulate questions that cover different aspects like grammar, historical events, biological processes, chemical reactions, and mathematical concepts.
+
+Starting with Portuguese, perhaps a question on pluralization. The correct form in Portuguese is "duas" for "dois." So the question would be: "O plurarl de 'dois' em português é qual?" with options a) Dois, b) Duas, c) Três, d) Quatro. Correct answer is b) Duas, and explain that in Portuguese, plural of "dois" is "duas."
+
+Next, History: A question about significant historical figures. Maybe "Qual foi o nome do fundador da revolução francesa?" Options could be a) Luís XVII, b) Robespierre, c) Napoleão Bonaparte, d) Marquês de Lafayette. Correct answer is b) Robespierre, explaining he was a key figure in the revolution.
+
+For Biology, perhaps about cell structures: "Qual é a estrutura que protege os orgãos dos animais?" Options might be a) Célula, b) Órgão, c) Sistema muscular, d) Sistema linfático. Correct answer is b) Órgão, explaining that organs are protected by the organ.
+
+Chemistry: A question on gases. "Qual é a substância responsável pelo odor de queimado?" Options could be a) Níquel, b) Carvão, c) Ammonia, d) Oxigênio. Correct answer is c) Ammonia, explaining it produces a pungent smell when burned.
+
+Mathematics: A question on operations. "Qual é a operação que representa 'multiplicar'?" Options are a) +, b) ×, c) -, d) ÷. Correct answer is b) ×, explanation that multiplication uses the cross symbol.
+
+I think these questions cover different areas and should be clear for students to understand.
+</think>
+
+### Questões de Múltipla Escolha
+
+#### 1. Pergunta?
+Qual é o plurarl de "dois" em português?  
+a) Dois  
+b) Duas  
+c) Três  
+d) Quatro  
+
+**Resposta correta:** b) Duas  
+
+ℹExplicação: Em português, o plural de "dois" é "duas." A adição da letra "s" não se aplica aqui pois a mudança de gênero ocorre sem alteração na forma.
