@@ -1,23 +1,17 @@
 { 
   "titulo": "string",            
-  "autor": "string",             
-  "disciplina": "string",        
-  "data": "string",              
-
-  "ementa": [                   
-    "string"
-  ],
+  "disciplina": "string",
 
   "topicos": [                   
-    {
-      "secao": "string",         
+    {        
       "subsecoes": [             
         {
           "titulo": "string",
           "conteudo": ["string"]
         }
       ],
-      "conteudo": ["string"]     
+      "palavras-chave": ["string"],
+      "titulo": "string"  
     }
   ],
 

@@ -1,0 +1,101 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "autor": "",
+  "disciplina": "",
+  "data": "",
+  "ementa": [
+    "• Definição de Banco de Dados;",
+    "• Terminologia básica;",
+    "• Usuários de Banco de Dados;",
+    "• Aplicações;",
+    "• Abstração de dados Esquema;",
+    "• Instância.",
+    "",
+    "• Sistemas de Gerenciamento de Banco de Dado (SGBD);",
+    "• Aspectos de modelagem de dados;",
+    "• Modelo Conceitual de dados;",
+    "• Modelo Relacional;",
+    "• Mapeamento entre modelos de dado;",
+    "• Álgebra Relacional;",
+    "• Linguagem de Definição de Dados (DDL);",
+    "• Linguagem de Manipulação de Dados (DML);",
+    "• Projeto e implementação de um Banco de Dados."
+  ],
+  "topicos": [
+    {
+      "secao": "Tópicos",
+      "subsecoes": [
+        {
+          "titulo": "",
+          "conteudo": [
+            "Conceitos Básicos de Banco de Dado:",
+            "• Definição de Banco de Dados;"
+          ]
+        },
+        {
+          "titulo": "Terminologia básica",
+          "conteudo": []
+        },
+        {
+          "titulo": "Usuários de Banco de Dado",
+          "conteudo": []
+        },
+        {
+          "titulo": "Aplicações",
+          "conteudo": [
+            "• Processos seletivos;",
+            "• Operações bancárias;",
+            "• Sistemas aéreo;",
+            "• Bibliotecas;",
+            "• Mercados;",
+            "• Hospitais;",
+            "• E muitas outras áreas."
+          ]
+        },
+        {
+          "titulo": "Abstração de dados Esquema",
+          "conteudo": []
+        },
+        {
+          "titulo": "Instância",
+          "conteudo": []
+        }
+      ],
+      "conteudo": [
+        "",
+        "• Sistemas de Gerenciamento de Banco de Dado (SGBD);",
+        "• Aspectos de modelagem de dados;",
+        "• Modelo Conceitual de dados;",
+        "• Modelo Relacional;",
+        "• Mapeamento entre modelos de dado;",
+        "• Álgebra Relacional;",
+        "• Linguagem de Definição de Dados (DDL);",
+        "• Linguagem de Manipulação de Dados (DML);",
+        "• Projeto e implementação de um Banco de Dados."
+      ]
+    },
+    {
+      "secao": "(PPA)",
+      "conteudo": [
+        "Referências"
+      ]
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "Ex.: SELECT * FROM tabela;",
+      "codigo": "",
+      "explicacao": ""
+    },
+    {
+      "descricao": "Ex.: db.minhaColecao.find({});",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ],
+  "referencias": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006.",
+    "HEUSER, C. A. Projeto de banco de dado. 6. ed. Porto Alegre: Bookman, 2010.",
+    "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
+  ]
+}

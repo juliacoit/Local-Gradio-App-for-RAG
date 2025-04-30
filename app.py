@@ -213,7 +213,7 @@ def gerar_questoes(json_corrigido, modelo_deepseek="deepseek-r1:8b"):
 
 
     prompt = f"""
-<｜User｜>Você é um professor criando questões educacionais com base na estrutura de aula abaixo (em formato JSON). 
+<｜User｜>Você é um professor criando questões educacionais com base na estrutura de aula abaixo. 
 
 Gere 5 questões de múltipla escolha com:
 - 4 alternativas (a, b, c, d)
@@ -221,8 +221,6 @@ Gere 5 questões de múltipla escolha com:
 - Dê uma explicação para a resposta
 
 JSON da aula:
-
-json
 {json.dumps(json_data, indent=2, ensure_ascii=False)}
 
 <｜Assistant｜>"""
