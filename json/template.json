@@ -1,7 +1,6 @@
 { 
   "titulo": "string",           
   "disciplina": "string",        
-  "data": "string",              
 
   "ementa": [                   
     "string"
