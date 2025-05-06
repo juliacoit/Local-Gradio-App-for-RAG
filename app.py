@@ -182,6 +182,13 @@ def fix_json(output_text):
             print("Falha ao corrigir com json-repair também:", str(e2).encode("utf-8", errors="replace"))
             return json_chunk  # retorna o texto bruto se não conseguir corrigir
 
+def safe_print(text):
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Se houver erro de codificação, converta para UTF-8 e imprima
+        print(text.encode('ascii', errors='replace').decode('ascii'))
+
 def predict_chunk(text, template, current, model_name="gemma3"):
     current = clean_json_text(current)
     input_llm = generate_prompt(model_name, template, current, text)
@@ -193,12 +200,12 @@ def predict_chunk(text, template, current, model_name="gemma3"):
     )
 
     output_text = response["message"]["content"]
-    print(f"\n===== RAW OUTPUT from {model_name} =====\n{output_text}\n")
+    safe_print(f"\n===== RAW OUTPUT from {model_name} =====\n{output_text}\n")
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
     # Corrigir o JSON antes de retornar
     json_corrigido = fix_json(output_text_cleaned)
-    print(f"\n===== JSON de  {model_name} CORRIGIDO =====\n{json_corrigido}\n")
+    safe_print(f"\n===== JSON de  {model_name} CORRIGIDO =====\n{json_corrigido}\n")
 
     return json_corrigido
 
