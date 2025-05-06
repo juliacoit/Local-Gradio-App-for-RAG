@@ -1,12 +1,30 @@
-{
-    "titulo": "",
-    "autor": "",
-    "conteudo": [
-      {
-        "pagina": "",
-        "secao": "",
-        "conteudo": []
-      }
-    ],
-    "referencias": []
-  }
+{ 
+  "titulo": "string",           
+  "disciplina": "string",        
+  "data": "string",              
+
+  "ementa": [                   
+    "string"
+  ],
+
+  "topicos": [                   
+    {
+      "secao": "string",         
+      "subsecoes": [             
+        {
+          "titulo": "string",
+          "conteudo": ["string"]
+        }
+      ],
+      "conteudo": ["string"]     
+    }
+  ],
+
+  "exemplos": [                 
+    {
+      "descricao": "string",
+      "codigo": "string",        
+      "explicacao": "string"
+    }
+  ]
+}
