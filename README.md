@@ -66,15 +66,6 @@ Inicie o Ollama e Execute o aplicativo:
     ollama serve
     python app.py
 
-📁 Estrutura do Projeto
-
-.
-├── app.py                # Interface principal com Gradio
-├── outputs/
-│   ├── json/             # Arquivos JSON gerados pelos modelos
-│   └── txt/              # Arquivos de texto extraídos
-├── README.md
-└── requirements.txt
 
 📌 Observações
 
