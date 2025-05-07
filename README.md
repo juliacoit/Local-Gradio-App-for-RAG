@@ -1,4 +1,4 @@
-# 📄 PDF Educational Data Extractor with LLMs (Phi3, LLaMA3, Mistral) + DeepSeek MCQ Generator
+# 📄 PDF Educational Data Extractor with LLMs (Gemma3, LLaMA3, Mistral) + Qwen3 MCQ Generator
 
 Este projeto é uma aplicação em Python com interface Gradio que permite **processar PDFs educacionais**, extrair e estruturar dados com modelos LLM locais via **Ollama**, e **gerar questões de múltipla escolha (MCQs)** com o modelo Qwen3.
 
