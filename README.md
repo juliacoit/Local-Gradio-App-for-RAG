@@ -12,7 +12,7 @@ Este projeto é uma aplicação em Python com interface Gradio que permite **pro
   - 🔹 LLaMA 3
   - 🔹 Mistral
 - 💾 Salvamento de arquivos JSON com as saídas dos modelos
-- 📝 Geração automática de questões de múltipla escolha com o modelo DeepSeek
+- 📝 Geração automática de questões de múltipla escolha com o modelo Qwen3
 - ⬇️ Download dos arquivos JSON e TXT processados
 
 -
@@ -24,13 +24,13 @@ Este projeto é uma aplicação em Python com interface Gradio que permite **pro
 
     Modelos:
 
-        phi3:mini
+        Gemma3
 
         llama3
 
         mistral
 
-        deepseek-coder ou similar para MCQ
+        Qwen3 ou similar para MCQ
 
     Dependências:
 
@@ -42,14 +42,14 @@ Este projeto é uma aplicação em Python com interface Gradio que permite **pro
 
         os, uuid, datetime
 
-        langchain, chromadb (opcional)
+        langchain
 
 ▶️ Como Executar
 
   Clone o repositório:
 
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/juliacoit/Local-Gradio-App-for-RAG
+    cd Local-Gradio-App-for-RAG
 
 Instale as dependências:
 
@@ -57,12 +57,13 @@ Instale as dependências:
 
 Certifique-se de que o Ollama esteja rodando com os modelos baixados:
 
-    ollama run Gamma3
+    ollama run gamma3
     ollama run llama3
     ollama run mistral
 
-Execute o aplicativo:
+Inicie o Ollama e Execute o aplicativo:
 
+    ollama serve
     python app.py
 
 📁 Estrutura do Projeto
