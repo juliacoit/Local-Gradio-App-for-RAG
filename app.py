@@ -12,7 +12,7 @@ from json_repair import repair_json
 # Constantes
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
-TEMPLATE_PATH = "E:/IFBA/TCC/Local-Gradio-App-for_RAG/json/template.json"
+TEMPLATE_PATH = "json/template.json"
 
 list_slms = ["gemma3", "llama3", "mistral"]
 
