@@ -3,6 +3,8 @@ import ollama
 import os
 import re
 import gradio as gr
+import sys
+import io
 from langchain_community.document_loaders import PyMuPDFLoader
 import unicodedata
 from json_repair import repair_json
@@ -11,8 +13,7 @@ from json_repair import repair_json
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
 TEMPLATE_PATH = "E:/IFBA/TCC/Local-GRadio-App-for_RAG/json/template.json"
-
-list_slms = ["phi3:mini", "llama3", "mistral"]
+list_slms = ["gemma3", "llama3", "mistral"]
 
 print("Iniciando Scripts...")
 
@@ -98,7 +99,7 @@ def normalize_text(text):
     return unicodedata.normalize("NFC", text)
 
 def generate_prompt(model_name, template, current, text):
-    if model_name == "phi3:mini":
+    if model_name == "gemma3":
         return f"""<|system|>
 Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:
 <|end|>
@@ -174,12 +175,20 @@ def fix_json(output_text):
         try:
             repaired = repair_json(json_chunk)
             parsed = json.loads(repaired)
+            print("JSON corrigido com json-repair.")
             return json.dumps(parsed, indent=2, ensure_ascii=False)
         except Exception as e2:
             print("Falha ao corrigir com json-repair também:", str(e2).encode("utf-8", errors="replace"))
             return json_chunk  # retorna o texto bruto se não conseguir corrigir
 
-def predict_chunk(text, template, current, model_name="phi3:mini"):
+def safe_print(text):
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        # Se houver erro de codificação, converta para UTF-8 e imprima
+        print(text.encode('ascii', errors='replace').decode('ascii'))
+
+def predict_chunk(text, template, current, model_name="gemma3"):
     current = clean_json_text(current)
     input_llm = generate_prompt(model_name, template, current, text)
 
@@ -190,46 +199,40 @@ def predict_chunk(text, template, current, model_name="phi3:mini"):
     )
 
     output_text = response["message"]["content"]
-    print(f"\n===== RAW OUTPUT from {model_name} =====\n{output_text}\n")
+    safe_print(f"\n===== RAW OUTPUT from {model_name} =====\n{output_text}\n")
     output_text_cleaned = output_text.replace("<|end-output|>", "").strip()
 
     # Corrigir o JSON antes de retornar
     json_corrigido = fix_json(output_text_cleaned)
+    safe_print(f"\n===== JSON de  {model_name} CORRIGIDO =====\n{json_corrigido}\n")
 
     return json_corrigido
 
-def gerar_questoes(json_corrigido, modelo_deepseek="deepseek-r1:8b"):
+def gerar_questoes(json_corrigido, modelo_questoes="qwen3:8b"):
+    import json
+
     with open(json_corrigido, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
-    topicos = ""
-    for sec in json_data.get("conteudo", []):
-        nome_secao = sec.get("secao", "Seção")
-        topicos += f"\n## {nome_secao}\n"
-        for item in sec.get("conteudo", []):
-            topicos += f"- {item}\n"
+
 
     prompt = f"""
-<｜User｜>Você é um professor criando questões educacionais com base nos seguintes tópicos:
-
-{topicos}
+<｜User｜>Você é um professor criando questões educacionais com base na estrutura de aula abaixo (em formato JSON). 
 
 Gere 5 questões de múltipla escolha com:
 - 4 alternativas (a, b, c, d)
 - Marque a resposta correta
 - Dê uma explicação para a resposta
 
-Formato:
-1. Pergunta?
-   a) ...
-   b) ...
-   c) ...
-   d) ...
-   Resposta correta: ...
-   ℹExplicação: ...<｜Assistant｜>"""
+JSON da aula:
+
+json
+{json.dumps(json_data, indent=2, ensure_ascii=False)}
+
+<｜Assistant｜>"""
 
     resposta = ollama.chat(
-        model=modelo_deepseek,
+        model=modelo_questoes,
         messages=[{"role": "user", "content": prompt}]
     )
 
@@ -279,7 +282,7 @@ def processar_tudo(pdf_file):
         try:
             questoes = gerar_questoes(path_json)
         except Exception as e:
-            questoes = f"Erro ao gerar questões com Deepseek: {e}"
+            questoes = f"Erro ao gerar questões: {e}"
 
         questoes_geradas[modelo] = questoes
 
@@ -289,16 +292,16 @@ def processar_tudo(pdf_file):
         arquivos_questoes[modelo] = path_q
 
     return (
-        jsons_gerados.get("phi3:mini", ""),
+        jsons_gerados.get("gemma3", ""),
         jsons_gerados.get("llama3", ""),
         jsons_gerados.get("mistral", ""),
-        questoes_geradas.get("phi3:mini", ""),
+        questoes_geradas.get("gemma3", ""),
         questoes_geradas.get("llama3", ""),
         questoes_geradas.get("mistral", ""),
-        arquivos_json.get("phi3:mini", ""),
+        arquivos_json.get("gemma3", ""),
         arquivos_json.get("llama3", ""),
         arquivos_json.get("mistral", ""),
-        arquivos_questoes.get("phi3:mini", ""),
+        arquivos_questoes.get("gemma3", ""),
         arquivos_questoes.get("llama3", ""),
         arquivos_questoes.get("mistral", "")
     )
@@ -308,20 +311,20 @@ interface = gr.Interface(
     fn=processar_tudo,
     inputs=gr.File(label="Upload do PDF"),
     outputs=[
-        gr.JSON(label="JSON - phi3"),
+        gr.JSON(label="JSON - gemma3"),
         gr.JSON(label="JSON - llama3"),
         gr.JSON(label="JSON - mistral"),
-        gr.Textbox(label="Questões - phi3", lines=10),
+        gr.Textbox(label="Questões - gemma3", lines=10),
         gr.Textbox(label="Questões - llama3", lines=10),
         gr.Textbox(label="Questões - mistral", lines=10),
-        gr.File(label="Download JSON - phi3"),
+        gr.File(label="Download JSON - gemma3"),
         gr.File(label="Download JSON - llama3"),
         gr.File(label="Download JSON - mistral"),
-        gr.File(label="Download Questões - phi3"),
+        gr.File(label="Download Questões - gemma3"),
         gr.File(label="Download Questões - llama3"),
         gr.File(label="Download Questões - mistral")
     ],
-    title="Extração + Questões Educacionais com 3 Modelos + Deepseek",
+    title="Extração + Questões Educacionais com 3 Modelos + Qwen3",
     description="Faça upload de um PDF, gere JSONs estruturados com phi3, llama3 e mistral e compare as questões geradas com Deepseek."
 )
 

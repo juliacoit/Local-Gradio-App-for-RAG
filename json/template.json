@@ -1,8 +1,6 @@
 { 
-  "titulo": "string",            
-  "autor": "string",             
+  "titulo": "string",           
   "disciplina": "string",        
-  "data": "string",              
 
   "ementa": [                   
     "string"
@@ -27,9 +25,5 @@
       "codigo": "string",        
       "explicacao": "string"
     }
-  ],
-
-  "referencias": [               
-    "string"
   ]
 }

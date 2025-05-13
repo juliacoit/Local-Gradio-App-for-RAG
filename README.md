@@ -1,124 +1,74 @@
-🧠 Local RAG App com Gradio + Ollama + PDF
+# 📄 PDF Educational Data Extractor with LLMs (Gemma3, LLaMA3, Mistral) + Qwen3 MCQ Generator
 
-Este projeto é uma aplicação local para extração de dados educacionais estruturados a partir de arquivos PDF, utilizando modelos LLM hospedados localmente via Ollama, com interface feita em Gradio. O sistema também gera automaticamente questões de múltipla escolha com base no conteúdo extraído.
-🚀 Funcionalidades
+Este projeto é uma aplicação em Python com interface Gradio que permite **processar PDFs educacionais**, extrair e estruturar dados com modelos LLM locais via **Ollama**, e **gerar questões de múltipla escolha (MCQs)** com o modelo Qwen3.
 
-    Extração de texto limpo a partir de arquivos PDF.
+---
 
-    Estruturação inicial do conteúdo (título, autor, seções).
+## 🚀 Funcionalidades
 
-    Uso de modelos LLM locais (phi3:mini, llama3, mistral) para gerar JSON estruturado.
+- 📥 Upload de arquivos PDF
+- 🧠 Extração e estruturação de dados com:
+  - 🔹 Gemma3
+  - 🔹 LLaMA 3
+  - 🔹 Mistral
+- 💾 Salvamento de arquivos JSON com as saídas dos modelos
+- 📝 Geração automática de questões de múltipla escolha com o modelo Qwen3
+- ⬇️ Download dos arquivos JSON e TXT processados
 
-    Correção automática de erros de formatação JSON com json-repair.
-
-    Geração de questões educacionais com o modelo Deepseek-R1.
-
-    Salvamento automático das saídas (arquivos .json e .txt).
-
+-
 🛠️ Requisitos
 
     Python 3.10+
 
-    Ollama instalado e rodando localmente
+    Ollama
 
-    Modelos LLM baixados via Ollama:
+    Modelos:
 
-        phi3:mini
+        Gemma3
 
         llama3
 
         mistral
 
-        deepseek-r1:8b
+        Qwen3 ou similar para MCQ
 
-    Instalar as dependências Python:
+    Dependências:
 
-pip install gradio langchain-community pymupdf json-repair
+        gradio
 
-🧱 Estrutura do Projeto
+        PyMuPDF (fitz)
 
-📁 resultados/         ← arquivos gerados (.json e .txt)
-📄 app.py              ← script principal com a interface
-📄 template.json       ← modelo de estrutura esperado para os dados extraídos
+        json
+
+        os, uuid, datetime
+
+        langchain
 
 ▶️ Como Executar
 
-Inicie o Ollama e certifique-se de que os modelos estão disponíveis localmente:
+  Clone o repositório:
 
-    ollama run phi3:mini
+    git clone https://github.com/juliacoit/Local-Gradio-App-for-RAG
+    cd Local-Gradio-App-for-RAG
+
+Instale as dependências:
+
+    pip install -r requirements.txt
+
+Certifique-se de que o Ollama esteja rodando com os modelos baixados:
+
+    ollama run gamma3
     ollama run llama3
     ollama run mistral
-    ollama run deepseek-r1:8b
 
-Execute o script principal:
+Inicie o Ollama e Execute o aplicativo:
 
+    ollama serve
     python app.py
 
-A interface será carregada via Gradio. Faça upload de um PDF educacional e aguarde o processamento.
 
-🧠 Modelos Suportados
-Modelo	Finalidade
-phi3:mini	Extração estruturada de texto para JSON
-llama3	Mesma função, com outro modelo LLM
-mistral	Alternativa de modelo para extração estruturada
-deepseek-r1	Geração de questões com base no conteúdo
-🧪 Pipeline de Processamento
+📌 Observações
 
-Extração de texto: Conversão do PDF para texto puro.
+Você pode adaptar os prompts individualmente para cada modelo no diretório prompts/.
 
-Estruturação inicial: Estimativa de título, autor e seções.
-
-Chunking: Divisão do texto em blocos com sobreposição.
-
-Geração de JSON estruturado: Cada chunk é processado por um LLM via Ollama.
-
-Correção de JSON: Heurísticas + json-repair para garantir estrutura válida.
-
-Geração de questões: Com o modelo Deepseek, baseado no conteúdo extraído.
-
-📂 Saídas
-
-Os arquivos gerados são salvos na pasta resultados/ com nomes no formato:
-
-    NOME_DO_PDF_saida_phi3_mini.json
-    NOME_DO_PDF_questoes_phi3_mini.txt
-
-📄 Modelo de JSON Estruturado
-
-O conteúdo extraído é salvo com a seguinte estrutura:
-
-    {
-      "titulo": "string",
-      "autor": "string",
-      "disciplina": "string",
-      "data": "string",
-      "ementa": ["string"],
-      "topicos": [
-        {
-          "secao": "string",
-          "subsecoes": [
-            {
-              "titulo": "string",
-              "conteudo": ["string"]
-            }
-          ],
-          "conteudo": ["string"]
-        }
-      ],
-      "exemplos": [
-        {
-          "descricao": "string",
-          "codigo": "string",
-          "explicacao": "string"
-        }
-      ],
-      "referencias": ["string"]
-    }
-
-💡 Observações
-
-O template utilizado pelos modelos está em template.json.
-
-Verifique se o caminho para o template.json está correto no código.
-
-A lógica pode ser adaptada para processar outros tipos de conteúdo além do educacional.
+Os arquivos são salvos com nomes únicos para facilitar a organização e o download.
