@@ -9,6 +9,8 @@ from langchain_community.document_loaders import PyMuPDFLoader
 import unicodedata
 from json_repair import repair_json
 
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 # Constantes
 MAX_INPUT_SIZE = 4000
 OVERLAP = 128
@@ -206,13 +208,10 @@ def predict_chunk(text, template, current, model_name="gemma3"):
 
     # Corrigir o JSON antes de retornar
     json_corrigido = fix_json(output_text_cleaned)
-    safe_print(f"\n===== JSON de  {model_name} CORRIGIDO =====\n{json_corrigido}\n")
 
     return json_corrigido
 
-def gerar_questoes(json_corrigido, modelo_questoes="qwen3:8b"):
-    import json
-
+def gerar_questoes(json_corrigido, modelo_deepseek="deepseek-r1:8b"):
     with open(json_corrigido, "r", encoding="utf-8") as f:
         json_data = json.load(f)
 
@@ -239,6 +238,7 @@ json
     )
 
     return resposta["message"]["content"]
+
 
 def processar_tudo(pdf_file):
     pdf_path = pdf_file.name
@@ -333,5 +333,3 @@ interface = gr.Interface(
 if __name__ == "__main__":
     print("Iniciando interface do Gradio...")
     interface.launch(share=True, debug=True)
-
-
