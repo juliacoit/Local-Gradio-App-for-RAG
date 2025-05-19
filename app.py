@@ -10,9 +10,10 @@ import unicodedata
 from json_repair import repair_json
 
 # Constantes
-MAX_INPUT_SIZE = 4000
-OVERLAP = 128
-TEMPLATE_PATH = "json/template.json"
+MAX_INPUT_SIZE = 8000
+OVERLAP = 200
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_PATH = os.path.join(BASE_DIR, "json", "template.json")
 
 list_slms = ["gemma3", "llama3", "mistral"]
 

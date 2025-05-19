@@ -1,24 +1,22 @@
 { 
   "titulo": "string",           
   "disciplina": "string",        
-
   "ementa": [                   
     "string"
   ],
-
   "topicos": [                   
     {
-      "secao": "string",         
+      "titulo": "string",
+      "palavras-chave": ["string"],      
+      "conteudo": ["string"],     
       "subsecoes": [             
         {
           "titulo": "string",
           "conteudo": ["string"]
         }
-      ],
-      "conteudo": ["string"]     
+      ]
     }
   ],
-
   "exemplos": [                 
     {
       "descricao": "string",
