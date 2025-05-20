@@ -89,6 +89,7 @@ def structure_text(text):
     if candidate_titles and not structured_data["titulo"]:
         structured_data["titulo"] = max(candidate_titles, key=len)
 
+    print("Texto estruturado:", structured_data)
     return structured_data
 
 # Normaliza e limpa JSON
@@ -219,16 +220,33 @@ def gerar_questoes(json_corrigido, modelo_questoes="qwen3:8b"):
 
 
     prompt = f"""
-<｜User｜>Você é um professor criando questões educacionais com base na estrutura de aula abaixo (em formato JSON). 
+<|User|>
+Você é um professor criando questões educacionais com base na estrutura da aula abaixo (em formato JSON).
 
-Gere 5 questões de múltipla escolha com:
+Gere 5 questões de múltipla escolha, cada uma com:
+- Enunciado da pergunta
 - 4 alternativas (a, b, c, d)
-- Marque a resposta correta
-- Dê uma explicação para a resposta
+- Indicação clara da alternativa correta
+- Uma explicação curta e objetiva para a resposta
 
-JSON da aula:
+! Formato da saída: **texto estruturado, e não JSON**. Siga exatamente o modelo abaixo para cada questão:
 
-json
+---
+**1. Pergunta:**
+[Enunciado da pergunta]
+
+a) Alternativa A  
+b) Alternativa B  
+c) Alternativa C  
+d) Alternativa D
+
+**Resposta correta:** [Letra]  
+**Explicação:** [Explicação da resposta]
+---
+
+Aqui está o conteúdo da aula em JSON:
+
+```json
 {json.dumps(json_data, indent=2, ensure_ascii=False)}
 
 <｜Assistant｜>"""

@@ -1,0 +1,79 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about SGBD (Database Management Systems). Let me start by understanding the key topics covered in the lecture.
+
+First, the lecture talks about the advantages of SGBD over file systems, like consistency, centralization, ease of access, organized data, isolation, security, integrity, and performance. Then there are definitions: entities, instances, schemas, data abstraction, data models, modeling approaches, conceptual models, logical models, relationships, attributes, weak entities, entity identifiers, transactions, associative entities. Also, there's mention of cardinality and the phases of database project.
+
+Now, I need to form questions that test understanding of these concepts. Let me brainstorm possible questions.
+
+1. What is an entity in the context of databases? The options could include definitions like a real-world object, a data structure, etc. The correct answer would be the real-world object.
+
+2. What is the difference between a conceptual model and a logical model? The answer should mention that the conceptual is independent of the DBMS, while the logical is user-focused.
+
+3. What is a weak entity? The correct answer would be that it depends on another entity for existence.
+
+4. What is cardinality? The answer is about the number of occurrences linked by a relationship.
+
+5. What is a transaction in a database? The correct answer is a logical unit of work consisting of one or more operations.
+
+I need to ensure each question has four options, the correct answer is clearly marked, and the explanation is concise. Let me check the JSON content again to make sure I'm using the correct terminology and that the answers are accurate based on the provided material. Also, avoid any markdown and use the specified format with dashes and bold headings.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual é a definição correta de "Entidade" no contexto de bancos de dados?  
+
+a) Um conjunto de dados armazenados em um SGBD  
+b) Um conjunto de objetos da realidade modelada sobre os quais deseja-se manter informações  
+c) A estrutura textual que descreve a organização dos dados  
+d) Um relacionamento entre duas ou mais entidades  
+
+**Resposta correta:** b  
+**Explicação:** Entidade refere-se a objetos da realidade que são modelados para armazenar informações no banco de dados, como pessoas, produtos ou eventos.  
+
+---  
+**2. Pergunta:**  
+Qual é a diferença fundamental entre um Modelo Conceitual e um Modelo Lógico?  
+
+a) O Modelo Conceitual é baseado em linguagem de programação, enquanto o Lógico é baseado em SQL  
+b) O Modelo Conceitual é independente de qualquer SGBD, enquanto o Lógico é específico para um SGBD  
+c) O Modelo Conceitual descreve dados organizados, enquanto o Lógico descreve dados isolados  
+d) O Modelo Conceitual é criado após o Modelo Lógico, para facilitar a implementação  
+
+**Resposta correta:** b  
+**Explicação:** O Modelo Conceitual é abstrato e independente de tecnologias, enquanto o Modelo Lógico é adaptado para ser usado por um Sistema de Gerenciamento de Banco de Dados.  
+
+---  
+**3. Pergunta:**  
+O que caracteriza uma "Entidade Fraca"?  
+
+a) Uma entidade que não possui identificador próprio  
+b) Uma entidade que depende de outra para existir  
+c) Uma entidade que é associada a um relacionamento de forma obrigatória  
+d) Uma entidade que é criada apenas para armazenar dados temporários  
+
+**Resposta correta:** b  
+**Explicação:** Entidades fracas dependem de outras entidades para existir, pois não têm sentido por si só, como por exemplo, uma "conta" que depende de um "cliente".  
+
+---  
+**4. Pergunta:**  
+O que significa "Cardinalidade" em um modelo de dados?  
+
+a) O número de atributos associados a uma entidade  
+b) O número mínimo e máximo de ocorrências de entidades associadas por um relacionamento  
+c) A capacidade de um sistema de gerenciar múltiplos bancos de dados  
+d) A medida de segurança dos dados em um banco de dados  
+
+**Resposta correta:** b  
+**Explicação:** Cardinalidade define quantas ocorrências de uma entidade podem estar relacionadas a uma ocorrência de outra entidade, como 1 para muitos.  
+
+---  
+**5. Pergunta:**  
+O que é uma "Transação" em um banco de dados?  
+
+a) Um conjunto de operações que alteram a estrutura do banco de dados  
+b) Um conjunto de uma ou mais operações que compõem uma unidade lógica de trabalho  
+c) Um modelo que descreve a organização física dos dados  
+d) Um tipo de segurança que protege dados sensíveis  
+
+**Resposta correta:** b  
+**Explicação:** Uma transação é uma unidade lógica de trabalho que executa operações como inserção, atualização ou exclusão de dados, garantindo consistência.

@@ -1,0 +1,77 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the given JSON content about database concepts. Let me start by understanding the material thoroughly.
+
+First, the main topics are SGBD, its advantages, key concepts like entities, instances, schemas, abstraction, data models, and the Entity-Relationship Diagram (ERD) with cardinality. The user wants questions that test understanding of these concepts.
+
+Question 1: Maybe about the definition of a database system. The content mentions it's software that handles definition, recovery, and alteration of data. So the correct answer would be the one that matches this description.
+
+Question 2: Advantages of SGBD. The advantages listed include consistency, centralization, security, etc. The question could ask which is NOT an advantage. The content says "Facilidade no acesso aos dados" (Ease of data access) is an advantage, so the incorrect option would be something not listed.
+
+Question 3: Entity vs. Instance. The content differentiates between entities (set of objects) and instances (actual data stored). So the question could ask which is the correct definition of an instance.
+
+Question 4: Cardinality in ER diagrams. The content explains cardinality as the number of occurrences associated between entities. The question could ask which option correctly describes cardinality.
+
+Question 5: Weak entity. The content states that weak entities depend on others for existence. So the question could ask which statement correctly defines a weak entity.
+
+Now, I need to structure each question with the correct answer and explanation, following the specified format. Make sure the explanations are concise and directly relate to the content provided.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual é a definição correta de Sistema de Gerenciamento de Banco de Dados (SGBD)?  
+
+a) Software que armazena dados em formato textual  
+b) Software que incorpora as funções de definição, recuperação e alteração de dados em um banco de dados  
+c) Conjunto de dados organizados em arquivos físicos  
+d) Ferramenta para criação de interfaces gráficas  
+
+**Resposta correta:** b)  
+**Explicação:** O SGBD é definido como software que realiza as funções de definição, recuperação e alteração de dados em um banco de dados, conforme explicado no conteúdo da aula.  
+
+---  
+**2. Pergunta:**  
+Qual alternativa **não** é uma vantagem do uso de SGBD?  
+
+a) Consistência dos dados  
+b) Facilidade no acesso aos dados  
+c) Redução da segurança dos dados  
+d) Integridade dos dados  
+
+**Resposta correta:** c)  
+**Explicação:** A segurança é uma vantagem do SGBD, enquanto a redução da segurança não é. As outras opções são mencionadas como benefícios no conteúdo da aula.  
+
+---  
+**3. Pergunta:**  
+Qual é a definição correta de "Instância" no contexto de banco de dados?  
+
+a) Conjunto de objetos da realidade modelada  
+b) Descrição textual da estrutura de um banco de dados  
+c) Conjunto de dados armazenados em um SGBD  
+d) Modelo abstrato que independe do SGBD  
+
+**Resposta correta:** c)  
+**Explicação:** A instância refere-se aos dados reais armazenados em um SGBD, enquanto a entidade é o conceito abstrato representado no modelo.  
+
+---  
+**4. Pergunta:**  
+Qual é a definição correta de "Cardinalidade" em um Diagrama Entidade-Relacionamento (DER)?  
+
+a) Número de atributos de uma entidade  
+b) Número mínimo e máximo de ocorrências de entidades associadas por um relacionamento  
+c) Conjunto de operações que compõem uma transação  
+d) Representação gráfica de um modelo conceitual  
+
+**Resposta correta:** b)  
+**Explicação:** A cardinalidade descreve a quantidade de associações entre ocorrências de entidades, conforme explicado no conteúdo da aula.  
+
+---  
+**5. Pergunta:**  
+Qual característica define corretamente uma "Entidade Fraca"?  
+
+a) Entidade que não tem identificador próprio  
+b) Entidade que depende de outra para existir  
+c) Entidade que representa relacionamentos entre tabelas  
+d) Entidade que armazena dados de transações  
+
+**Resposta correta:** b)  
+**Explicação:** A entidade fraca depende de outra entidade para existir, pois não tem sentido individual, conforme definido no conteúdo.

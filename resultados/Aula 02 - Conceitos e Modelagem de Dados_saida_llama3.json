@@ -1,0 +1,70 @@
+{
+  "titulo": "Aula 02 – Conceitos e",
+  "disciplina": "",
+  "ementa": [
+    "Modelagem de Dados"
+  ],
+  "topicos": [
+    {
+      "titulo": "SGBD",
+      "palavras-chave": [],
+      "conteudo": [
+        "• Sistema de Gerenciamento de Banco de Dados;",
+        "• Software que incorpora as funções de definição, recuperação e alteração de dados em um banco de dados; ",
+        "• Apresentam vantagens relevantes em comparação a Sistemas de Arquivos.",
+        "Vantagens do SGBD",
+        "• Consistência e centralização dos dados;",
+        "• Facilidade no acesso aos dados;",
+        "• Dados organizados;",
+        "• Isolamentos dos dados;",
+        "• Segurança; ",
+        "• Integridade; ",
+        "• Desempenho."
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Definições",
+          "conteudo": [
+            "• Entidades: conjunto de objetos da realidade modelada sobre os quais deseja-se manter informações no banco de dados;",
+            "• Instância: uma instância no contexto de banco de dados, é o conjunto de dados armazenados em um SGBD;",
+            "• Esquema: descrição, textual ou gráfica, da estrutura de um banco de dados, levando-se em consideração um modelo de dados definido;",
+            "• Abstração de Dados: capacidade de definir características e propriedades importantes da instancia definida; ",
+            "• Modelo de Dados: descrição formal da estrutura de um banco de dados;",
+            "• Abordagem de Modelagem: conjunto de conceitos utilizados para construir modelos;",
+            "• Modelo Conceitual: modelo de dados abstrato, que descreve a estrutura de um banco de dados de forma independente de um Sistema de Gerenciamento de Banco de Dados (SGBD).",
+            "Definições",
+            "• Modelo Lógico: modelo de dados que representa a estrutura de dados de um banco de dados conforme vista pelo usuário do SGBD. ",
+            "• Relacionamento: conjunto de associações entre ocorrências de entidades;",
+            "• Atributo: é um dado que é associado a cada ocorrência de uma entidade ou de um relacionamento;",
+            "• Entidade Fraca: entidades que dependem de outras entidades para existirem, pois, individualmente elas não fazem sentido; ",
+            "• Identificador de Entidade: conjunto de um ou mais atributos e relacionamentos cujos valores servem para distinguir uma ocorrência da entidade das demais ocorrências da mesma entidade;",
+            "• Transação: no contexto de banco de dados, é o conjunto de uma ou mais operações que compõem uma única tarefa ou unidade lógica de trabalho a ser executada; ",
+            "• Entidade Associativa: surge quando há a necessidade de associar uma entidade a um relacionamento existente."
+          ],
+          "Diagrama Entidade Relacionamento": "• Cardinalidade: número (mínimo, máximo) de ocorrências de entidade associadas a uma ocorrência da entidade em questão através do relacionamento.",
+          "secao": "Fases do Projeto de Banco de Dados"
+        },
+        {
+          "conteudo": []
+        },
+        {
+          "secao": "Referências",
+          "conteudo": [
+            "ACHADO, F. N. R. Banco de dados: projeto e implementação. 2. ed. São Paulo: Érica, 2008.",
+            "BEIGHLEY, L. Use a Cabeça SQL. Rio de Janeiro: Alta Books, 2008.",
+            "DATE, C. J. Introdução a sistemas de bancos de dados. Rio de Janeiro: Elsevier, 2004.",
+            "HEUSER, C. A. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman, 2010.",
+            "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006."
+          ]
+        }
+      ],
+      "exemplos": [
+        {
+          "descricao": "",
+          "codigo": "",
+          "explicacao": ""
+        }
+      ]
+    }
+  ]
+}
