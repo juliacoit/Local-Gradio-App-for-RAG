@@ -1,0 +1,75 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about database basics. Let me start by understanding the structure of the JSON. The title is "Conceitos Básicos de Banco de Dados" and the ementa includes various topics like definitions, SGBD, data modeling, relational model, SQL, etc.
+
+First, I should identify key concepts from the ementa. The first question could be about the definition of a database. The ementa mentions that a database is an organized collection of structured information stored electronically. So the correct answer should reflect that definition.
+
+Next, the second question might focus on the types of databases. The ementa lists relational, object-oriented, distributed, and document databases. The example given for NoSQL is MongoDB, so maybe a question about which type uses a document format.
+
+Third, the SGBD advantages. The ementa states that SGBD offers better data management, security, and scalability compared to file systems. So a question about the advantages of SGBD over file systems would work.
+
+Fourth, the relational model's primary key. The ementa mentions keys and constraints, so a question about the primary key's role in ensuring uniqueness.
+
+Lastly, the SQL command for selecting data. The ementa provides examples like SELECT * FROM tabela, so a question about the correct SQL syntax for retrieving data.
+
+Now, I need to structure each question with the correct answer and a brief explanation. Make sure each question is distinct and covers different topics from the ementa. Avoid repetition and ensure the explanations are concise.
+</think>
+
+---  
+**1. Pergunta:**  
+O que é um banco de dados, segundo a definição apresentada na aula?  
+
+a) Um sistema de arquivos para armazenar documentos físicos  
+b) Uma coleção organizada de informações estruturadas, armazenadas eletronicamente  
+c) Um conjunto de dados não estruturados armazenados em nuvem  
+d) Um programa para gerenciar redes de computadores  
+
+**Resposta correta:** b  
+**Explicação:** A definição apresentada na aula destaca que um banco de dados é uma coleção organizada de informações estruturadas, armazenadas eletronicamente em um sistema de computador.  
+
+---  
+**2. Pergunta:**  
+Qual tipo de banco de dados é descrito como "informações armazenadas em formato de objeto"?  
+
+a) Relacional  
+b) Orientado a objetos  
+c) Distribuído  
+d) Documento  
+
+**Resposta correta:** b  
+**Explicação:** O banco de dados orientado a objetos armazena informações em formato de objeto, diferenciando-se dos outros tipos mencionados na aula.  
+
+---  
+**3. Pergunta:**  
+Qual é uma vantagem dos Sistemas de Gerenciamento de Banco de Dados (SGBD) em comparação com sistemas de arquivos?  
+
+a) Menor capacidade de armazenamento  
+b) Facilidade de acesso direto aos dados sem estrutura  
+c) Maior segurança e controle sobre os dados  
+d) Necessidade de programação complexa para consultas  
+
+**Resposta correta:** c  
+**Explicação:** A aula destaca que os SGBD oferecem maior segurança, controle e eficiência na gestão de dados em comparação com sistemas de arquivos tradicionais.  
+
+---  
+**4. Pergunta:**  
+No modelo relacional, qual é a função principal de uma chave primária?  
+
+a) Armazenar dados redundantes  
+b) Garantir a unicidade dos registros em uma tabela  
+c) Permitir consultas em tempo real  
+d) Facilitar a replicação de dados  
+
+**Resposta correta:** b  
+**Explicação:** A chave primária é usada para identificar exclusivamente cada registro em uma tabela, garantindo integridade e evitar duplicatas.  
+
+---  
+**5. Pergunta:**  
+Qual é o comando SQL correto para selecionar todos os registros de uma tabela chamada "clientes"?  
+
+a) SELECT clientes FROM *  
+b) SELECT * FROM clientes  
+c) GET * FROM clientes  
+d) FETCH clientes  
+
+**Resposta correta:** b  
+**Explicação:** A sintaxe correta do SQL para selecionar todos os dados de uma tabela é "SELECT * FROM nome_da_tabela", conforme explicado na aula.

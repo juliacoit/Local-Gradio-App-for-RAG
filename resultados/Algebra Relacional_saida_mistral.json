@@ -1,0 +1,128 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "disciplina": "",
+  "ementa": [
+    "Definição de Banco de Dados",
+    "Terminologia básica",
+    "Usuários de Banco de Dados",
+    "Aplicações",
+    "Abstração de dados Esquema",
+    "Instância",
+    "Sistemas de Gerenciamento de Banco de Dado (SGBD)",
+    "Vantagens do SGBD",
+    "Comparação com o Sistema de Arquivos",
+    "Aspectos de modelagem de dados",
+    "Conceito de Modelo de Dados",
+    "Conhecimento e especificação do minimundo",
+    "Métodos e técnicas",
+    "Objetivo da modelagem",
+    "Abstração",
+    "Coleta de requisitos",
+    "Análise de requisitos",
+    "Categorias de modelos",
+    "Modelo Conceitual de dados",
+    "Entidades",
+    "Atributos",
+    "Relacionamentos",
+    "Cardinalidade de relacionamentos",
+    "Diagrama entidade-relacionamento (DER)",
+    "Modelo Relacional",
+    "Nomenclatura do Modelo Relacional",
+    "Domínio",
+    "Relações",
+    "Chaves",
+    "Restrições de Integridade",
+    "Esquemas de Relação",
+    "Mapeamento entre modelos de dado",
+    "Equivalência entre os Modelos Entidade-Relacionamento e Relacional",
+    "Regras para o mapeamento",
+    "Álgebra Relacional",
+    "Conceito de Álgebra Relacional",
+    "Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano, Junção, Renomear",
+    "Linguagem de Definição de Dados (DDL)",
+    "Tipo de Dados em SQL",
+    "Comandos: Create, Drop, Alter; Restrições: Integridade de Domínio, Integridade de entidade, Integridade de Chave, Integridade Referencial",
+    "Linguagem de Manipulação de Dados (DML)",
+    "Comandos: Insert, Delete, Update, Select; Visões",
+    "Projeto e implementação de um Banco de Dado",
+    "Criação de um Banco de Dado a partir de um minimundo real escolhido"
+  ],
+  "topicos": [
+    {
+      "titulo": "Algebra Relacional",
+      "palavras-chave": [
+        "Algebra Relacional",
+        "Edgar Frank Codd"
+      ],
+      "conteudo": [
+        "Base para o entendimento das operações de um banco de dado relacional",
+        "Parte teórica de como operar um banco de dados relacional",
+        "Uma parte relacionada com a teoria dos conjuntos da Matemática"
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Operações",
+          "conteudo": [
+            "Seleção(   ); Projeção (π); União (   ); Diferença (-); Produto Cartesiano (x); Junção (⋈); Renomear (    )"
+          ]
+        },
+        {
+          "titulo": "Seleção",
+          "conteudo": [
+            "Seleciona os registros de acordo com uma condição estabelecida;     id_estado = 2 (tab_cantor)"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "Projeção",
+          "conteudo": [
+            "Especificação de colunas; Linhas duplicadas são eliminadas;  π nome (tab_estado)"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "União",
+          "conteudo": [
+            "União das tabelas envolvidas   (π id(tab_cantor))        (π id(tab_estado))"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "Diferença",
+          "conteudo": [
+            "Retorna apenas os registros que contém na primeira tabela, mas que não contem na segunda. (π id(tab_cantor)) - (π id(tab_estado))"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "Produto Cartesiano",
+          "conteudo": [
+            "Todas as linhas da primeira tabela com todas as linhas da outra tabela; tab_cantor x tab_estado"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "Produto Cartesiano",
+          "conteudo": [
+            "Junção de registros entre tabelas de forma organizada e estabelecida; tab_cantor ⋈ (tab_cantor.id_estado =  tab_estado.id) tab_estado"
+          ],
+          "subsecoes": []
+        },
+        {
+          "titulo": "Renomear",
+          "conteudo": [
+            "Renomear tabela;    tab_cantor_nordeste (tab_cantor)"
+          ],
+          "subsecoes": []
+        }
+      ]
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ]
+}

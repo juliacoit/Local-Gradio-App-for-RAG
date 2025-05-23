@@ -1,0 +1,79 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about relational algebra. Let me start by understanding the key topics covered in the lecture. The main sections are Algebra Relacional, its operations like Seleção, Projeção, União, Diferença, Produto Cartesiano, Junção, and Renomear. There's also mention of Edgar Frank Codd and the theoretical basis of relational operations.
+
+First, I should identify the core concepts and operations. For example, Seleção filters rows based on a condition, Projeção selects columns and removes duplicates, União combines rows from two tables, Diferença finds rows in one table not in another, Produto Cartesiano creates all possible combinations, Junção combines rows based on a condition, and Renomear renames tables.
+
+I need to make sure each question targets a different operation or concept. Let me think of possible questions:
+
+1. What is the purpose of the Seleção operation? (Answer: Filtering rows based on a condition)
+2. Which operation removes duplicates when selecting columns? (Answer: Projeção)
+3. What does the União operation do? (Answer: Combines rows from two tables)
+4. What is the result of the Diferença operation? (Answer: Rows present in the first table but not the second)
+5. Which operation combines rows based on a condition? (Answer: Junção)
+
+I should structure each question with the enunciado, four alternatives, the correct answer, and a brief explanation. Let me check the example given in the JSON to ensure consistency. The example mentions "tab_cantor" and "tab_estado" as tables, so I can use these in the questions for clarity.
+
+Wait, the JSON has a note about the Produto Cartesiano having two entries. The first one is about all combinations, and the second is about Junção. I need to make sure I don't confuse them. Also, the Renomear example is mentioned as renaming a table.
+
+Now, I'll draft each question, ensuring the alternatives are clear and the correct answer is indicated. The explanations should be concise, linking back to the concepts in the lecture. Let me verify each question to ensure they are distinct and cover different aspects of relational algebra.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual é a função da operação **Seleção** na Álgebra Relacional?  
+
+a) Elimina duplicatas de uma tabela  
+b) Combina registros de duas tabelas com base em uma condição  
+c) Filtra registros de acordo com uma condição estabelecida  
+d) Renomeia uma tabela  
+
+**Resposta correta:** c) Filtra registros de acordo com uma condição estabelecida  
+**Explicação:** A Seleção (σ) seleciona apenas as linhas que atendem a uma condição específica, como `id_estado = 2`.  
+
+---  
+**2. Pergunta:**  
+Qual operação na Álgebra Relacional é responsável por retornar apenas as colunas desejadas e remover duplicatas?  
+
+a) União  
+b) Junção  
+c) Projeção  
+d) Diferença  
+
+**Resposta correta:** c) Projeção  
+**Explicação:** A Projeção (π) especifica quais colunas devem ser incluídas e elimina linhas duplicadas, como em `π nome (tab_estado)`.  
+
+---  
+**3. Pergunta:**  
+Qual operação combina os registros de duas tabelas, retornando apenas os que possuem valores correspondentes em uma coluna?  
+
+a) Produto Cartesiano  
+b) Diferença  
+c) Junção  
+d) Seleção  
+
+**Resposta correta:** c) Junção  
+**Explicação:** A Junção (⋈) combina linhas de tabelas com base em uma condição de relacionamento, como `tab_cantor ⋈ (tab_cantor.id_estado = tab_estado.id)`.  
+
+---  
+**4. Pergunta:**  
+O que a operação **Diferença** retorna em relação a duas tabelas?  
+
+a) Registros presentes em ambas as tabelas  
+b) Registros presentes apenas na primeira tabela, mas não na segunda  
+c) Todos os registros de ambas as tabelas  
+d) Registros que atendem a uma condição específica  
+
+**Resposta correta:** b) Registros presentes apenas na primeira tabela, mas não na segunda  
+**Explicação:** A Diferença (-) retorna apenas os registros da primeira tabela que não existem na segunda, como em `(π id(tab_cantor)) - (π id(tab_estado))`.  
+
+---  
+**5. Pergunta:**  
+Qual operação na Álgebra Relacional cria todas as combinações possíveis entre os registros de duas tabelas?  
+
+a) Junção  
+b) Diferença  
+c) Produto Cartesiano  
+d) Seleção  
+
+**Resposta correta:** c) Produto Cartesiano  
+**Explicação:** O Produto Cartesiano (x) gera todas as combinações de linhas entre duas tabelas, como em `tab_cantor x tab_estado`.

@@ -1,0 +1,77 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about database basics. Let me start by going through the content to identify key topics.
+
+First, the sections include definitions, SGBD, data modeling, ER model, relational model, mapping between models, relational algebra, DDL, DML, database creation, types of databases, SQL, NoSQL, users, and references. 
+
+For the first question, maybe focus on the definition of a database. The content mentions it as a structured collection of information. So the correct answer would be the option that matches that definition.
+
+Next, the SGBD section talks about advantages over file systems. The answer should highlight things like data independence, security, and concurrency control.
+
+Third, the ER model section includes entities, attributes, relationships, and cardinality. A question could ask about the main components of the ER model.
+
+Fourth, the relational model has concepts like domains, relations, keys, and integrity constraints. A question could be about primary keys and their role in uniqueness.
+
+Lastly, the types of databases section mentions relational, object-oriented, distributed, and document databases. A question could ask which type is most commonly used, which is relational.
+
+Now, I need to structure each question with the correct answer and a brief explanation. I'll make sure the options are plausible and the explanations are clear. Let me check for any overlaps or if I missed important points. Once that's done, I'll format them according to the user's specified structure.
+</think>
+
+---  
+**1. Pergunta:**  
+O que define um Banco de Dados?  
+
+a) Uma coleção desorganizada de informações armazenadas em papel  
+b) Uma coleção organizada de informações estruturadas, armazenadas eletronicamente  
+c) Um sistema de arquivos comum para armazenamento de dados  
+d) Um programa de computador para processamento de dados  
+
+**Resposta correta:** b  
+**Explicação:** Um Banco de Dados é descrito como uma coleção organizada de informações estruturadas, geralmente armazenadas eletronicamente em um sistema de computador, conforme definido na aula.  
+
+---  
+**2. Pergunta:**  
+Qual é uma vantagem principal dos Sistemas de Gerenciamento de Banco de Dados (SGBD) em comparação aos sistemas de arquivos tradicionais?  
+
+a) Permite armazenamento de dados apenas em formato textual  
+b) Garante maior segurança e controle de acesso aos dados  
+c) Exige que os usuários tenham conhecimento de programação  
+d) Não suporta operações de consulta complexas  
+
+**Resposta correta:** b  
+**Explicação:** Os SGBD oferecem vantagens como segurança, controle de acesso e eficiência no gerenciamento de dados, diferenciando-se dos sistemas de arquivos tradicionais, que carecem dessas funcionalidades.  
+
+---  
+**3. Pergunta:**  
+No Modelo Entidade-Relacionamento (ER), quais são os principais componentes?  
+
+a) Tabelas, colunas e índices  
+b) Entidades, atributos e relacionamentos  
+c) Consultas, atualizações e exclusões  
+d) Domínios, chaves e restrições de integridade  
+
+**Resposta correta:** b  
+**Explicação:** O Modelo ER é composto por entidades (objetos do mundo real), atributos (características das entidades) e relacionamentos (ligações entre entidades), conforme abordado na aula.  
+
+---  
+**4. Pergunta:**  
+No Modelo Relacional, qual é a função principal de uma chave primária?  
+
+a) Identificar um único registro em uma tabela  
+b) Armazenar dados de texto livre  
+c) Permitir a criação de índices secundários  
+d) Garantir a integridade referencial  
+
+**Resposta correta:** a  
+**Explicação:** Uma chave primária é um atributo ou conjunto de atributos que identificam univocamente cada registro em uma tabela, garantindo a unicidade dos dados.  
+
+---  
+**5. Pergunta:**  
+Qual tipo de Banco de Dados é mais utilizado atualmente e organiza os dados em tabelas?  
+
+a) NoSQL  
+b) Relacional  
+c) Orientado a objetos  
+d) Distribuído  
+
+**Resposta correta:** b  
+**Explicação:** O Banco de Dados Relacional é o mais comum, organizando dados em tabelas com linhas e colunas, e é amplamente usado em aplicações empresariais.

@@ -1,0 +1,780 @@
+Estrutura de Dados
+Prof. Msc. Matheus R. D. Ullmann
+matheusullmannifba@gmail.com
+Instituto Federal da Bahia - IFBA
+Campus Barreiras
+February 22, 2024
+Sum´ario
+1 Apresenta¸c˜ao da Disciplina
+2 Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Estrutura b´asica de um prog. em C
+Comandos B´asicos
+Tomada de Decis˜ao
+La¸cos
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Fun¸c˜oes
+Matrizes
+Ponteiros
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Apresenta¸c˜ao da Disciplina
+Apresenta¸c˜ao da Disciplina
+1/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+O professor
+Professor Matheus Rudolfo Diedrich Ullmann
+Bacharel em Ciˆencia da Computa¸c˜ao - UFG
+Mestre em Ciˆencia da Computa¸c˜ao - INF/UFG
+Doutorando em Engenharia El´etrica e de Computa¸c˜ao - EMC/UFG
+Apresenta¸c˜ao da Disciplina
+2/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Bibliograﬁa da Disciplina
+TENENBAUM, A.M.; LANGSAM, Y.; AUGENSTEIN, M.J. Estruturas de
+Dados Usando C. Porto Alegre: Editora Makron Books/Pearson
+Education, 2005.
+CELES, W.; CERQUEIRA, R. RANGEL, J. L. Introdu¸c˜ao `a estruturas de
+dados. S˜ao Paulo: Editora Campus Elsevier, 2004.
+SEDGEWICK, R. and WAYNE, K. Algorithms, 4th Edition, Editora
+Addison-Wesley, 2011.
+Apresenta¸c˜ao da Disciplina
+3/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Bibliograﬁa Complementar da Disciplina
+LOUDON, K. Dominando Algoritmos com C, Ed. Ciˆencia Moderna, Rio
+de Janeiro, 2000.
+EDELWEISS, N.; GALANTE, R., Estrutura de Dados. Porto Alegre:
+Bookman, 2009. (S´erie Livros Did´aticos Inform´atica UFRGS).
+LAFORE, R. Aprenda em 24 horas: estrutura de dados e algoritmos. Rio
+de Janeiro: Editora Campus, 1999.
+Apresenta¸c˜ao da Disciplina
+4/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Ementa
+An´alise e projeto dos tipos de dados abstratos, estruturas de dados e suas
+aplica¸c˜oes: listas lineares, pilhas, ﬁlas.
+Identiﬁcar e implementar m´etodos e t´ecnicas de classiﬁca¸c˜ao de dados.
+Conhecer as principais t´ecnicas de programa¸c˜ao envolvendo estruturas de
+dados em Linguagem de alto n´ıvel.
+Deﬁnir formalmente as estruturas de dados, manipular estas estruturas,
+selecion´a-las para suas aplica¸c˜oes e analisar m´etodos de pesquisa,
+ordena¸c˜ao, representa¸c˜ao de dados.
+Apresenta¸c˜ao da Disciplina
+5/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Programa do Curso
+Conceitos Iniciais
+Introdu¸c˜ao `a linguagem de programa¸c˜ao C;
+Tipos primitivos de dados;
+Vetores;
+Matrizes;
+Estruturas (structs);
+Tipos abstratos de dados (TADs);
+Representa¸c˜ao e implementa¸c˜ao de TDA;
+Recursividade
+Deﬁni¸c˜ao;
+Exemplos;
+Simula¸c˜ao;
+Implementa¸c˜ao de recursividade.
+Apresenta¸c˜ao da Disciplina
+6/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Programa do Curso
+Vis˜ao geral de estruturas e listas lineares
+Conceituar Estrutura de Dados;
+Descrever os tipos de Estruturas de Dados;
+Implementar opera¸c˜oes b´asicas da Estrutura de Dados Lista;
+Inser¸c˜ao;
+Troca;
+Sele¸c˜ao;
+Distribui¸c˜ao e intercala¸c˜ao;
+Compara¸c˜ao entre os m´etodos;
+Listas Lineares
+Deﬁni¸c˜ao;
+Estruturas est´aticas e dinˆamicas;
+Opera¸c˜oes b´asicas em listas de elementos.
+Apresenta¸c˜ao da Disciplina
+7/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Programa do Curso
+Pilhas
+Deﬁni¸c˜ao do tipo abstrato, aplica¸c˜oes e exemplos;
+Opera¸c˜oes b´asicas em uma pilha;
+Implementa¸c˜oes de pilhas;
+Filas
+Deﬁni¸c˜ao do tipo abstrato, aplica¸c˜oes e exemplos;
+Opera¸c˜oes b´asicas em uma ﬁla;
+Filas circulares;
+Implementa¸c˜oes de ﬁlas.
+Apresenta¸c˜ao da Disciplina
+8/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Programa do Curso
+Listas Ligadas
+Pilhas ligadas;
+Filas lidadas;
+Listas ligadas;
+Listas duplamente ligadas;
+Implementa¸c˜ao.
+Apresenta¸c˜ao da Disciplina
+9/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+M´etodo de Avalia¸c˜ao
+As notas podem variar de 0,0 a 10,0;
+A avalia¸c˜ao ser´a feita por meio de:
+Prova;
+Trabalho e/ou semin´ario;
+Exerc´ıcios e laborat´orio.
+Apresenta¸c˜ao da Disciplina
+10/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Informa¸c˜oes Importantes
+Haver´a chamada em todas as aulas e ser´a realizada 10 minutos ap´os o
+hor´ario de in´ıcio da aula. Ap´os a chamada s´o ser´a permitida a entrada em
+sala at´e 15 minutos do in´ıcio da aula;
+Ser´a permitido o uso de notebooks, tablets para ﬁns de educacionais, mas
+o ´audio destes dispositivos dever´a estar desligado;
+N˜ao ser´a permitido atender ou efetuar liga¸c˜oes dentro da sala de aula,
+esta medida visa garantir o respeito aos ambiente de estudo;
+Apresenta¸c˜ao da Disciplina
+11/65
+Estrutura de Dados
+Apresenta¸c˜ao da Disciplina
+Informa¸c˜oes Importantes
+Durante as provas n˜ao ser´a permitido o uso de quaisquer dispositivos
+eletrˆonicos, ou outros materiais de consulta;
+As provas ser˜ao individuais;
+As aulas laboratoriais, provas e entrega de trabalhos e exerc´ıcios ser˜ao
+marcadas antecipadamente e divulgadas no Classroom;
+O atraso na entrega dos trabalhos e exerc´ıcios assim como a n˜ao
+participa¸c˜ao nas aulas laboratoriais ser˜ao computados como desconto da
+nota de exerc´ıcios e participa¸c˜ao.
+Apresenta¸c˜ao da Disciplina
+12/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Linguagem de Programa¸c˜ao C
+Linguagem de Programa¸c˜ao C
+13/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Linguagem C - Introdu¸c˜ao
+Desenvolvida inicialmente por Dennis M. Ritchie e Ken Thompson em
+1972;
+Baseada na linguagem B criada por Thompson, esta linguagem evoluiu da
+linguagem BCPL, dando origem a duas linguagens anteriores.
+Linguagem de Programa¸c˜ao C
+14/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Linguagem C - Introdu¸c˜ao
+Projetada inicialmente para ser utilizada no sistema operacional Unix;
+C ´e considerada uma linguagem procedural (forma sequencial de
+instru¸c˜oes);
+Caracter´ısticas principais:
+Robusta;
+Multiplataforma;
+Projetada para aplica¸c˜oes modulares de acesso r´apido.
+Linguagem de Programa¸c˜ao C
+15/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Linguagem C - Introdu¸c˜ao
+C ´e considerada uma linguagem de m´edio n´ıvel:
+Possui instru¸c˜oes de alto n´ıvel e estruturada, como o Pascal;
+Possui instru¸c˜oes muito pr´oximas da linguagem de m´aquina, que s´o o Assembler
+possui;
+Com essa linguagem podemos construir programas organizados e concisos
+(como o Pascal) e ocupando pouco espa¸co de mem´oria com alta
+velocidade de execu¸c˜ao (como o Assembler).
+Linguagem de Programa¸c˜ao C
+16/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Linguagem C - Introdu¸c˜ao - Caracter´ısticas
+Portabilidade entre m´aquinas e sistemas operacionais;
+Dados compostos em forma estruturada;
+Programas Estruturados;
+Total intera¸c˜ao com o Sistema Operacional;
+C´odigo compacto e r´apido, quando comparado ao c´odigo de outras
+linguagem de complexidade an´aloga.
+Linguagem de Programa¸c˜ao C
+17/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Introdu¸c˜ao
+Linguagem C - Introdu¸c˜ao - Caracter´ısticas
+Programa estruturado?
+A programa¸c˜ao estruturada (PE) ´e um paradigma de programa¸c˜ao, uma
+forma de programa¸c˜ao de computadores, com ˆenfase no uso de
+sub-rotinas, la¸cos de repeti¸c˜ao, condicionais e estruturas em bloco.
+Linguagem de Programa¸c˜ao C
+18/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Estrutura b´asica de um programa em C
+Um programa em C consiste em uma ou mais ”fun¸c˜oes”;
+Menor programa em C:
+Linguagem de Programa¸c˜ao C
+19/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Estrutura b´asica de um programa em C
+Adicionando uma instru¸c˜ao:
+Linguagem de Programa¸c˜ao C
+20/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Fundamentos em C
+Primeiramente iremos se ater mais na compreens˜ao geral do programa do
+que na an´alise detalhada de cada comando ou fun¸c˜ao utilizada;
+Utilizaremos comandos fundamentais para a escrita de programas b´asicos
+e utilizaremos sua sintaxe elementar.
+Linguagem de Programa¸c˜ao C
+21/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Fundamentos em C
+Linguagem de Programa¸c˜ao C
+22/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Fundamentos em C
+Diretiva #include
+Inclui o conte´udo de outro arquivo dentro do programa atual, ou seja, a linha que
+cont´em a diretiva ´e substitu´ıda pelo conte´udo do arquivo especiﬁcado.
+Linguagem de Programa¸c˜ao C
+23/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Fundamentos em C
+Primeiro modo (com < nome do arquivo >)
+Utilizado para incluir arquivos que cont´em declara¸c˜ao das fun¸c˜oes na biblioteca
+padr˜ao;
+Geralmente possuem a extens˜ao .h;
+Arquivo e descri¸c˜ao:
+stdio.h - Fun¸c˜oes de entrada e sa´ıda (I/O);
+string.h - Fun¸c˜oes de tratamento de strings;
+math.h - Fun¸c˜oes matem´aticas;
+ctype.h - Fun¸c˜oes de teste e tratamento de caracteres;
+stdlib.h - Fun¸c˜oes de uso gen´erico.
+Linguagem de Programa¸c˜ao C
+24/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Estrutura b´asica de um prog. em C
+Linguagem C - Fundamentos em C
+Segundo modo (com ”nome do arquivo”)
+´E usado normalmente para incluir algum arquivo que tenha sido criado pelo pr´oprio
+programador ou por terceiros;
+Tem que estar no mesmo diret´orio em que o programa est´a sendo compilado.
+Linguagem de Programa¸c˜ao C
+25/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+As instru¸c˜oes de entrada e sa´ıda s˜ao os comandos mais b´asicos e
+obrigat´orios em quase todos os programas em C;
+Objetivo dos programas?
+Linguagem de Programa¸c˜ao C
+26/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+As instru¸c˜oes de entrada e sa´ıda s˜ao os comandos mais b´asicos e
+obrigat´orios em quase todos os programas em C;
+Objetivo dos programas?
+Fornecimento de um conjunto de dados (entradas);
+Linguagem de Programa¸c˜ao C
+26/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+As instru¸c˜oes de entrada e sa´ıda s˜ao os comandos mais b´asicos e
+obrigat´orios em quase todos os programas em C;
+Objetivo dos programas?
+Fornecimento de um conjunto de dados (entradas);
+Realiza¸c˜ao de c´alculos ou pesquisas (processamento);
+Linguagem de Programa¸c˜ao C
+26/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+As instru¸c˜oes de entrada e sa´ıda s˜ao os comandos mais b´asicos e
+obrigat´orios em quase todos os programas em C;
+Objetivo dos programas?
+Fornecimento de um conjunto de dados (entradas);
+Realiza¸c˜ao de c´alculos ou pesquisas (processamento);
+Obten¸c˜ao de resultados (sa´ıdas).
+Linguagem de Programa¸c˜ao C
+26/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+A fun¸c˜ao printf()
+Servir´a basicamente para apresenta¸c˜ao dos dados no monitor;
+Forma geral: printf (“string de controle”, lista de argumentos );
+Linguagem de Programa¸c˜ao C
+27/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+Linguagem de Programa¸c˜ao C
+28/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+Operadores Especiais suportados por printf()
+\b Retrocesso (BackSpace);
+\f Salto de p´agina (Form Feed);
+\n Nova linha (Line Feed);
+\t Tabula¸c˜ao horizontal (TAB);
+\x Representa¸c˜ao de byte na base hexadecimal;
+Exemplo: printf(“\x41”), causa a impress˜ao da letra A na tela.
+Linguagem de Programa¸c˜ao C
+29/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+A fun¸c˜ao scanf ()
+Serve para fazer a leitura de dados tipados atrav´es do teclado;
+Forma geral: scanf(“string de controle”, lista de argumentos);
+Esta ´e a sintaxe simples, posteriormente veremos a sintaxe completa.
+Linguagem de Programa¸c˜ao C
+30/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+A fun¸c˜ao scanf ()
+Sintaxe b´asica:
+%c - leitura de caractere;
+%d - leitura de n´umeros inteiros;
+%f - leitura de n´umeros reais;
+%s - leitura de caracteres.
+Importante! A lista de argumentos deve conter exatamente a mesma
+quantidade de c´odigos que est˜ao sendo utilizados na
+< stringdecontrole >.
+Linguagem de Programa¸c˜ao C
+31/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+A fun¸c˜ao scanf ()
+Cada vari´avel a ser lida, dever´a ser precedida pelo caractere & ;
+Para sequˆencia de caracteres (%s), o caractere & n˜ao dever´a ser usado.
+Linguagem de Programa¸c˜ao C
+32/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Comandos B´asicos
+Linguagem C - Comandos B´asicos
+Linguagem de Programa¸c˜ao C
+33/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Tomada de Decis˜ao
+Linguagem C - Tomada de Decis˜ao
+if
+if-else
+switch
+Linguagem de Programa¸c˜ao C
+34/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Tomada de Decis˜ao
+Linguagem C - Tomada de Decis˜ao
+Fazer um programa que utilize if-else para dizer se uma pessoa ´e:
+Idosa (> 70)
+Adulta (> 21)
+Jovem (caso contr´ario)
+Linguagem de Programa¸c˜ao C
+35/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Tomada de Decis˜ao
+Linguagem C - Tomada de Decis˜ao
+Fazer um programa que utilize if-else para dizer o maior valor entre trˆes
+n´umeros.
+Linguagem de Programa¸c˜ao C
+36/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Tomada de Decis˜ao
+Linguagem C - Tomada de Decis˜ao
+Fazer um programa que utilize switch para dizer se uma pessoa ´e idosa
+(70 acima) ou adulta (70 abaixo).
+Linguagem de Programa¸c˜ao C
+37/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Utilizar o la¸co for para imprimir a tabuada de um determinado n´umero.
+Linguagem de Programa¸c˜ao C
+38/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Elabore tabela de Convers˜ao de temperaturas entre as escalas Celsius e
+Fahrnheit;
+Fahrnheit 0 - 300, incrementa em 20;
+celsius = (5.0/9.0) ∗(fahr −32);
+Linguagem de Programa¸c˜ao C
+39/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Comando while
+Semelhante ao Java j´a aprendido, o la¸co while signiﬁca enquanto;
+´E geralmente utilizado para se realizar repeti¸c˜oes quando n˜ao se pode
+determinar a quantidade de vezes que ser´a repetido o la¸co;
+while (condi¸c˜ao) { <instru¸c˜ao>; }
+Linguagem de Programa¸c˜ao C
+40/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Utilizando o comando while fa¸ca a contagem de 0 a 100 imprimindo na
+tela;
+Linguagem de Programa¸c˜ao C
+41/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Utilizando o comando while fa¸ca a contagem de 0 a 100 imprimindo na
+tela;
+Linguagem de Programa¸c˜ao C
+41/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Comando do-while
+O la¸co do-while signiﬁca fa¸ca enquanto;
+O diferencial desse la¸co ´e que o c´odigo dentro dele ´e executado pelo
+menos uma vez, mesmo que a condi¸c˜ao seja falsa;
+do { <instru¸c˜ao>; } while (condi¸c˜ao);
+Como ﬁcaria a contagem de 0 a 100?
+Linguagem de Programa¸c˜ao C
+42/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Linguagem de Programa¸c˜ao C
+43/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+La¸cos
+Linguagem C - La¸cos
+Exerc´ıcios
+1 Some, subtraia, multiplique e divida 10 com 15 e imprima na tela a seguinte frase:
+”O resultado da XX ´e: ” mostrando o resultado.
+2 Leia o nome e as duas notas de um aluno e apresente ambos na tela, juntamente
+com a m´edia.
+Linguagem de Programa¸c˜ao C
+44/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Conceitualmente, C ´e baseada em blocos de constru¸c˜ao;
+Assim sendo, um programa em C nada mais ´e que um conjunto de
+fun¸c˜oes b´asicas ordenadas pelo programador;
+As instru¸c˜oes printf( ) e scanf( ), vistas anteriormente, n˜ao fazem parte
+do conjunto de palavras padr˜oes da linguagem (instru¸c˜oes), pois n˜ao
+passam elas mesmas de fun¸c˜oes escritas em C!
+Linguagem de Programa¸c˜ao C
+45/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Esta abordagem permite a portabilidade da linguagem, pois seus
+comandos de entrada e sa´ıda, n˜ao s˜ao parte do conjunto b´asico da
+linguagem;
+Isso a livra dos problemas de suporte aos diversos padr˜oes de v´ıdeos,
+teclados e sistemas operacionais existentes;
+Cada fun¸c˜ao em C ´e uma sub-rotina, contendo um ou mais comandos em
+C ou executa uma ou mais tarefas.
+Linguagem de Programa¸c˜ao C
+46/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Uma fun¸c˜ao em C deve possuir um nome e uma lista de argumentos
+Linguagem de Programa¸c˜ao C
+47/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Exerc´ıcio: Fa¸ca o quadrado de um n´umero utilizando uma fun¸c˜ao.
+Linguagem de Programa¸c˜ao C
+48/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Exerc´ıcio: Fa¸ca o quadrado de um n´umero utilizando uma fun¸c˜ao.
+Linguagem de Programa¸c˜ao C
+48/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+O c´odigo do exerc´ıcio anterior possui um erro, lembre-se de passar os
+parˆametros nas fun¸c˜oes!
+Linguagem de Programa¸c˜ao C
+49/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Argumento: se refere ao valor que ´e usado para chamar uma fun¸c˜ao;
+Parˆametro: se refere `a vari´avel em uma fun¸c˜ao que recebe o valor dos
+argumentos usados na fun¸c˜ao;
+A distin¸c˜ao que deve ser compreendida ´e que a vari´avel usada como
+argumento na chamada de uma fun¸c˜ao n˜ao tem nenhuma rela¸c˜ao com o
+parˆametro formal que recebe o valor dessa vari´avel.
+Linguagem de Programa¸c˜ao C
+50/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+A declara¸c˜ao de uma fun¸c˜ao quando feita no inicio de um programa em C
+´e dita prot´otipo da fun¸c˜ao;
+Esta declara¸c˜ao deve ser feita sempre antes da fun¸c˜ao main, deﬁnindo-se
+o tipo, o nome e os argumentos desta mesma fun¸c˜ao. Exemplo:
+ﬂoat soma (ﬂoat, ﬂoat);
+O prot´otipo indica ao compilador C que a fun¸c˜ao est´a deﬁnida em outro
+local do c´odigo.
+Linguagem de Programa¸c˜ao C
+51/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+VAMOS CONCERTAR A FUNC¸ ˜AO DA RAIZ QUADRADA!
+Linguagem de Programa¸c˜ao C
+52/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Fun¸c˜oes
+Fun¸c˜ao Recursiva
+Uma fun¸c˜ao denomina-se recursiva quando dentro dela se faz uma
+chamada para ela mesma;
+Um exemplo pr´atico seria o c´alculo do fatorial de um n´umero.
+Fa¸ca esse exemplo utilizando o do-while! Obs: La¸co inﬁnito, repetindo a
+fun¸c˜ao at´e que o usu´ario digite um n´umero negativo!)
+Linguagem de Programa¸c˜ao C
+53/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Uma Matriz ´e um conjunto de vari´aveis de mesmo tipo que compartilham
+um mesmo nome;
+Com Matriz agora podemos armazenar mais de um valor para depois
+serem manipulados atrav´es de um ´ındice;
+ESSE ´INDICE REFERENCIA UM DOS ELEMENTOS!
+Linguagem de Programa¸c˜ao C
+54/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Para criar uma matriz:
+Deﬁnir um tipo;
+Deﬁnir um nome;
+Deﬁnir a quantidade de elementos ([ ]);
+int mat[5];
+Linguagem de Programa¸c˜ao C
+55/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Referenciando elementos de uma matriz:
+x = mat[10];
+Linguagem de Programa¸c˜ao C
+56/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Referenciando elementos de uma matriz:
+x = mat[10]; x recebe o elemento de mat na posi¸c˜ao 10;
+mat[10] = 20;
+Linguagem de Programa¸c˜ao C
+56/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Referenciando elementos de uma matriz:
+x = mat[10]; x recebe o elemento de mat na posi¸c˜ao 10;
+mat[10] = 20; o elemento de mat na posi¸c˜ao 10 recebe o valor 20;
+Linguagem de Programa¸c˜ao C
+56/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Inicializa¸c˜ao de matrizes:
+Matriz inicializada com os valores 1,2 e 3:
+int mat[3] = 1;2;3;
+Linguagem de Programa¸c˜ao C
+57/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Matrizes
+Inicializa¸c˜ao de matrizes:
+Matriz inicializada com os valores 1,2 e 3:
+int mat[3] = 1;2;3;
+Exerc´ıcio: Implementar um programa que calcula a media de trˆes notas
+utilizando uma matriz.
+Linguagem de Programa¸c˜ao C
+57/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+O que ´e um ponteiro?
+O ponteiro nada mais ´e do que uma vari´avel que guarda o endere¸co de outra
+vari´avel.
+Declarando um ponteiro:
+int *ptr;
+Essa declara¸c˜ao deﬁne a vari´avel ptr como um ponteiro para uma vari´avel do
+tipo int (n´umero inteiro).
+Linguagem de Programa¸c˜ao C
+58/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+Inicializando um ponteiro:
+Para se inicializar um ponteiro ´e necess´ario apenas atribuir-se um endere¸co de
+mem´oria.
+Linguagem de Programa¸c˜ao C
+59/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+Linguagem de Programa¸c˜ao C
+60/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+Com ptr apontando para var, ´e poss´ıvel realizar opera¸c˜oes com esta
+´ultima de forma indireta, a partir de ptr:
+int newVar = *ptr;
+Linguagem de Programa¸c˜ao C
+61/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+Com ptr apontando para var, ´e poss´ıvel realizar opera¸c˜oes com esta
+´ultima de forma indireta, a partir de ptr:
+int newVar = *ptr;
+*ptr = 20;
+Linguagem de Programa¸c˜ao C
+61/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Ponteiros
+Com ptr apontando para var, ´e poss´ıvel realizar opera¸c˜oes com esta
+´ultima de forma indireta, a partir de ptr:
+int newVar = *ptr;
+*ptr = 20;
+Exerc´ıcio: Crie um programa que solicite ao usu´ario 2 n´umeros e retorne a
+soma. As opera¸c˜oes devem ser feitas utilizando ponteiros.
+Linguagem de Programa¸c˜ao C
+61/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Exerc´ıcios para ﬁxa¸c˜ao - Fun¸c˜oes
+1 Fazer um programa que calcule o volume de uma esfera, sendo que o
+volume de uma esfera ´e raio*raio*raio. Crie uma fun¸c˜ao que fa¸ca esse
+c´alculo.
+2 Elabore programa que leia “n” n´umeros digitados e apresente sua m´edia.
+3 Escreva uma fun¸c˜ao que receba dois n´umeros e retorne o menor n´umero.
+4 Fa¸ca uma fun¸c˜ao que recebe a idade de uma pessoa em anos, meses e
+dias e retorna essa idade expressa em dias.
+Linguagem de Programa¸c˜ao C
+62/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Exerc´ıcios para ﬁxa¸c˜ao - Matrizes
+1 Fa¸ca um programa que tenha uma matriz (vetor) denominada A que
+armazene 6 n´umeros inteiros. O programa deve executar os seguintes
+passos:
+Atribua os seguintes valores ao vetor: 1, 0, 5, -2, -5, 7;
+Armazene em uma vari´avel inteira simples a soma entre os valores das posi¸c˜oes
+A[0], A[1] e A[5] da matriz e mostre na tela;
+Modiﬁque a posi¸c˜ao 4, atribuindo o valor 100;
+Mostre na tela cada valor do vetor A, um em cada linha.
+Linguagem de Programa¸c˜ao C
+63/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+Linguagem C - Exerc´ıcios para ﬁxa¸c˜ao - Matrizes
+1 Fa¸ca um programa que tenha uma fun¸c˜ao que leia uma matriz (vetor) de
+10 posi¸c˜oes e conte quantos n´umeros pares ele possui.
+2 Fa¸ca uma fun¸c˜ao que leia uma matriz 4x4, conte e escreva quantos
+valores maiores que 10 ela possui.
+Linguagem de Programa¸c˜ao C
+64/65
+Estrutura de Dados
+Linguagem de Programa¸c˜ao C
+Fun¸c˜oes, matrizes, ponteiros e arquivos
+D´uvidas?
+D´uvidas?
+Linguagem de Programa¸c˜ao C
+65/65

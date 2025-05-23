@@ -1,0 +1,148 @@
+{
+  "titulo": "SQL",
+  "disciplina": "",
+  "ementa": [],
+  "topicos": [
+    {
+      "titulo": "Ligado a parte estrutural de um banco de",
+      "palavras-chave": [],
+      "conteudo": [
+        "dados;",
+        "Restrições de Integridade;",
+        "Comandos: Create, Drop, Alter;",
+        " que se cria uma tabela, adiciona novas",
+        "colunas, etc.",
+        "DML",
+        "Data Manipulation Language",
+        "DML",
+        "Linguagem de manipulação de dados;",
+        "Relacionada com a operação dos dados;",
+        "Comandos: Insert, Update, Select, Delete;",
+        "É através dos comandos DML que inserimos,",
+        "atualizamos, selecionamos e excluímos dados.",
+        "Primeiros Passos",
+        "Inicialmente é necessário criar uma base de",
+        "dados, para isso, utiliza-se o comando:",
+        "CREATE DATABASE nomeDatabase;",
+        "  ",
+        "subsecoes",
+        []
+      ]
+    },
+    {
+      "titulo": "Tipos de Dados",
+      "palavras-chave": [],
+      "conteudo": [
+        "Char: quantidade de caracteres definida;",
+        "Varchar: quantidade de caracteres variável;",
+        "Text: texto longo;",
+        "Int: número inteiro;",
+        "Float: números reais;",
+        "Double: números reais (maior precisão);",
+        "Boolean: booleano;",
+        "Date: data;",
+        "Time: hora;",
+        "Timestamp: data e hora."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Inicialmente é necessário criar uma base de  ",
+      "palavras-chave": [],
+      "conteudo": [
+        "dados, para isso, utiliza-se o comando:",
+        "CREATE DATABASE nomeDatabase;",
+        "  ",
+        " Sempre que quisermos utilizar uma base de",
+        "dados é necessário executar o seguinte ",
+        "comando:",
+        "USE nomeDatabase;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "CREATE TABLE  ",
+      "palavras-chave": [],
+      "conteudo": [
+        "CREATE TABLE curso(",
+        "id_curso INT AUTO_INCREMENT NOT NULL,"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "INSERT  ",
+      "palavras-chave": [],
+      "conteudo": [
+        "Comando utilizado para inserir dados na",
+        "tabela;",
+        "  ",
+        "Ex.:",
+        "INSERT INTO curso(nome, sigla, descricao, ativo,"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "ativo, salario_previsto, mensalidade, data_inicio,"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "SELECT  ",
+      "palavras-chave": [],
+      "conteudo": [
+        " De forma geral, comando utilizado para trazer",
+        "dados;",
+        "  ",
+        "Ex.:",
+        "SELECT * FROM curso;",
+        "  ",
+        "WHERE;",
+        "  ",
+        "ORDER BY;",
+        "  ",
+        "LIMIT;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "UPDATE",
+        "  ",
+        "Utilizado para atualizar/editar dados nas",
+        "tabelas;",
+        "  ",
+        "Ex.:",
+        "UPDATE curso SET nome = 'Análise de Sistemas',",
+        "sigla = 'AS'"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "UPDATE curso SET nome = ‘Análise de Sistemas’,",
+        "sigla = ‘AS’ WHERE id_curso = 1;",
+        "DELETE",
+        "Utilizado para excluir registros das tabelas;",
+        "Tomem bastante cuidado ao utilizar esse",
+        "comando;",
+        "Ex.:",
+        "DELETE FROM curso WHERE id_curso = 1;"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "É através dos comandos DDL, por exemplo,",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "titulo": "SQL",
+  "disciplina": "",
+  "ementa": [],
+  "topicos": [
+    {
+      "titulo": "SQL",
+      "palavras-chave": [
+        "SQL"
+      ],
+      "conteudo": [
+        "SQL; SQL; DDL; DML; Data Definition Language; Data Manipulation Language; Char: quantidade de caracteres definida;",
+        "Varchar: quantidade de caracteres variável;",
+        "Text: texto longo;",
+        "Int: número inteiro;",
+        "Float: números reais;",
+        "Double: números reais (maior precisão);",
+        "Boolean: booleano;",
+        "Date: data;",
+        "Time: hora;",
+        "Timestamp: data e hora.",
+        "Ligado a parte estrutural de um banco de dados; Restrições de Integridade;",
+        "Comandos: Create, Drop, Alter;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "DML",
+      "palavras-chave": [
+        "SQL"
+      ],
+      "conteudo": [
+        "Linguagem de manipulação de dados; Relacionada com a operação dos dados;",
+        "Comandos: Insert, Update, Select, Delete;",
+        "É através dos comandos DML que inserimos,",
+        "atualizamos, selecionamos e excluímos dados."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "DML",
+      "palavras-chave": [
+        "SQL"
+      ],
+      "conteudo": [
+        "Linguagem de manipulação de dados; Relacionada com a operação dos dados;",
+        "Comandos: Insert, Update, Select, Delete;",
+        "É através dos comandos DML que inserimos,",
+        "atualizamos, selecionamos e excluímos dados."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "UPDATE curso SET nome = ‘Análise de Sistemas’,",
+      "palavras-chave": [],
+      "conteudo": [
+        "sigla = ‘AS’;",
+        "X"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "UPDATE curso SET nome = ‘Análise de Sistemas’,",
+      "palavras-chave": [],
+      "conteudo": [
+        "sigla = ‘AS’ WHERE id_curso = 1;",
+        "DELETE FROM curso WHERE id_curso = 1; X DELETE FROM curso;"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "É através dos comandos DDL, por exemplo,",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ]
+}

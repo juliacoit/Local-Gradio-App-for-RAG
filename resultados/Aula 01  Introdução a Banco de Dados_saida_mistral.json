@@ -1,0 +1,180 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "disciplina": "",
+  "ementa": [
+    "Aula 01 – Introdução a Banco de Dados",
+    "Ementa da Disciplina",
+    "Conceitos Básicos de Banco de Dados:",
+    "Definição de Banco de Dado;",
+    "Terminologia básica;",
+    "Usuários de Banco de Dado;",
+    "Aplicações;",
+    "Abstração de dados Esquema;",
+    "Instância.",
+    "Sistemas de Gerenciamento de Banco de Dado (SGBD):",
+    "Conceito de SGBD;",
+    "Vantagens do SGBD;",
+    "Comparação com o Sistema de Arquivos.",
+    "Aspectos de modelagem de dados:",
+    "Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;",
+    "Métodos e técnicas; Objetivo da modelagem;",
+    "Abstração; Coleta de requisitos;",
+    "Análise de requisitos; Categorias de modelos.",
+    "Ementa da Disciplina",
+    "Modelo Conceitual de dados:",
+    "Abordagem entidade-relacionamento (ER);  ",
+    "Entidades;Atributos; Relacionamentos;",
+    "Cardinalidade de relacionamentos;",
+    "Diagrama entidade-relacionamento (DER).",
+    "Modelo Relacional:",
+    "Nomenclatura do Modelo Relacional;",
+    "Domínio;",
+    "Relações;",
+    "Chaves;",
+    "Restrições de Integridade;",
+    "Esquemas de Relação.",
+    "Mapeamento entre modelos de dados:",
+    "Equivalência entre os Modelos Entidade-Relacionamento e Relacional;",
+    "Regras para o mapeamento."
+  ],
+  "topicos": [
+    {
+      "titulo": "Sistemas de Gerenciamento de Banco de Dado (SGBD)",
+      "palavras-chave": [],
+      "conteudo": [
+        "Conceito de SGBD;",
+        "Vantagens do SGBD;",
+        "Comparação com o Sistema de Arquivos."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Aspectos de modelagem de dados:",
+        "Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Aspectos de modelagem de dados:",
+        "Métodos e técnicas; Objetivo da modelagem;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Aspectos de modelagem de dados:",
+        "Abstração; Coleta de requisitos;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Aspectos de modelagem de dados:",
+        "Análise de requisitos; Categorias de modelos."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Conceitual de dados:",
+        "Abordagem entidade-relacionamento (ER);",
+        "Entidades;Atributos; Relacionamentos;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Conceitual de dados:",
+        "Cardinalidade de relacionamentos;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Conceitual de dados:",
+        "Diagrama entidade-relacionamento (DER)."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Relacional:",
+        "Nomenclatura do Modelo Relacional;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Relacional:",
+        "Domínio;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Relacional:",
+        "Relações;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Relacional:",
+        "Chaves;",
+        "Restrições de Integridade;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Relacional:",
+        "Esquemas de Relação."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Mapeamento entre modelos de dados:",
+        "Equivalência entre os Modelos Entidade-Relacionamento e Relacional;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "palavras-chave": [],
+      "conteudo": [
+        "Mapeamento entre modelos de dados:",
+        "Regras para o mapeamento."
+      ],
+      "subsecoes": []
+    }
+  ]
+}

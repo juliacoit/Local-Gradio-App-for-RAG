@@ -14,6 +14,20 @@ MAX_INPUT_SIZE = 8000
 OVERLAP = 200
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, "json", "template.json")
+KEYWORDS = {
+    "ementa": [
+        "ementa", "objetivo", "introdução", "fundamentos", "conceitos", "proposta", "conteúdo programático"
+    ],
+    "topico": [
+        "tópico", "tema", "assunto", "estrutura", "arquitetura", "componente", "modelo", "abordagem", "técnica", "estratégia"
+    ],
+    "exemplo": [
+        "exemplo", "exemplificação", "demonstração", "caso", "código", "aplicação"
+    ],
+    "subsecao": [
+        "detalhe", "subtópico", "aspecto", "variação", "tipo", "subclasse", "submodelo"
+    ]
+}
 
 list_slms = ["gemma3", "llama3", "mistral"]
 
@@ -49,50 +63,70 @@ def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
 
     return chunks
 
-# Função para estruturar qualquer texto extraído
 def structure_text(text):
-    lines = text.split("\n")
+    lines = [l.strip() for l in text.split("\n") if l.strip()]
+    
     structured_data = {
-        "titulo": "",
-        "autor": "",
-        "conteudo": []
+        "titulo": lines[0] if lines else "",
+        "disciplina": "",
+        "ementa": [],
+        "topicos": [],
+        "exemplos": []
     }
 
-    current_section = None
-    candidate_titles = []
+    current_topico = None
 
-    for i, line in enumerate(lines):
-        line = line.strip()
+    def detect_type(line):
+        l = line.lower()
+        for k, palavras in KEYWORDS.items():
+            for p in palavras:
+                if p in l:
+                    return k
+        return None
 
-        if not structured_data["autor"] and re.search(r"(Prof\\.|Professor[a]?)", line, re.IGNORECASE):
-            structured_data["autor"] = line
-            continue
+    for line in lines[1:]:
+        tipo = detect_type(line)
 
-        if i < 5 and 10 < len(line) < 100 and not re.search(r"(prof\\.|instituto|ifba|ifma|ifrn|campus|colegio|escola)", line, re.IGNORECASE):
-            candidate_titles.append(line)
+        if tipo == "ementa":
+            structured_data["ementa"].append(line)
 
-        if len(line) < 60 and line.isupper():
-            current_section = {"secao": line, "conteudo": []}
-            structured_data["conteudo"].append(current_section)
-            continue
+        elif tipo == "exemplo":
+            structured_data["exemplos"].append({
+                "descricao": line,
+                "codigo": "",
+                "explicacao": ""
+            })
 
-        if line.startswith("\u2022") or line.startswith("- "):
-            if not current_section:
-                current_section = {"secao": "Tópicos", "conteudo": []}
-                structured_data["conteudo"].append(current_section)
-            current_section["conteudo"].append(line)
-            continue
+        elif tipo == "topico":
+            if current_topico:
+                structured_data["topicos"].append(current_topico)
+            current_topico = {
+                "titulo": line,
+                "palavras-chave": [],
+                "conteudo": [],
+                "subsecoes": []
+            }
 
-        if current_section:
-            current_section["conteudo"].append(line)
+        elif tipo == "subsecao":
+            if current_topico:
+                current_topico["subsecoes"].append({
+                    "titulo": line,
+                    "conteudo": []
+                })
 
-    if candidate_titles and not structured_data["titulo"]:
-        structured_data["titulo"] = max(candidate_titles, key=len)
+        else:
+            if current_topico:
+                if current_topico["subsecoes"]:
+                    current_topico["subsecoes"][-1]["conteudo"].append(line)
+                else:
+                    current_topico["conteudo"].append(line)
 
-    print("Texto estruturado:", structured_data)
+    if current_topico:
+        structured_data["topicos"].append(current_topico)
+    safe_print(f"\n===== Texto estruturado =====\n{json.dumps(structured_data, indent=2, ensure_ascii=False)}\n")
     return structured_data
 
-# Normaliza e limpa JSON
+ #Normaliza e limpa JSON
 def clean_json_text(text):
     text = re.sub(r'[\x00-\x1F]+', '', text)
     text = re.sub(r'\s+', ' ', text)
@@ -102,39 +136,57 @@ def normalize_text(text):
     return unicodedata.normalize("NFC", text)
 
 def generate_prompt(model_name, template, current, text):
+    prompt_context = (
+        "Você é um assistente que está extraindo informações educacionais de um texto longo, em partes (chunks).\n"
+        "A cada etapa, você recebe:\n"
+        "- Um modelo JSON com o formato final esperado\n"
+        "- Um JSON parcial já preenchido até agora (chamado de \"estado atual\")\n"
+        "- Um novo trecho de texto (chunk) com informações adicionais\n\n"
+        "Sua tarefa é **completar e atualizar o JSON atual** com base no novo texto fornecido, **mantendo o que já está preenchido**.\n\n"
+        "! Retorne **apenas o JSON atualizado**. Não adicione explicações nem comentários.\n"
+    )
+
     if model_name == "gemma3":
         return f"""<|system|>
-Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:
-<|end|>
-<|user|>
-### Template:
+{prompt_context}
+Modelo JSON esperado:
 {template}
-### Current:
+
+JSON atual:
 {current}
-### Text:
+
+Novo texto:
 {text}
 <|end|>
 <|assistant|>"""
+
     elif model_name == "llama3":
         return f"""<|start_header_id|>system<|end_header_id|>
-Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:<|eot_id|>
-<|start_header_id|>user<|end_header_id|>
-### Template:
+{prompt_context}
+Modelo JSON esperado:
 {template}
-### Current:
-{current}
-### Text:
-{text}<|eot_id|>
-<|start_header_id|>assistant<|end_header_id|>"""
-    elif model_name == "mistral":
-        return f"""[INST] Leia o texto abaixo e retorne os dados extraídos no seguinte formato JSON, sem explicações ou comentários:
 
-### Template:
-{template}
-### Current:
+JSON atual:
 {current}
-### Text:
-{text} [/INST]"""
+
+Novo texto:
+{text}
+<|eot_id|>
+<|start_header_id|>assistant<|end_header_id|>"""
+
+    elif model_name == "mistral":
+        return f"""[INST]
+{prompt_context}
+Modelo JSON esperado:
+{template}
+
+JSON atual:
+{current}
+
+Novo texto:
+{text}
+[/INST]"""
+
     else:
         raise ValueError(f"Modelo {model_name} não suportado.")
 
@@ -282,6 +334,7 @@ def processar_tudo(pdf_file):
         print(f"\n========= Processando com modelo: {modelo} =========")
         current = current_json
         for chunk in chunks:
+            print(f"\n===== Processando chunk =====")
             current = predict_chunk(chunk, template, current, modelo)
 
         try:

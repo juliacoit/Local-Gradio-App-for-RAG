@@ -1,0 +1,143 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "autor": "Prof. Esp. Marcos Brito",
+  "ementa": [
+    "Definição de Banco de Dados",
+    "Terminologia básica",
+    "Usuários de Banco de Dados",
+    "Aplicações",
+    "Abstração de dados Esquema",
+    "Instância"
+  ],
+  "topicos": [
+    {
+      "titulo": "Sistemas de Gerenciamento de Banco de Dados (SGBD):",
+      "palavras-chave": [
+        "SGBD",
+        "Conceito",
+        "Vantagens",
+        "Sistema de Arquivos"
+      ],
+      "conteudo": [
+        "Conceito de SGBD",
+        "Vantagens do SGBD",
+        "Comparação com o Sistema de Arquivos"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Aspectos de modelagem de dados:",
+      "palavras-chave": [
+        "Modelo de Dados",
+        "Minimundo",
+        "Métodos e técnicas",
+        "Objetivo da modelagem",
+        "Abstração",
+        "Coleta de requisitos",
+        "Análise de requisitos",
+        "Categorias de modelos"
+      ],
+      "conteudo": [
+        "Conceito de Modelo de Dados",
+        "Conhecimento e especificação do minimundo",
+        "Métodos e técnicas",
+        "Objetivo da modelagem",
+        "Abstração",
+        "Coleta de requisitos",
+        "Análise de requisitos",
+        "Categorias de modelos"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Modelo Conceitual de dados:",
+      "palavras-chave": [
+        "Modelo Entidade-Relacionamento",
+        "DER",
+        "Entidades",
+        "Atributos",
+        "Relacionamentos",
+        "Cardinalidade de relacionamentos",
+        "Diagrama entidade-relacionamento"
+      ],
+      "conteudo": [
+        "Abordagem entidade-relacionamento (ER)",
+        "Entidades",
+        "Atributos",
+        "Relacionamentos",
+        "Cardinalidade de relacionamentos",
+        "Diagrama entidade-relacionamento (DER)"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Modelo Relacional:",
+      "palavras-chave": [
+        "Nomenclatura do Modelo Relacional",
+        "Domínio",
+        "Relações",
+        "Chaves",
+        "Restrições de Integridade",
+        "Esquemas de Relação"
+      ],
+      "conteudo": [
+        "Nomenclatura do Modelo Relacional",
+        "Domínio",
+        "Relações",
+        "Chaves",
+        "Restrições de Integridade",
+        "Esquemas de Relação"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Mapeamento entre modelos de dados:",
+      "palavras-chave": [
+        "Equivalência entre os Modelos Entidade-Relacionamento e Relacional",
+        "Regras para o mapeamento"
+      ],
+      "conteudo": [
+        "Equivalência entre os Modelos Entidade-Relacionamento e Relacional",
+        "Regras para o mapeamento"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "Seleção",
+      "codigo": "Seleciona os registros de acordo com uma condição estabelecida; id_estado = 2 (tab_cantor)",
+      "explicacao": "Seleciona registros da tabela `tab_cantor` onde o valor da coluna `id_estado` é igual a 2."
+    },
+    {
+      "descricao": "Projeção",
+      "codigo": "π nome (tab_estado)",
+      "explicacao": "Projeta apenas a coluna 'nome' da tabela `tab_estado`, eliminando as demais colunas."
+    },
+    {
+      "descricao": "União",
+      "codigo": "(π id(tab_cantor)) (π id(tab_estado))",
+      "explicacao": "União das colunas 'id' das tabelas `tab_cantor` e `tab_estado`."
+    },
+    {
+      "descricao": "Diferença",
+      "codigo": "(π id(tab_cantor)) - (π id(tab_estado))",
+      "explicacao": "Retorna apenas os registros que contêm na tabela `tab_cantor` mas que não contêm na tabela `tab_estado`."
+    },
+    {
+      "descricao": "Produto Cartesiano",
+      "codigo": "tab_cantor x tab_estado",
+      "explicacao": "Todas as linhas da primeira tabela com todas as linhas da segunda tabela."
+    },
+    {
+      "descricao": "Junção",
+      "codigo": "tab_cantor ⋈ (tab_cantor.id_estado = tab_estado.id) tab_estado",
+      "explicacao": "Junção de registros entre tabelas de forma organizada e estabelecida."
+    },
+    {
+      "descricao": "Renomear",
+      "codigo": "tab_cantor_nordeste (tab_cantor)",
+      "explicacao": "Renomeia a tabela `tab_cantor` para `tab_cantor_nordeste`."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about SQL. Let me start by understanding the structure of the content. The topics include SQL, DDL, DML, and some examples of UPDATE and DELETE commands.
+
+First, I'll look at the key concepts. DDL commands like CREATE, DROP, ALTER are mentioned. DML commands are INSERT, UPDATE, SELECT, DELETE. Data types like CHAR, VARCHAR, TEXT, INT, FLOAT, DOUBLE, BOOLEAN, DATE, TIME, TIMESTAMP are listed. Also, there are examples of UPDATE and DELETE statements with WHERE clauses.
+
+For the questions, I should cover these areas. Let me brainstorm possible questions. 
+
+Question 1: What is DDL used for? The options can be about data manipulation, data definition, etc. The correct answer is data definition, which includes CREATE, DROP, ALTER.
+
+Question 2: Which data type is used for variable-length strings? The options are CHAR, VARCHAR, TEXT, etc. The answer is VARCHAR.
+
+Question 3: Which command is used to update data in a table? The options are UPDATE, DELETE, INSERT, SELECT. The correct answer is UPDATE.
+
+Question 4: What does the DELETE command do? The options are to add, modify, delete, or select data. The answer is delete.
+
+Question 5: Which command is used to retrieve data? The options are SELECT, INSERT, UPDATE, DELETE. The answer is SELECT.
+
+I need to make sure each question has four alternatives, the correct answer is clearly indicated, and the explanation is concise. Let me check the content again to ensure accuracy. For example, the UPDATE example includes a WHERE clause, so the question about the DELETE command should mention the WHERE clause. Also, the data types are covered in the first topic. Alright, I think that's all. Let me format each question as per the user's instructions.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual é a função principal do DDL em SQL?  
+
+a) Manipular dados existentes (como inserir, atualizar ou excluir)  
+b) Definir a estrutura do banco de dados (como criar, alterar ou excluir tabelas)  
+c) Realizar consultas para recuperar dados  
+d) Gerenciar permissões de acesso ao banco de dados  
+
+**Resposta correta:** b  
+**Explicação:** DDL (Data Definition Language) é responsável por definir a estrutura do banco de dados, incluindo comandos como CREATE, DROP e ALTER.  
+
+---  
+**2. Pergunta:**  
+Qual dos seguintes é um tipo de dado em SQL utilizado para armazenar textos de comprimento variável?  
+
+a) CHAR  
+b) VARCHAR  
+c) DATE  
+d) BOOLEAN  
+
+**Resposta correta:** b  
+**Explicação:** VARCHAR é usado para armazenar strings de comprimento variável, enquanto CHAR tem tamanho fixo. DATE e BOOLEAN são tipos para datas e valores lógicos, respectivamente.  
+
+---  
+**3. Pergunta:**  
+Qual comando SQL é utilizado para atualizar dados em uma tabela?  
+
+a) DELETE  
+b) SELECT  
+c) UPDATE  
+d) INSERT  
+
+**Resposta correta:** c  
+**Explicação:** O comando UPDATE é usado para modificar dados existentes em uma tabela, enquanto DELETE remove dados, SELECT recupera dados e INSERT adiciona novos registros.  
+
+---  
+**4. Pergunta:**  
+O que o comando DELETE faz em um banco de dados?  
+
+a) Adiciona novos registros a uma tabela  
+b) Atualiza valores existentes em uma tabela  
+c) Remove registros de uma tabela  
+d) Recupera dados de uma tabela  
+
+**Resposta correta:** c  
+**Explicação:** O comando DELETE remove registros de uma tabela. Para evitar exclusões acidentais, é comum usar a cláusula WHERE para especificar quais registros devem ser excluídos.  
+
+---  
+**5. Pergunta:**  
+Qual comando SQL é usado para recuperar dados de uma tabela?  
+
+a) INSERT  
+b) UPDATE  
+c) DELETE  
+d) SELECT  
+
+**Resposta correta:** d  
+**Explicação:** O comando SELECT é usado para consultar e recuperar dados de uma tabela, sendo o mais comum em operações de leitura em SQL.

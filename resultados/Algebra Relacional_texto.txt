@@ -1,0 +1,101 @@
+Álgebra Relacional 
+Prof. Esp. Marcos Brito
+Ementa da Disciplina 
+Conceitos Básicos de Banco de Dados:  
+Definição de Banco de Dados;  
+Terminologia básica;  
+Usuários de Banco de Dados;  
+Aplicações;  
+Abstração de dados Esquema;  
+Instância.  
+Sistemas de Gerenciamento de Banco de Dados (SGBD):  
+Conceito de SGBD;  
+Vantagens do SGBD;  
+Comparação com o Sistema de Arquivos.  
+Aspectos de modelagem de dados:  
+Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;  
+Métodos e técnicas;  Objetivo da modelagem;  
+Abstração; Coleta de requisitos;  
+Análise de requisitos; Categorias de modelos.
+Ementa da Disciplina 
+Modelo Conceitual de dados:  
+Abordagem entidade-relacionamento (ER); 
+Entidades;Atributos; Relacionamentos; 
+Cardinalidade de relacionamentos;  
+Diagrama entidade-relacionamento (DER).  
+Modelo Relacional:  
+Nomenclatura do Modelo Relacional;  
+Domínio;  
+Relações;  
+Chaves;  
+Restrições de Integridade;  
+Esquemas de Relação.  
+Mapeamento entre modelos de dados:  
+Equivalência entre os Modelos Entidade-Relacionamento e Relacional;  
+Regras para o mapeamento.
+Ementa da Disciplina 
+Álgebra Relacional:  
+Conceito de Álgebra Relacional;  
+Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano.  
+Renomear;  
+Junção.  
+Linguagem de Definição de Dados (DDL):  
+Tipo de Dados em SQL;  
+Comandos: Create, Drop, Alter;  
+Restrições: Integridade de Domínio, Integridade de entidade, Integridade de 
+Chave, Integridade Referencial.  
+Linguagem de Manipulação de Dados (DML):  
+Comandos: Insert, Delete, Update, Select;  
+Visões.  
+Projeto e implementação de um Banco de Dados:  
+Criação de um Banco de Dados a partir de um minimundo real escolhido
+Álgebra Relacional 
+Proposta por Edgar Frank Codd; 
+Base para o entendimento das operações de 
+um banco de dados relacional; 
+Uma parte relacionada com a teoria dos 
+conjuntos da Matemática; 
+Parte teórica de como operar um banco de 
+dados relacional;
+Edgar Frank Codd
+Operações 
+Seleção(   ); 
+Projeção (π);  
+União (   ); 
+Diferença (-);  
+Produto Cartesiano (x); 
+Junção (⋈); 
+Renomear (    ).
+
+
+Seleção 
+Seleciona os registros de acordo com uma 
+condição estabelecida; 
+     id_estado = 2 (tab_cantor)
+Projeção 
+Especificação de colunas; 
+Linhas duplicadas são eliminadas; 
+π nome (tab_estado)
+União 
+União das tabelas envolvidas 
+  (π id(tab_cantor))        (π id(tab_estado))
+Diferença 
+Retorna apenas os registros que contém na 
+primeira tabela, mas que não contem na 
+segunda. 
+(π id(tab_cantor)) - (π id(tab_estado))
+Produto Cartesiano 
+Todas as linhas da primeira tabela com todas 
+as linhas da outra tabela; 
+tab_cantor x tab_estado
+Produto Cartesiano
+Junção 
+Junção de registros entre tabelas de forma 
+organizada e estabelecida; 
+tab_cantor ⋈ (tab_cantor.id_estado = 
+tab_estado.id) tab_estado
+Renomear 
+Renomear tabela; 
+    tab_cantor_nordeste (tab_cantor)
+Exercícios
+

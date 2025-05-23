@@ -1,0 +1,79 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about database basics. Let's start by understanding the structure of the JSON. The main topics are Modelo Conceitual de dados, Modelo Relacional, and Álgebra Relacional. The Álgebra Relacional section has several operations like Seleção, Projeção, União, Diferença, Produto Cartesiano, and Renomear, each with examples.
+
+First question: Maybe focus on the Modelo Conceitual de dados. The key terms include Entidades, Atributos, Relacionamentos, Cardinalidade, and DER. So a question about identifying an entity in an ER diagram. The answer would be something like "Cliente" as an example of an entity.
+
+Second question: Modelo Relacional. The keywords are Chaves, Restrições de Integridade, Esquemas de Relação. A question about primary key. The correct answer is the attribute that uniquely identifies a tuple.
+
+Third question: Álgebra Relacional. The operations include Seleção, which is selecting records based on a condition. The example given is "id_estado = 2". The question could ask which operation is used here, with Seleção as the correct answer.
+
+Fourth question: Produto Cartesiano. The example is tab_cantor x tab_estado. The question could ask which operation results in all combinations of rows from two tables. The answer is Produto Cartesiano.
+
+Fifth question: Diferença. The example is (π id(tab_cantor)) - (π id(tab_estado)). The question could ask which operation returns records present in the first table but not in the second. The answer is Diferença.
+
+Now, I need to structure each question with the given format, ensuring the correct answer is highlighted and the explanation is clear and concise. Let me check each question for accuracy and make sure the explanations align with the content provided.
+</think>
+
+---
+**1. Pergunta:**  
+No Modelo Conceitual de Dados (ER), qual dos seguintes é um exemplo de **entidade**?  
+
+a) CPF  
+b) Data de Nascimento  
+c) Cliente  
+d) Endereço  
+
+**Resposta correta:** c) Cliente  
+**Explicação:** Entidades representam objetos ou conceitos no mundo real, como "Cliente", "Funcionário" ou "Produto". Atributos, como CPF ou Data de Nascimento, são propriedades das entidades, enquanto Endereço pode ser um atributo ou parte de uma entidade composta.  
+
+---
+
+**2. Pergunta:**  
+No Modelo Relacional, qual é a função de uma **chave primária**?  
+
+a) Armazenar dados de múltiplas tabelas  
+b) Garantir a unicidade de um registro em uma tabela  
+c) Permitir a criação de relações entre tabelas  
+d) Definir o domínio de um atributo  
+
+**Resposta correta:** b) Garantir a unicidade de um registro em uma tabela  
+**Explicação:** A chave primária é um atributo ou conjunto de atributos que identificam univocamente cada linha (tupla) em uma tabela, evitando duplicidades.  
+
+---
+
+**3. Pergunta:**  
+Qual operação da Álgebra Relacional é usada para **selecionar registros com base em uma condição**?  
+
+a) União  
+b) Projeção  
+c) Seleção  
+d) Produto Cartesiano  
+
+**Resposta correta:** c) Seleção  
+**Explicação:** A operação **Seleção** (σ) filtra registros de uma tabela que atendem a uma condição específica, como "id_estado = 2". A Projeção (π) é usada para selecionar colunas.  
+
+---
+
+**4. Pergunta:**  
+Qual operação da Álgebra Relacional resulta em **todas as combinações possíveis de linhas entre duas tabelas**?  
+
+a) União  
+b) Diferença  
+c) Produto Cartesiano  
+d) Junção  
+
+**Resposta correta:** c) Produto Cartesiano  
+**Explicação:** O **Produto Cartesiano** combina cada linha da primeira tabela com todas as linhas da segunda tabela, gerando um número de registros igual ao produto do número de linhas das duas tabelas.  
+
+---
+
+**5. Pergunta:**  
+Qual operação da Álgebra Relacional **retorna apenas os registros presentes na primeira tabela, mas não na segunda**?  
+
+a) União  
+b) Diferença  
+c) Seleção  
+d) Junção  
+
+**Resposta correta:** b) Diferença  
+**Explicação:** A operação **Diferença** (−) retorna os registros da primeira tabela que não existem na segunda, como em (π id(tab_cantor)) − (π id(tab_estado)). A União combina registros de ambas as tabelas.

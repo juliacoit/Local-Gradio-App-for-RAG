@@ -1,0 +1,121 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "disciplina": "",
+  "ementa": [
+    "Definição de Banco de Dados;",
+    "Terminologia básica;",
+    "Usuários de Banco de Dados;",
+    "Aplicações;",
+    "Abstração de dados Esquema;",
+    "Instância.",
+    "Sistemas de Gerenciamento de Banco de Dados (SGBD): Conceito de SGBD; Vantagens do SGBD; Comparação com o Sistema de Arquivos.",
+    "Aspectos de modelagem de dados: Conceito de Modelo de Dados; Conhecimento e especificação do minimundo; Métodos e técnicas; Objetivo da modelagem; Abstração; Coleta de requisitos; Análise de requisitos; Categorias de modelos.",
+    "Modelo Conceitual de dados: Abordagem entidade-relacionamento (ER); Entidades; Atributos; Relacionamentos; Cardinalidade de relacionamentos; Diagrama entidade-relacionamento (DER).",
+    "Modelo Relacional: Nomenclatura do Modelo Relacional; Domínio; Relações; Chaves; Restrições de Integridade; Esquemas de Relação.",
+    "Mapeamento entre modelos de dados: Equivalência entre os Modelos Entidade-Relacionamento e Relacional; Regras para o mapeamento.",
+    "Álgebra Relacional: Conceito de Álgebra Relacional; Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano. Renomear;",
+    "Linguagem de Definição de Dados (DDL): Tipo de Dados em SQL; Comandos: Create, Drop, Alter; Restrições: Integridade de Domínio, Integridade de entidade, Integridade de Chave, Integridade Referencial.",
+    "Linguagem de Manipulação de Dados (DML): Comandos: Insert, Delete, Update, Select;",
+    "Projeto e implementação de um Banco de Dados:",
+    "Álgebra Relacional"
+  ],
+  "topicos": [
+    {
+      "titulo": "Modelo Conceitual de dados",
+      "palavras-chave": [
+        "Abordagem entidade-relacionamento (ER); Entidades; Atributos; Relacionamentos; Cardinalidade de relacionamentos; Diagrama entidade-relacionamento (DER)"
+      ],
+      "conteudo": [],
+      "subsecoes": [
+        {
+          "titulo": "Conceito de Modelo de Dados",
+          "conteudo": []
+        },
+        {
+          "titulo": "Métodos e técnicas",
+          "conteudo": []
+        }
+      ]
+    },
+    {
+      "titulo": "Modelo Relacional",
+      "palavras-chave": [
+        "Nomenclatura do Modelo Relacional; Domínio; Relações; Chaves; Restrições de Integridade; Esquemas de Relação"
+      ],
+      "conteudo": [],
+      "subsecoes": [
+        {
+          "titulo": "",
+          "conteudo": []
+        }
+      ]
+    },
+    {
+      "titulo": "Álgebra Relacional",
+      "palavras-chave": [
+        "Conceito de Álgebra Relacional; Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano. Renomear"
+      ],
+      "conteúdo": [],
+      "subsecoes": [
+        {
+          "titulo": "",
+          "conteúdo": []
+        },
+        {
+          "titulo": "Operações",
+          "conteúdo": [
+            "Seleção",
+            "Projeção",
+            "União",
+            "Diferença",
+            "Produto Cartesiano",
+            "Renomear"
+          ]
+        },
+        {
+          "titulo": "Seleção",
+          "conteúdo": [
+            "Selecione os registros de acordo com uma condição estabelecida; id_estado = 2 (tab_cantor)"
+          ]
+        },
+        {
+          "titulo": "Projeção",
+          "conteúdo": [
+            "Especificação de colunas; Linhas duplicadas são eliminadas; π nome (tab_estado)"
+          ]
+        },
+        {
+          "titulo": "União",
+          "conteúdo": [
+            " União das tabelas envolvidas (π id(tab_cantor))        (π id(tab_estado))"
+          ]
+        },
+        {
+          "titulo": "Diferença",
+          "conteúdo": [
+            "Retorna apenas os registros que contém na primeira tabela, mas que não contem na segunda. (π id(tab_cantor)) - (π id(tab_estado))"
+          ]
+        },
+        {
+          "titulo": "Produto Cartesiano",
+          "conteúdo": [
+            "Todas as linhas da primeira tabela com todas as linhas da outra tabela; tab_cantor x tab_estado"
+          ]
+        },
+        {
+          "titulo": "Junção",
+          "conteúdo": [
+            "Junção de registros entre tabelas de forma organizada e estabelecida; tab_cantor ⋈ (tab_cantor.id_estado = tab_estado.id) tab_estado"
+          ]
+        },
+        {
+          "titulo": "Renomear",
+          "conteúdo": [
+            "Renomear tabela;    tab_cantor_nordeste (tab_cantor)"
+          ]
+        }
+      ],
+      "exemplos": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about SQL. Let me start by understanding the structure of the aula content.
+
+The topics include DDL (Create, Drop, Alter), DML (Insert, Update, Select, Delete), data types like Char, Varchar, Int, Float, Boolean, Date, Time, Timestamp. Also, there are examples of commands like CREATE DATABASE, CREATE TABLE, INSERT, SELECT, UPDATE, DELETE. The examples section mentions DDL commands.
+
+First question: Maybe about DDL vs DML. The content mentions DDL for creating tables and DML for manipulating data. So a question could ask which command belongs to DDL. The options could be CREATE, INSERT, SELECT, DELETE. The correct answer is CREATE, which is DDL.
+
+Second question: Data types. The content lists types like Char, Varchar, Int, etc. A question could ask which data type is used for dates. The options would be Date, Time, Timestamp, and maybe Char. The correct answer is Date.
+
+Third question: Commands for inserting data. The INSERT command is discussed. The example shows INSERT INTO curso(nome, sigla...). So a question could be about the correct syntax for inserting data, with options including INSERT INTO, SELECT, UPDATE, DELETE. The answer is INSERT INTO.
+
+Fourth question: The purpose of the SELECT command. The content says it's used to retrieve data. Options could be insert, update, delete, select. The correct answer is select.
+
+Fifth question: The command to delete records. The DELETE command is mentioned with an example. The options would be DELETE, UPDATE, INSERT, SELECT. The correct answer is DELETE.
+
+Now, I need to structure each question with the required format, ensuring the correct answer is highlighted and the explanation is concise. Let me check each question to make sure they are based on the content provided and that the explanations are accurate.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual comando pertence à categoria DDL (Data Definition Language)?  
+
+a) INSERT  
+b) SELECT  
+c) CREATE  
+d) DELETE  
+
+**Resposta correta:** c) CREATE  
+**Explicação:** CREATE é um comando DDL, pois é utilizado para definir a estrutura de tabelas e bancos de dados, como CREATE TABLE ou CREATE DATABASE.  
+
+---  
+**2. Pergunta:**  
+Qual tipo de dado em SQL é adequado para armazenar datas?  
+
+a) Char  
+b) Date  
+c) Float  
+d) Text  
+
+**Resposta correta:** b) Date  
+**Explicação:** O tipo Date é especificado para armazenar valores de data, enquanto Char, Float e Text são usados para strings, números e textos longos, respectivamente.  
+
+---  
+**3. Pergunta:**  
+Qual comando é utilizado para inserir dados em uma tabela?  
+
+a) SELECT  
+b) UPDATE  
+c) INSERT INTO  
+d) DELETE FROM  
+
+**Resposta correta:** c) INSERT INTO  
+**Explicação:** O comando INSERT INTO é usado para adicionar novos registros em uma tabela, conforme exemplificado no conteúdo com a sintaxe INSERT INTO curso(nome, sigla...).  
+
+---  
+**4. Pergunta:**  
+Qual comando é usado para recuperar dados de uma tabela?  
+
+a) DELETE  
+b) UPDATE  
+c) SELECT  
+d) CREATE  
+
+**Resposta correta:** c) SELECT  
+**Explicação:** O comando SELECT é parte do DML (Data Manipulation Language) e é responsável por buscar e exibir dados armazenados em tabelas.  
+
+---  
+**5. Pergunta:**  
+Qual comando é utilizado para excluir registros de uma tabela?  
+
+a) INSERT  
+b) UPDATE  
+c) DELETE FROM  
+d) SELECT *  
+
+**Resposta correta:** c) DELETE FROM  
+**Explicação:** O comando DELETE FROM é usado para remover dados de uma tabela, como mostrado no exemplo: DELETE FROM curso WHERE id_curso = 1.

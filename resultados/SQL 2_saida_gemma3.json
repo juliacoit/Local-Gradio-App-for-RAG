@@ -1,0 +1,71 @@
+{
+  "titulo": "SQL",
+  "disciplina": "Prof. Esp. Marcos Brito",
+  "ementa": [
+    "Tipos de Dados",
+    "DDL",
+    "DML"
+  ],
+  "topicos": [
+    {
+      "titulo": "Tipos de Dados",
+      "palavras-chave": [
+        "Char",
+        "Varchar",
+        "Text",
+        "Int",
+        "Float",
+        "Double",
+        "Boolean",
+        "Date",
+        "Time",
+        "Timestamp"
+      ],
+      "conteudo": [
+        "Char: quantidade de caracteres definida;",
+        "Varchar: quantidade de caracteres variável;",
+        "Text: texto longo;",
+        "Int: número inteiro;",
+        "Float: números reais;",
+        "Double: números reais (maior precisão);",
+        "Boolean: booleano;",
+        "Date: data;",
+        "Time: hora;",
+        "Timestamp: data e hora."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "DDL",
+      "palavras-chave": [
+        "Data Definition Language"
+      ],
+      "conteudo": [
+        "Linguagem de definição de dados;",
+        "Ligado a parte estrutural de um banco de dados;",
+        "Restrições de Integridade;",
+        "Comandos: Create, Drop, Alter;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "DML",
+      "palavras-chave": [
+        "Data Manipulation Language"
+      ],
+      "conteudo": [
+        "Linguagem de manipulação de dados;",
+        "Relacionada com a operação dos dados;",
+        "Comandos: Insert, Update, Select, Delete;"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "exemplos": [
+    {
+      "descricao": "É através dos comandos DDL, por exemplo, que se cria uma tabela, adiciona novas colunas, etc.",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ]
+}

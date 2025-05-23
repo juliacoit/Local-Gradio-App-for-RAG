@@ -1,0 +1,69 @@
+<think>
+Okay, I need to create 5 multiple-choice questions based on the provided JSON content about database concepts. Let me start by understanding the structure of the JSON. The main topics are SGBD, modeling aspects, conceptual models, relational model, and mapping between models.
+
+First, I'll identify key concepts from each section. For example, under SGBD, the advantages are a key point. Then, modeling aspects include abstraction, requirements collection, etc. The conceptual model involves ER diagrams and cardinality. The relational model covers keys, integrity constraints, and schemas. Mapping between models includes equivalence and rules.
+
+I should ensure each question targets a different topic to cover the material comprehensively. Let me brainstorm possible questions. For SGBD, a question on advantages. For modeling, maybe about the purpose of modeling. For ER diagrams, cardinality. For relational model, primary keys. And for mapping, equivalence between models.
+
+Now, I need to phrase each question clearly, create four options, indicate the correct answer, and provide a concise explanation. I have to avoid any JSON formatting and follow the specified structure for each question. Let me check the topics again to ensure coverage and accuracy. Once done, I'll format them as per the example provided.
+</think>
+
+---  
+**1. Pergunta:**  
+O que é uma das principais vantagens de usar um Sistema de Gerenciamento de Banco de Dados (SGBD) em comparação a sistemas de arquivos tradicionais?  
+
+a) Facilita a criação de arquivos em formato de texto puro  
+b) Permite o armazenamento de dados em múltiplas linguagens de programação  
+c) Garante maior segurança e controle sobre os dados  
+d) Elimina a necessidade de backups dos dados  
+
+**Resposta correta:** c) Garante maior segurança e controle sobre os dados  
+**Explicação:** SGBDs oferecem recursos como autenticação, permissões de acesso e mecanismos de recuperação de dados, que são essenciais para garantir a integridade e segurança dos dados, algo que sistemas de arquivos tradicionais não suportam eficientemente.  
+
+---  
+**2. Pergunta:**  
+Qual é o objetivo principal da modelagem de dados em um banco de dados?  
+
+a) Criar um sistema de arquivos para armazenar dados  
+b) Representar o minimundo de forma abstrata e organizada  
+c) Implementar diretamente o esquema relacional  
+d) Reduzir o tempo de acesso aos dados  
+
+**Resposta correta:** b) Representar o minimundo de forma abstrata e organizada  
+**Explicação:** A modelagem de dados busca capturar o conhecimento do minimundo (realidade do problema) de forma estruturada, permitindo que os dados sejam organizados de maneira clara e utilizáveis para o sistema.  
+
+---  
+**3. Pergunta:**  
+No modelo entidade-relacionamento (ER), qual conceito representa a relação entre duas entidades?  
+
+a) Atributo  
+b) Cardinalidade  
+c) Relacionamento  
+d) Esquema de relação  
+
+**Resposta correta:** c) Relacionamento  
+**Explicação:** Relacionamentos são os vinculos estabelecidos entre entidades no modelo ER, indicando como os dados estão conectados, como "um cliente pode ter muitos pedidos".  
+
+---  
+**4. Pergunta:**  
+No modelo relacional, qual é a função de uma chave primária?  
+
+a) Identificar um único registro em uma tabela  
+b) Armazenar dados de texto livre  
+c) Garantir a segurança de acesso a dados  
+d) Definir o domínio de um atributo  
+
+**Resposta correta:** a) Identificar um único registro em uma tabela  
+**Explicação:** A chave primária é um atributo ou conjunto de atributos que identificam univocamente cada linha (registro) em uma tabela do modelo relacional.  
+
+---  
+**5. Pergunta:**  
+Qual é a relação entre o Modelo Entidade-Relacionamento (ER) e o Modelo Relacional?  
+
+a) O ER é uma versão mais antiga do Modelo Relacional  
+b) O Modelo Relacional é uma representação formal do Modelo ER  
+c) O ER é apenas uma ferramenta de visualização  
+d) Não há relação entre os dois modelos  
+
+**Resposta correta:** b) O Modelo Relacional é uma representação formal do Modelo ER  
+**Explicação:** O Modelo Relacional é derivado do Modelo ER por meio de regras de mapeamento, transformando as entidades, atributos e relacionamentos do ER em tabelas, chaves e restrições do modelo relacional.

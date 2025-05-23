@@ -1,0 +1,79 @@
+<think>
+Okay, let's see. The user wants me to create 5 multiple-choice questions based on the provided JSON content about database basics. The questions need to follow a specific format, with each question having the prompt, four alternatives, the correct answer, and a brief explanation. 
+
+First, I'll need to go through the JSON content to identify key topics and concepts. The main sections are about SGBD, data modeling, conceptual models, relational model, and mapping between models. Also, there are examples of SQL operations like selection, projection, union, difference, Cartesian product, join, and renaming.
+
+I should make sure each question covers different aspects. Let me start by brainstorming possible questions. 
+
+For the first question, maybe something about the advantages of a DBMS over a file system. That's covered in the SGBD section. The options can include things like data redundancy, security, scalability, etc. The correct answer would be data redundancy reduction.
+
+Next, a question on the conceptual model. The ER model is a key part here. The question could ask which is not a component of the ER model. The options might include attributes, entities, relationships, or cardinality. Wait, cardinality is part of the model, so the incorrect option would be something else, like 'domain' which is part of the relational model.
+
+Third, maybe a question on relational model concepts. For example, what is a primary key? The options could include a unique identifier, a foreign key, etc. The correct answer is a unique identifier.
+
+Fourth, a question about the mapping between ER and relational models. The user might ask which rule is correct for mapping an entity to a table. The answer would involve creating a table with attributes and a primary key.
+
+Lastly, a question on SQL operations. The examples include selection, projection, etc. A question asking which operation returns rows from one table not present in another would be a difference, so the correct answer is the difference operation.
+
+Now, I need to structure each question following the user's format. Make sure each has the correct answer and explanation. Let me check each question to ensure they are accurate based on the content provided. Also, avoid any JSON formatting and use the specified text structure.
+</think>
+
+---  
+**1. Pergunta:**  
+Qual é uma vantagem principal de usar um Sistema de Gerenciamento de Banco de Dados (SGBD) em comparação com um sistema de arquivos tradicional?  
+
+a) Aumenta a redundância de dados  
+b) Facilita a manipulação de grandes volumes de dados  
+c) Permite o acesso aleatório a registros  
+d) Reduz a segurança dos dados  
+
+**Resposta correta:** b) Facilita a manipulação de grandes volumes de dados  
+**Explicação:** SGBDs são projetados para gerenciar dados de forma eficiente, permitindo operações como armazenamento, recuperação e atualização de grandes conjuntos de dados de maneira organizada e segura.  
+
+---  
+**2. Pergunta:**  
+No Modelo Entidade-Relacionamento (DER), qual dos seguintes **não** é um componente básico do modelo?  
+
+a) Entidades  
+b) Atributos  
+c) Cardinalidade  
+d) Domínio  
+
+**Resposta correta:** d) Domínio  
+**Explicação:** O domínio é um conceito do Modelo Relacional, não do DER. No DER, os componentes básicos são entidades, atributos e relacionamentos, com cardinalidade para definir relações entre entidades.  
+
+---  
+**3. Pergunta:**  
+No Modelo Relacional, qual é a definição correta de "chave primária"?  
+
+a) Um campo que armazena valores repetidos  
+b) Um campo que identifica univocamente uma tupla  
+c) Um campo que vincula tabelas diferentes  
+d) Um campo que define o domínio de valores  
+
+**Resposta correta:** b) Um campo que identifica univocamente uma tupla  
+**Explicação:** A chave primária é um atributo ou conjunto de atributos que identificam univocamente cada registro (tupla) em uma tabela.  
+
+---  
+**4. Pergunta:**  
+Ao mapear um modelo entidade-relacionamento (DER) para o modelo relacional, qual regra é aplicada para transformar uma entidade em uma tabela?  
+
+a) Cada relacionamento se torna uma nova tabela  
+b) Cada atributo da entidade se torna uma coluna da tabela  
+c) Cada cardinalidade se torna uma chave estrangeira  
+d) Cada entidade se torna uma tabela com uma chave primária  
+
+**Resposta correta:** d) Cada entidade se torna uma tabela com uma chave primária  
+**Explicação:** Durante o mapeamento, cada entidade do DER é convertida em uma tabela, com seus atributos como colunas e uma chave primária para garantir a unicidade dos registros.  
+
+---  
+**5. Pergunta:**  
+Qual operação em álgebra relacional retorna os registros presentes em uma tabela, mas **não** presentes em outra?  
+
+a) União  
+b) Interseção  
+c) Diferença  
+d) Produto Cartesiano  
+
+**Resposta correta:** c) Diferença  
+**Explicação:** A operação de diferença (A - B) retorna os registros que existem em A e não estão presentes em B, conforme exemplificado no conteúdo com a sintaxe "(π id(tab_cantor)) - (π id(tab_estado))".

@@ -1,0 +1,129 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados:",
+  "autor": "Prof. Marcos Brito",
+  "conteudo": [
+    {
+      "secao": "Ementa da Disciplina",
+      "conteudo": [
+        "Conceitos Básicos de Banco de Dados:",
+        "Definição de Banco de Dados;",
+        "Terminologia básica;",
+        "Usuários de Banco de Dados;",
+        "Aplicações;",
+        "Abstração de dados Esquema;",
+        "Instância."
+      ]
+    },
+    {
+      "secao": "Sistemas de Gerenciamento de Banco de Dados (SGBD):",
+      "conteudo": [
+        "Conceito de SGBD;",
+        "Vantagens do SGBD;",
+        "Comparação com o Sistema de Arquivos."
+      ]
+    },
+    {
+      "secao": "Aspectos de modelagem de dados:",
+      "conteudo": [
+        "Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;",
+        "Métodos e técnicas; Objetivo da modelagem;",
+        "Abstração; Coleta de requisitos;",
+        "Análise de requisitos; Categorias de modelos."
+      ]
+    },
+    {
+      "secao": "Ementa da Disciplina",
+      "conteudo": [
+        "Modelo Conceitual de dados:",
+        "Abordagem entidade-relacionamento (ER);",
+        "Entidades;Atributos; Relacionamentos; ",
+        "Cardinalidade de relacionamentos; ",
+        "Diagrama entidade-relacionamento (DER)."
+      ]
+    },
+    {
+      "secao": "Modelo Relacional:",
+      "conteudo": [
+        "Nomenclatura do Modelo Relacional; ",
+        "Domínio; ",
+        "Relações; ",
+        "Chaves; ",
+        "Restrições de Integridade; ",
+        "Esquemas de Relação."
+      ]
+    },
+    {
+      "secao": "Mapeamento entre modelos de dados:",
+      "conteudo": [
+        "Equivalência entre os Modelos Entidade-Relacionamento e Relacional; ",
+        "Regras para o mapeamento."
+      ]
+    },
+    {
+      "secao": "Ementa da Disciplina",
+      "conteudo": [
+        "Álgebra Relacional:",
+        "Conceito de Álgebra Relacional;",
+        "Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano.",
+        "Renomear;",
+        "Junção."
+      ]
+    },
+    {
+      "secao": "Linguagem de Definição de Dados (DDL):",
+      "conteudo": [
+        "Tipo de Dados em SQL;",
+        "Comandos: Create, Drop, Alter;",
+        "Restrições: Integridade de Domínio, Integridade de entidade, Integridade de Chave, Integridade Referencial."
+      ]
+    },
+    {
+      "secao": "Linguagem de Manipulação de Dados (DML):",
+      "conteudo": [
+        "Comandos: Insert, Delete, Update, Select;",
+        "Visões."
+      ]
+    },
+    {
+      "secao": "Projeto e implementação de um Banco de Dados:",
+      "conteudo": [
+        "Criação de um Banco de Dados a partir de um minimundo real escolhido",
+        "O que é um banco de dados?”,",
+        "“Coleção organizada de informações -”,",
+        "“ou dados - estruturados, normalmente”,",
+        "“armazenados eletronicamente em um”,",
+        "“sistema de computador. ” (Oracle,”,",
+        "“2024)”,\n        \"Aplicações\",\n        \"• Processos seletivos;\",\n        \"• Operações bancárias;\",\n        \"• Sistemas aéreo; \",\n        \"• Bibliotecas; \",\n        \"• Mercados; \",\n        \"• Hospitais; \",\n        \"• E muitas outras áreas.\"\n      ]\n    },\n    {\n      \"secao\": \"Tipos de Banco de Dados\",\n      \"conteudo\": [\n        ",
+        "Relacionais: O mais utilizado atualmente, a organização dos dados é feita em tabelas no formato linha e coluna;",
+        "• Orientado a objetos: Informações armazenadas em formato de objeto;",
+        "• Distribuído: permite que as informações sejam armazenadas em diferentes computadores;",
+        "• Documentos: informações salvas em formato de documentos. Está em uma grande ascensão devido ao crescimento no desenvolvimento de aplicações web e mobile.",
+        "Structured Query Language (SQL)",
+        "• Linguagem de consulta estruturada;",
+        "• Linguagem dos bancos de dados relacionais;",
+        "• A linguagem mais utilizada nos bancos de dados relacionais;",
+        "Ex.: SELECT * FROM tabela;",
+        "• NoSQL",
+        "Ex.: db.minhaColecao.find({})",
+        "Tipos de Usuários",
+        "• Administrados de banco de dados (DBA): responsável pela administração e gerenciamento do banco de dados;",
+        "• Analista de sistemas: é quem faz o levantamento de requisitos e projeta o banco de dados;",
+        "• Programador: interage com o banco de dados através de linguagens de programação."
+      ]
+    },
+    {
+      "secao": "Pratica Profissional Articuladora (PPA)",
+      "conteudo": [
+        "(PPA)"
+      ]
+    },
+    {
+      "secao": "Referências",
+      "conteudo": [
+        "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. Sistemas de banco de dados. São Paulo: Campus, 2006.",
+        "HEUSER, C. A. Projeto de banco de dados. 6. ed. Porto Alegre: Bookman, 2010.",
+        "[Oracle] Banco de Dados. Oracle. Disponível em: <www.oracle.com>. Acesso em: 03/2024."
+      ]
+    }
+  ]
+}
