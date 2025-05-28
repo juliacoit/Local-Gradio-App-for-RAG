@@ -45,7 +45,11 @@ def extract_text_from_pdf(pdf_file_path):
 
     loader = PyMuPDFLoader(pdf_file_path)
     data = loader.load()
-    return "\n".join([doc.page_content.strip() for doc in data])
+    
+    textos = []
+    for i, doc in enumerate(data):
+        textos.append(f"--- Página {i + 1} ---\n{doc.page_content.strip()}\n")
+    return "\n".join(textos)
 
 # Função para dividir o documento em chunks de forma otimizada
 def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
@@ -63,18 +67,21 @@ def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
 
     return chunks
 
-def structure_text(text):
-    lines = [l.strip() for l in text.split("\n") if l.strip()]
-    
+def structure_text(text, pdf_file_path):
+
+    titulo_pdf = os.path.splitext(os.path.basename(pdf_file_path))[0]
+
+    # Divide o texto por páginas usando o padrão inserido
+    paginas = re.split(r"--- Página \d+ ---", text)
+    paginas = [p.strip() for p in paginas if p.strip()]  # remove vazios
+
     structured_data = {
-        "titulo": lines[0] if lines else "",
+        "titulo": titulo_pdf,
         "disciplina": "",
         "ementa": [],
         "topicos": [],
         "exemplos": []
     }
-
-    current_topico = None
 
     def detect_type(line):
         l = line.lower()
@@ -84,45 +91,52 @@ def structure_text(text):
                     return k
         return None
 
-    for line in lines[1:]:
-        tipo = detect_type(line)
+    for pagina_texto in paginas:
+        lines = [l.strip() for l in pagina_texto.split("\n") if l.strip()]
+        if not lines:
+            continue
 
-        if tipo == "ementa":
-            structured_data["ementa"].append(line)
+        topico = {
+            "titulo": lines[0],  # primeira linha da página vira título do tópico
+            "palavras-chave": [],
+            "conteudo": [],
+            "subsecoes": []
+        }
 
-        elif tipo == "exemplo":
-            structured_data["exemplos"].append({
-                "descricao": line,
-                "codigo": "",
-                "explicacao": ""
-            })
+        current_subsecao = None
 
-        elif tipo == "topico":
-            if current_topico:
-                structured_data["topicos"].append(current_topico)
-            current_topico = {
-                "titulo": line,
-                "palavras-chave": [],
-                "conteudo": [],
-                "subsecoes": []
-            }
+        for line in lines[1:]:  # ignora a primeira linha que já virou título
+            tipo = detect_type(line)
 
-        elif tipo == "subsecao":
-            if current_topico:
-                current_topico["subsecoes"].append({
-                    "titulo": line,
-                    "conteudo": []
+            if tipo == "ementa":
+                structured_data["ementa"].append(line)
+
+            elif tipo == "exemplo":
+                structured_data["exemplos"].append({
+                    "descricao": line,
+                    "codigo": "",
+                    "explicacao": ""
                 })
 
-        else:
-            if current_topico:
-                if current_topico["subsecoes"]:
-                    current_topico["subsecoes"][-1]["conteudo"].append(line)
-                else:
-                    current_topico["conteudo"].append(line)
+            elif tipo == "subsecao":
+                current_subsecao = {
+                    "titulo": line,
+                    "conteudo": []
+                }
+                topico["subsecoes"].append(current_subsecao)
 
-    if current_topico:
-        structured_data["topicos"].append(current_topico)
+            else:
+                if current_subsecao:
+                    current_subsecao["conteudo"].append(line)
+                else:
+                    topico["conteudo"].append(line)
+
+        structured_data["topicos"].append(topico)
+
+    # Define o título principal como o do primeiro tópico
+    if structured_data["topicos"]:
+        structured_data["titulo"] = structured_data["topicos"][0]["titulo"]
+
     safe_print(f"\n===== Texto estruturado =====\n{json.dumps(structured_data, indent=2, ensure_ascii=False)}\n")
     return structured_data
 
@@ -320,7 +334,7 @@ def processar_tudo(pdf_file):
     with open(f"resultados/{nome_base}_texto.txt", "w", encoding="utf-8") as f:
         f.write(texto)
 
-    estrutura_inicial = structure_text(texto)
+    estrutura_inicial = structure_text(texto, pdf_path)
     current_json = json.dumps(estrutura_inicial, ensure_ascii=False)
     template = json.dumps(load_template(), ensure_ascii=False)
     chunks = split_document(texto)
