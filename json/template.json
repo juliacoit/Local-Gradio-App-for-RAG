@@ -1,29 +1,27 @@
 { 
-  "titulo": "string",            
-  "disciplina": "string",
-
+  "titulo": "string",           
+  "disciplina": "string",        
+  "ementa": [                   
+    "string"
+  ],
   "topicos": [                   
-    {        
+    {
+      "titulo": "string",
+      "palavras-chave": ["string"],      
+      "conteudo": ["string"],     
       "subsecoes": [             
         {
           "titulo": "string",
           "conteudo": ["string"]
         }
-      ],
-      "palavras-chave": ["string"],
-      "titulo": "string"  
+      ]
     }
   ],
-
   "exemplos": [                 
     {
       "descricao": "string",
       "codigo": "string",        
       "explicacao": "string"
     }
-  ],
-
-  "referencias": [               
-    "string"
   ]
 }
