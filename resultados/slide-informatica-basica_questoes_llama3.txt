@@ -1,0 +1,3 @@
+
+
+O conteúdo da aula em JSON está vazio ou não foi fornecido corretamente. Para gerar questões educacionais, é necessário que o JSON contenha informações sobre o tema da aula, conceitos principais, exemplos, definições ou outros elementos pedagógicos. Por favor, forneça o conteúdo da aula em formato JSON válido para que eu possa criar as questões com base nele.
