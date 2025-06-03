@@ -1,11 +1,61 @@
-<think>
-Okay, the user wants me to generate 5 multiple-choice questions based on the provided JSON content, but the JSON seems empty. Wait, the user mentioned the content of the lesson is in JSON, but in the example, the JSON is empty. Maybe that's a placeholder. Since there's no actual content, I need to make assumptions or perhaps there was an error in the input.
 
-Wait, looking back, the user provided a JSON that's empty. So maybe they intended to include the lesson content but forgot. In that case, I should inform them that the JSON content is missing. But the user's instruction says to generate questions based on the lesson structure. Since there's no content, I can't create specific questions. 
 
-Alternatively, maybe the JSON was supposed to be there but got cut off. The user might have intended to paste the JSON but it's not present. In this case, I should point out that the JSON content is missing and ask for it. However, the user might have made a mistake. 
+---  
+**1. Pergunta:**  
+O que é a CPU (Unidade Central de Processamento)?  
 
-But since the user provided an example of the output structure, maybe they just want me to generate generic questions. Wait, no, the instructions say to base the questions on the lesson content in JSON. Without that content, it's impossible. So I need to respond that the JSON content is missing and request it. That's the correct approach here.
-</think>
+a) Um dispositivo de armazenamento de dados  
+b) Um componente volátil que armazena temporariamente informações  
+c) Conjunto de chips de silício que controla o fluxo de funcionamento da máquina  
+d) Um periférico utilizado para entrada de dados  
 
-O conteúdo da aula em JSON está vazio ou não foi fornecido corretamente. Para gerar questões educacionais, é necessário que o conteúdo da aula seja disponibilizado em formato estruturado (por exemplo, com tópicos, conceitos, exemplos, etc.). Por favor, forneça o conteúdo da aula em JSON para que eu possa criar as questões com base nele.
+**Resposta correta:** c) Conjunto de chips de silício que controla o fluxo de funcionamento da máquina  
+**Explicação:** A CPU é responsável por coordenar e controlar as operações do computador, sendo o núcleo da unidade central.  
+
+---  
+**2. Pergunta:**  
+Qual característica define corretamente a Memória RAM?  
+
+a) É uma memória não volátil, onde os dados são armazenados permanentemente  
+b) É uma memória volátil, permitindo leitura, gravação e regravação de dados  
+c) Armazena dados de forma permanente, mesmo após desligar o computador  
+d) É um dispositivo de armazenamento secundário, como discos rígidos  
+
+**Resposta correta:** b) É uma memória volátil, permitindo leitura, gravação e regravação de dados  
+**Explicação:** A RAM (Random Access Memory) é volátil, ou seja, perde seus dados ao desligar o computador.  
+
+---  
+**3. Pergunta:**  
+Qual dispositivo é considerado o principal para armazenamento de informações em um computador?  
+
+a) CD-ROM  
+b) Disco Rígido  
+c) Unidade de disco flexível  
+d) Memória ROM  
+
+**Resposta correta:** b) Disco Rígido  
+**Explicação:** O disco rígido é o dispositivo principal de armazenamento de dados, capaz de guardar grandes quantidades de informações de forma permanente.  
+
+---  
+**4. Pergunta:**  
+Quantos bits compõem um byte?  
+
+a) 8 bits  
+b) 10 bits  
+c) 16 bits  
+d) 32 bits  
+
+**Resposta correta:** a) 8 bits  
+**Explicação:** O byte é a unidade básica de armazenamento de dados, composto por 8 bits.  
+
+---  
+**5. Pergunta:**  
+Qual exemplo de software pertence ao tipo "Sistema Operacional"?  
+
+a) Microsoft Word  
+b) Windows  
+c) Adobe Photoshop  
+d) Excel  
+
+**Resposta correta:** b) Windows  
+**Explicação:** O Sistema Operacional é o software responsável por gerenciar os recursos do computador e permitir a interação com o usuário. Windows é um exemplo clássico desse tipo.

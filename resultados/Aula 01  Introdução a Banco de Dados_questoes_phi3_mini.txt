@@ -1,0 +1,76 @@
+
+Okay, I'm trying to help create 5 multiple-choice questions based on the JSON structure provided. The JSON outlines a course titled "Conceitos Básicos de Banco de Dados" by Prof. Marcos Brito. It's part of the "Modelagem e Gestão em Sistemas Eletrônicos para Aplicações Web & Mobile; PPA" discipline, but the date is blank.
+
+First, I'll review the 'ementa' section to understand the key points: definition of databases, basic terminology, users of a database, applications in various areas, and abstraction with instance schema. The 'topicos' include an introduction and content about DBMS (SGBD) concepts, advantages, and comparison with file systems. There are no examples provided in the JSON, but I can create my own.
+
+I need to ensure each question has 4 alternatives (a-d), marks one correct answer, and provides explanations. The topics should cover definitions, types of databases, ER diagrams, SQL basics, and database normalization.
+
+For question 1: Define a database. Correct answer is about data storage and retrieval. Alternatives might confuse with things like tables or relational concepts.
+
+Question 2: Types of databases. Options could include relational, non-relational, etc., with correct being relational focusing on structure.
+
+Question 3: Users of a DBMS. They include designers, administrators, analysts, etc.
+
+Question 4: Abstraction layers. Could be about data independence and the database schema.
+
+Question 5: SQL example. A simple SELECT statement, correctly explained.
+
+I'll structure each question with these points, ensuring explanations are clear.
+</think>
+
+```json
+{
+  "titulo": "Conceitos Básicos de Banco de Dados",
+  "autor": "Prof. Marcos Brito",
+  "disciplina": "Modelagem e Gestão em Sistemas Eletrônicos para Aplicações Web & Mobile; PPA",
+  "data": "",
+  "ementa": [
+    "Definição de Banco de Dados; Terminologia básica; Usuários do Banco de Dados.",
+    "Aplicações em várias áreas. ",
+    "Abstração e Instância Esquema."
+  ],
+  "topicos": [
+    {
+      "secao": "Introdução",
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "conteudo": [
+        "Sistemas de Gerenciamento de Banco de Dados (SGBD): Conceito; Vantagens do SGBD. Comparação com o sistema de arquivos."
+      ]
+    }
+  ],
+  "exampleos": [
+    {
+      "descricao": "Qual é a principal diferença entre um Sistema de Gerenciamento de Banco de Dados (SGBD) e um Sistema de Arquivos?",
+      "codigo": "q1",
+      "explicacao": "No SGBD, os dados são organizados em tabelas com esquemas definidos logicamente, permitindo consultas complexas. No sistema de arquivos, os dados são armazenados em arquivos sequenciais sem essa capacidade."
+    },
+    {
+      "descricao": "Qual é o principal usuário de um Banco de Dados?",
+      "codigo": "q2",
+      "explicacao": "Os usuários podem ser designers de banco de dados, administradores, analistas ou desenvolvedores de aplicativos."
+    },
+    {
+      "descricao": "Qual é a função do modelo de abstração em um Banco de Dados?",
+      "codigo": "q3",
+      "explicacao": "O modelo de abstração separa os dados reais da interface com o usuário, permitindo uma maior flexibilidade e independência dos dois."
+    },
+    {
+      "descricao": "Qual é a diferença entre um esquema relacional e um esquema não-relacional?",
+      "codigo": "q4",
+      "explicacao": "Os esquemas relacionais organizam dados em tabelas com chaves primárias, enquanto os não-relacionais são mais flexíveis e não requerem isso."
+    },
+    {
+      "descricao": "Determine qual comando SQL é usado para recuperar todos os registros de uma tabela?",
+      "codigo": "q5",
+      "explicacao": "A instrução `SELECT * FROM tabela` recupera todos os registros de uma tabela no Banco de Dados."
+    }
+  ],
+  "referencias": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S. 'Sistemas de banco de dados'. São Paulo: Campus, 2006.",
+    "'Projeto de Banco de Dados', C.A HEUSER 6a edição, Porto Alegre: Bookman, 2010."
+  ]
+}
+```

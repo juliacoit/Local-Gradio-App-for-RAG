@@ -14,20 +14,7 @@ MAX_INPUT_SIZE = 8000
 OVERLAP = 200
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(BASE_DIR, "json", "template.json")
-KEYWORDS = {
-    "ementa": [
-        "ementa", "objetivo", "introdução", "fundamentos", "conceitos", "proposta", "conteúdo programático"
-    ],
-    "topico": [
-        "tópico", "tema", "assunto", "estrutura", "arquitetura", "componente", "modelo", "abordagem", "técnica", "estratégia"
-    ],
-    "exemplo": [
-        "exemplo", "exemplificação", "demonstração", "caso", "código", "aplicação"
-    ],
-    "subsecao": [
-        "detalhe", "subtópico", "aspecto", "variação", "tipo", "subclasse", "submodelo"
-    ]
-}
+
 
 list_slms = ["gemma3", "llama3", "mistral"]
 
@@ -66,82 +53,8 @@ def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
         chunks.append(document)
 
     return chunks
-
-def structure_text(text, pdf_file_path):
-
-    titulo_pdf = os.path.splitext(os.path.basename(pdf_file_path))[0]
-
-    # Divide o texto por páginas usando o padrão inserido
-    paginas = re.split(r"--- Página \d+ ---", text)
-    paginas = [p.strip() for p in paginas if p.strip()]  # remove vazios
-
-    structured_data = {
-        "titulo": titulo_pdf,
-        "disciplina": "",
-        "ementa": [],
-        "topicos": [],
-        "exemplos": []
-    }
-
-    def detect_type(line):
-        l = line.lower()
-        for k, palavras in KEYWORDS.items():
-            for p in palavras:
-                if p in l:
-                    return k
-        return None
-
-    for pagina_texto in paginas:
-        lines = [l.strip() for l in pagina_texto.split("\n") if l.strip()]
-        if not lines:
-            continue
-
-        topico = {
-            "titulo": lines[0],  # primeira linha da página vira título do tópico
-            "palavras-chave": [],
-            "conteudo": [],
-            "subsecoes": []
-        }
-
-        current_subsecao = None
-
-        for line in lines[1:]:  # ignora a primeira linha que já virou título
-            tipo = detect_type(line)
-
-            if tipo == "ementa":
-                structured_data["ementa"].append(line)
-
-            elif tipo == "exemplo":
-                structured_data["exemplos"].append({
-                    "descricao": line,
-                    "codigo": "",
-                    "explicacao": ""
-                })
-
-            elif tipo == "subsecao":
-                current_subsecao = {
-                    "titulo": line,
-                    "conteudo": []
-                }
-                topico["subsecoes"].append(current_subsecao)
-
-            else:
-                if current_subsecao:
-                    current_subsecao["conteudo"].append(line)
-                else:
-                    topico["conteudo"].append(line)
-
-        structured_data["topicos"].append(topico)
-
-    # Define o título principal como o do primeiro tópico
-    if structured_data["topicos"]:
-        structured_data["titulo"] = structured_data["topicos"][0]["titulo"]
-
-    safe_print(f"\n===== Texto estruturado =====\n{json.dumps(structured_data, indent=2, ensure_ascii=False)}\n")
-    return structured_data
-
- #Normaliza e limpa JSON
-def clean_json_text(text):
+ #Normaliza e limpa texto
+def clean_text(text):
     text = re.sub(r'[\x00-\x1F]+', '', text)
     text = re.sub(r'\s+', ' ', text)
     return text.strip()
@@ -149,15 +62,14 @@ def clean_json_text(text):
 def normalize_text(text):
     return unicodedata.normalize("NFC", text)
 
-def generate_prompt(model_name, template, current, text):
+def generate_prompt(model_name, template, text):
     prompt_context = (
         "Você é um assistente que está extraindo informações educacionais de um texto longo, em partes (chunks).\n"
         "A cada etapa, você recebe:\n"
         "- Um modelo JSON com o formato final esperado\n"
-        "- Um JSON parcial já preenchido até agora (chamado de \"estado atual\")\n"
         "- Um novo trecho de texto (chunk) com informações adicionais\n\n"
-        "Sua tarefa é **completar e atualizar o JSON atual** com base no novo texto fornecido, **mantendo o que já está preenchido**.\n\n"
-        "! Retorne **apenas o JSON atualizado**. Não adicione explicações nem comentários.\n"
+        "Sua tarefa é criar e atualizar um JSON com base no novo texto fornecido.\n\n"
+        "! Retorne **apenas o JSON**. Não adicione explicações nem comentários.\n"
     )
 
     if model_name == "gemma3":
@@ -166,10 +78,7 @@ def generate_prompt(model_name, template, current, text):
 Modelo JSON esperado:
 {template}
 
-JSON atual:
-{current}
-
-Novo texto:
+texto:
 {text}
 <|end|>
 <|assistant|>"""
@@ -179,9 +88,6 @@ Novo texto:
 {prompt_context}
 Modelo JSON esperado:
 {template}
-
-JSON atual:
-{current}
 
 Novo texto:
 {text}
@@ -193,9 +99,6 @@ Novo texto:
 {prompt_context}
 Modelo JSON esperado:
 {template}
-
-JSON atual:
-{current}
 
 Novo texto:
 {text}
@@ -257,9 +160,10 @@ def safe_print(text):
         # Se houver erro de codificação, converta para UTF-8 e imprima
         print(text.encode('ascii', errors='replace').decode('ascii'))
 
-def predict_chunk(text, template, current, model_name="gemma3"):
-    current = clean_json_text(current)
-    input_llm = generate_prompt(model_name, template, current, text)
+def predict_chunk(text, template, model_name="gemma3"):
+    text = clean_text(text)
+    text = normalize_text(text)
+    input_llm = generate_prompt(model_name, template, text)
 
     response = ollama.chat(
         model=model_name,
@@ -331,11 +235,11 @@ def processar_tudo(pdf_file):
     os.makedirs("resultados", exist_ok=True)
 
     texto = extract_text_from_pdf(pdf_path)
+    print("Texto extraído do PDF:  " + texto[:500] + "...")  # Exibe os primeiros 500 caracteres
     with open(f"resultados/{nome_base}_texto.txt", "w", encoding="utf-8") as f:
         f.write(texto)
 
-    estrutura_inicial = structure_text(texto, pdf_path)
-    current_json = json.dumps(estrutura_inicial, ensure_ascii=False)
+
     template = json.dumps(load_template(), ensure_ascii=False)
     chunks = split_document(texto)
 
@@ -343,21 +247,23 @@ def processar_tudo(pdf_file):
     questoes_geradas = {}
     arquivos_json = {}
     arquivos_questoes = {}
+    questoes_limpas = {}
 
     for modelo in list_slms:
         print(f"\n========= Processando com modelo: {modelo} =========")
-        current = current_json
+        respostas = ""
         for chunk in chunks:
             print(f"\n===== Processando chunk =====")
-            current = predict_chunk(chunk, template, current, modelo)
+            resposta = predict_chunk(chunk, template, modelo)
+            respostas += resposta
 
         try:
-            json_final = fix_json(current)
+            json_final = fix_json(respostas)
             if json_final is None:
-                json_final = current  # salva bruto se ainda inválido
+                json_final = respostas  # salva bruto se ainda inválido
         except Exception as e:
             print("Erro ao aplicar fix_json:", e)
-            json_final = current
+            json_final = respostas
 
         jsons_gerados[modelo] = json_final
 
@@ -373,11 +279,11 @@ def processar_tudo(pdf_file):
             questoes = f"Erro ao gerar questões: {e}"
 
         questoes_geradas[modelo] = questoes
-        questoes_limpas = re.sub(r'<think>.*?</think>', '', questoes, flags=re.DOTALL)
+        questoes_limpas[modelo] = re.sub(r'<think>.*?</think>', '', questoes, flags=re.DOTALL)
 
         path_q = f"resultados/{nome_base}_questoes_{modelo.replace(':', '_')}.txt"
         with open(path_q, "w", encoding="utf-8") as f:
-            f.write(questoes_limpas)
+            f.write(questoes_limpas[modelo])
         arquivos_questoes[modelo] = path_q
 
     return (

@@ -1,5 +1,8 @@
+--- Página 1 ---
 Nosso Site
 http://www.cintegrado.com.br/anapolis/
+
+--- Página 2 ---
 MÓDULO I 
 INFORMÁTICA BÁSICA
 Endereço do grupo
@@ -8,6 +11,8 @@ http://douglasddp.wordpress.com.br
 Endereço de e-mail atual:
 douglas.ddp@gmail.com
 Prof. Douglas Diego de Paiva
+
+--- Página 3 ---
 • Conteúdo:
 • Utilização de aplicativos para editoração de 
 textos,confecção de gráficos e tabelas e 
@@ -15,6 +20,8 @@ cálculos estatísticos.
 • Aplicação de planilha eletrônica.
 • Manutenção de Banco de dados.
 • Utilização de Intranet e Internet.
+
+--- Página 4 ---
 Compromissos
 • Não faltar aulas;
 • Não chegar atrasado e 
@@ -32,6 +39,8 @@ que o for solicitado;
 • Fazer estudos em grupos;
 • Participar da aulas;
 • Evitar conversas paralelas;
+
+--- Página 5 ---
 Conceitos Básicos sobre Sistema de 
 Computação
 • INFORMÁTICA - É Ciência que estuda o 
@@ -40,6 +49,8 @@ tratamento automático da informação.
 capaz de ordenar, calcular, testar, pesquisar e 
 editar informações de acordo com instruções 
 estabelecidas.
+
+--- Página 6 ---
 6
 Conceitos Básicos
 • Sistemas computacionais
@@ -52,10 +63,14 @@ São conjuntos de procedimentos básicos que fazem que
 o computador seja útil executando alguma função.  A
 essas “ordens”  preestabelecidas chamamos também de
 programas.
+
+--- Página 7 ---
 7
 Esquema do Computador
 Hardware
 Software
+
+--- Página 8 ---
 8
 Hardware – Conceitos Básicos
 • Principais componentes físicos
@@ -63,6 +78,8 @@ Monitor de vídeo
 Gabinete
 Teclado
 Mouse
+
+--- Página 9 ---
 9
 Hardware – Conceitos Básicos
 ENTRADA
@@ -71,6 +88,8 @@ SAÍDA
 PROCESSAMENTO
 PROCESSAMENTO
 •Processamento de Dados
+
+--- Página 10 ---
 10
 Hardware – Conceitos Básicos
 • É constituído por elementos básicos, ditos 
@@ -78,6 +97,8 @@ UNIDADES FUNCIONAIS BÁSICAS:
 – Unidade Central de Processamento (CPU).
 – Memória Principal.
 – Unidades de Entrada e Saída.
+
+--- Página 11 ---
 11
 Hardware – Conceitos Básicos
 • CPU (Unidade Central de Processamento)
@@ -85,6 +106,8 @@ Hardware – Conceitos Básicos
 – conjunto de chips de silício que controla o fluxo 
 de funcionamento de toda a máquina
 – localizada na placa-mãe
+
+--- Página 12 ---
 12
 Hardware – Conceitos Básicos
 • Memória RAM
@@ -93,6 +116,8 @@ gravação e regravação de dados.
 – utilizada apenas para trabalho.
 – armazenamento temporário de programas e 
 dados.
+
+--- Página 13 ---
 Hardware – Conceitos Básicos
 • ROM É sigla para Read Only Memory 
 (memória somente de leitura). 
@@ -100,6 +125,8 @@ Hardware – Conceitos Básicos
 fabricante. O CD-ROM é memória RAM, 
 • BIOS (Basic Input/Output System): checa o 
 sistema de I/O;
+
+--- Página 14 ---
 Senac - Anápolis / Introdução à Informática
 14
 Hardware – Conceitos Básicos
@@ -108,12 +135,16 @@ Hardware – Conceitos Básicos
 armazenamento de informações
 – Armazenamento não-volátil
 – Informações armazenadas na forma de arquivos
+
+--- Página 15 ---
 15
 Hardware – Conceitos Básicos
 • Unidade de disco flexível
 – armazena informações em discos removíveis
 – pode-se ler e gravar arquivos
 – tamanho comum: 3 1/2 polegadas
+
+--- Página 16 ---
 16
 Hardware – Conceitos Básicos
 • CD-ROM ou DVD-ROM
@@ -123,6 +154,8 @@ Hardware – Conceitos Básicos
 – armazena arquivos (dados, músicas, vídeo, etc)
 – armazena o espaço equivalente a 500 disquetes 
 de 3 1/2 polegadas
+
+--- Página 17 ---
 17
 Hardware – Conceitos Básicos
 • Periféricos: todo equipamento utilizado pelo 
@@ -145,6 +178,8 @@ mouse, mousetouch
 entrada de dados
 microfone para multimídia
 entrada de dados
+
+--- Página 18 ---
 18
 Hardware – Conceitos Básicos
 • Monitor
@@ -155,18 +190,24 @@ dados
 – dispositivo que produz uma cópia em papel de 
 documentos criados no computador
 – tipos comuns: matricial, jato de tinta, laser
+
+--- Página 19 ---
 19
 Hardware – Conceitos Básicos
 • Modem
 – conecta o computador através da linha telefônica
 – tipos: interno e externo
 – principal uso: acesso à internet
+
+--- Página 20 ---
 20
 Hardware – Conceitos Básicos
 • Scanner
 – dispositivo que digitaliza imagens e textos
 – permite extrair fotos ou gravuras e armazená-las 
 em arquivos
+
+--- Página 21 ---
 21
 Hardware – Conceitos Básicos
 • Medidas de Dados
@@ -181,6 +222,8 @@ código binário ou bit
 G
 01011101
 1 byte
+
+--- Página 22 ---
 22
 Hardware – Conceitos Básicos
 • Medidas de dados
@@ -222,6 +265,8 @@ disco rígido
 160 Gb
 alta
 R$ 120,00
+
+--- Página 23 ---
 23
 Software – Conceitos Básicos
 software
@@ -232,6 +277,8 @@ Básico
 Aplicativo
 Programa escrito em uma linguagem 
 para uma aplicação específica
+
+--- Página 24 ---
 24
 Vantagens do computador
 • Facilidade de armazenamento e 
@@ -242,6 +289,8 @@ podem ser automatizadas;
 • Planejamento e controle;
 • Segurança;
 • Redução de custos.
+
+--- Página 25 ---
 25
 Armazenamento de Dados
 • Funcionamento básico
@@ -253,6 +302,8 @@ PASTAS
  ou 
 Salvar
 Carregar
+
+--- Página 26 ---
 Inesul - Anápolis / Introdução à Informática
 26
 Nomes de Arquivos e Pastas
@@ -265,6 +316,8 @@ Nomes de Arquivos e Pastas
 Feliz Natal.doc
 nome
 extensão
+
+--- Página 27 ---
 27
 Windows
 • Sistema Operacional
@@ -275,17 +328,29 @@ computador
 • controlar o hardware
 • executar aplicativos
 • gerenciar informações (arquivos)
+
+--- Página 28 ---
 HISTÓRICO: EVOLUÇÃO NO TEMPO
 • A palavra computar significa calcular. 
 Portanto, de alguma forma computadores já 
 existem há bastante tempo. O primeiro 
 dispositivo de cálculo de que se tem notícia é 
 o ábaco, cuja invenção data de 3000 a.C.
+
+--- Página 29 ---
 Precursores
 • Vêm a ser as máquinas mecânicas.
+
+--- Página 30 ---
 A PRIMEIRA GERAÇÃO (1940-1952)
+
+--- Página 31 ---
 A SEGUNDA GERAÇÃO (1952-1964)
+
+--- Página 32 ---
 A TERCEIRA GERAÇÃO (1964-1971)
+
+--- Página 33 ---
 A QUARTA GERAÇÃO (1971-1981)
 •
 Nas últimas décadas, os chips só evoluíram em número de 
@@ -303,6 +368,8 @@ RAM e espaço em disco.
 •
 Os computadores prosseguiram evoluindo, se tornando cada vez 
 mais rápidos e com capacidade cada vez maior de armazenamento.
+
+--- Página 34 ---
 A QUINTA GERAÇÃO (1981....)
 • 1981 – IBM-PC XT – Um dos primeiros 
 computadores pessoais(Microprocessador Intel 

@@ -1,1 +1,102 @@
-""
+{
+  "titulo": "Introdução à Informática",
+  "disciplina": "Informática Básica",
+  "ementa": [
+    "Conteúdo:",
+    "Utilização de aplicativos editoração de texto, confecção de gráficos e tabelas e cálculos estatísticos.",
+    "Aplicação de planilha eletrônica.",
+    "Manutenção de Banco de dados.",
+    "Utilização de Intranet e Internet."
+  ],
+  "topicos": [
+    {
+      "titulo": "Conceitos",
+      "palavras-chave": [
+        "Informática",
+        "Computador"
+      ],
+      "conteudo": [
+        "INFORMÁTICA - É Ciência que estuda o tratamento automático da informação.",
+        "COMPUTADOR – Equipamento Eletrônico capaz de ordenar, calcular, testar, pesquisar e editar informações de acordo com instruções estabelecidas."
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Conceitos Básicos sobre Sistema de Computação",
+          "conteudo": []
+        }
+      ]
+    },
+    {
+      "titulo": "Hardware",
+      "palavras-chave": [
+        "Monitor",
+        "Gabinete"
+      ],
+      "conteudo": [
+        "• Conceitos Básicos sobre Sistema de Computação"
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Conceitos Básicos - Hardware",
+          "conteudo": []
+        }
+      ]
+    },
+    {
+      "titulo": "Hardware – Conceitos Básicos",
+      "palavras-chave": [
+        "Principais componentes físicos"
+      ],
+      "conteudo": [],
+      "subsecoes": [
+        {
+          "titulo": "Entrada",
+          "conteudo": [
+            "• Processamento de Dados"
+          ]
+        },
+        {
+          "titulo": "Processingo",
+          "conteudo": []
+        },
+        {
+          "titulo": "Unidades Funcionais Básicas",
+          "conteudo": [
+            "- Unidade Central de Processamento (CPU).",
+            "- Memória Principal.",
+            "- Unidades de Entrada e Saída."
+          ]
+        },
+        {
+          "titulo": "CPU (Unidade Central de Processamento)",
+          "conteudo": []
+        },
+        {
+          "titulo": "Memória RAM",
+          "conteudo": []
+        },
+        {
+          "titulo": "ROM",
+          "conteudo": []
+        },
+        {
+          "titulo": "Disco Rígido",
+          "conteudo": []
+        },
+        {
+          "titulo": "Unidade de disco flexível",
+          "conteudo": []
+        },
+        {
+          "titulo": "CD-ROM ou DVD-ROM",
+          "conteudo": []
+        },
+        {
+          "titulo": "Periféricos",
+          "conteudo": []
+        }
+      ]
+    }
+  ],
+  "exemplo_de_arquivo": "Feliz Natal.doc"
+}

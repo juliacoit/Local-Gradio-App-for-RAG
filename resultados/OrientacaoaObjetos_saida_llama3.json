@@ -1,0 +1,125 @@
+{
+  "titulo": "Análise e Projeto de Sistemas",
+  "disciplina": "Orientação a Objetos",
+  "ementa": [
+    "Introdução à Orientação a Objetos"
+  ],
+  "topicos": [
+    {
+      "titulo": "Objetos",
+      "palavras-chave": [
+        "Abstração",
+        "Classes",
+        "Instâncias"
+      ],
+      "conteudo": [
+        "Definição de objetos conceituais",
+        "Representação de objetos no mundo real",
+        "Características e comportamentos dos objetos"
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Abstração",
+          "conteudo": [
+            "Definição de abstração",
+            "Exemplos de abstração"
+          ]
+        },
+        {
+          "titulo": "Classes",
+          "conteudo": [
+            "Definição de classes",
+            "Características e comportamentos das classes"
+          ]
+        },
+        {
+          "titulo": "Instâncias",
+          "conteudo": [
+            "Definição de instâncias",
+            "Relação entre classes e instâncias"
+          ]
+        }
+      ]
+    },
+    {
+      "titulo": "Atributo",
+      "palavras-chave": [
+        "Características"
+      ],
+      "conteudo": [
+        "Definição de atributo",
+        "Características dos objetos",
+        "Tipos de atributos"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Operação",
+      "palavras-chave": [
+        "Comportamentos"
+      ],
+      "conteudo": [
+        "Definição de operação",
+        "Comportamentos dos objetos",
+        "Tipos de operações"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Mensagem",
+      "palavras-chave": [
+        "Comunicação"
+      ],
+      "conteudo": [
+        "Definição de mensagem",
+        "Comunicação entre objetos",
+        "Tipos de mensagens"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Polimorfismo",
+      "palavras-chave": [
+        "Multiformidade"
+      ],
+      "conteudo": [
+        "Definição de polimorfismo",
+        "Exemplos de polimorfismo",
+        "Tipos de polimorfismo"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Herança",
+      "palavras-chave": [
+        "Inheritância"
+      ],
+      "conteudo": [
+        "Definição de herança",
+        "Exemplos de herança",
+        "Tipos de herança"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Composição",
+      "palavras-chave": [
+        "Reunião"
+      ],
+      "conteudo": [
+        "Definição de composição",
+        "Exemplos de composição",
+        "Tipos de composição"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "atividade_pratica": {
+    "titulo": "Atividade Prática: Desenvolvimento de um Carrinho de Compras",
+    "descricao": [
+      "Criar um carrinho de compras com as funcionalidades de adicionar e remover produtos",
+      "Calcular o valor total do carrinho"
+    ],
+    "exemplos": []
+  }
+}

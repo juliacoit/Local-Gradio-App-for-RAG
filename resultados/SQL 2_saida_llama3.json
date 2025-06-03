@@ -1,77 +1,153 @@
 {
-  "titulo": "SQL",
-  "disciplina": "",
-  "ementa": [],
+  "titulo": "SQL Prof. Esp. Marcos Brito",
+  "disciplina": "SQL",
+  "ementa": [
+    "Tipos de Dados",
+    "DDL Data Definition Language",
+    "DML Data Manipulation Language"
+  ],
   "topicos": [
     {
-      "titulo": "SQL",
+      "titulo": "Tipos de Dados",
       "palavras-chave": [
-        "SQL"
+        "Char",
+        "Varchar",
+        "Text",
+        "Int",
+        "Float",
+        "Double",
+        "Boolean",
+        "Date",
+        "Time",
+        "Timestamp"
       ],
       "conteudo": [
-        "SQL; SQL; DDL; DML; Data Definition Language; Data Manipulation Language; Char: quantidade de caracteres definida;",
-        "Varchar: quantidade de caracteres variável;",
-        "Text: texto longo;",
-        "Int: número inteiro;",
-        "Float: números reais;",
-        "Double: números reais (maior precisão);",
-        "Boolean: booleano;",
-        "Date: data;",
-        "Time: hora;",
-        "Timestamp: data e hora.",
-        "Ligado a parte estrutural de um banco de dados; Restrições de Integridade;",
-        "Comandos: Create, Drop, Alter;"
+        "quantidade de caracteres definida",
+        "quantidade de caracteres variável",
+        "texto longo",
+        "número inteiro",
+        "números reais",
+        "números reais (maior precisão)",
+        "booleano",
+        "data",
+        "hora",
+        "data e hora"
       ],
       "subsecoes": []
     },
     {
-      "titulo": "DML",
+      "titulo": "DDL Data Definition Language",
       "palavras-chave": [
-        "SQL"
+        "Linguagem de definição de dados",
+        "Restrições de Integridade",
+        "Comandos: Create, Drop, Alter"
       ],
       "conteudo": [
-        "Linguagem de manipulação de dados; Relacionada com a operação dos dados;",
-        "Comandos: Insert, Update, Select, Delete;",
-        "É através dos comandos DML que inserimos,",
-        "atualizamos, selecionamos e excluímos dados."
+        "Ligado a parte estrutural de um banco de dados",
+        "É através dos comandos DDL que se cria uma tabela, adiciona novas colunas, etc."
       ],
       "subsecoes": []
     },
     {
-      "titulo": "DML",
+      "titulo": "DML Data Manipulation Language",
       "palavras-chave": [
-        "SQL"
+        "Linguagem de manipulação de dados",
+        "Comandos: Insert, Update, Select, Delete"
       ],
       "conteudo": [
-        "Linguagem de manipulação de dados; Relacionada com a operação dos dados;",
-        "Comandos: Insert, Update, Select, Delete;",
-        "É através dos comandos DML que inserimos,",
-        "atualizamos, selecionamos e excluímos dados."
-      ],
-      "subsecoes": []
-    },
-    {
-      "titulo": "UPDATE curso SET nome = ‘Análise de Sistemas’,",
-      "palavras-chave": [],
-      "conteudo": [
-        "sigla = ‘AS’;",
-        "X"
+        "Relacionada com a operação dos dados",
+        "É através dos comandos DML que inserimos, atualizamos, selecionamos e excluímos dados."
       ],
       "subsecoes": []
     },
     {
-      "titulo": "UPDATE curso SET nome = ‘Análise de Sistemas’,",
-      "palavras-chave": [],
+      "titulo": "Primeiros Passos",
+      "palavras-chave": [
+        "CREATE DATABASE",
+        "USE"
+      ],
       "conteudo": [
-        "sigla = ‘AS’ WHERE id_curso = 1;",
-        "DELETE FROM curso WHERE id_curso = 1; X DELETE FROM curso;"
+        "Inicialmente é necessário criar uma base de dados, para isso, utiliza-se o comando: CREATE DATABASE nomeDatabase;",
+        "Sempre que quisermos utilizar uma base de dados é necessário executar o seguinte comando: USE nomeDatabase;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "CREATE TABLE",
+      "palavras-chave": [
+        "curso",
+        "id_curso",
+        "nome",
+        "sigla",
+        "descricao",
+        "ativo",
+        "salario_previsto",
+        "mensalidade",
+        "data_inicio",
+        "hora_inicio",
+        "registro"
+      ],
+      "conteudo": [
+        "CREATE TABLE curso( id_curso INT AUTO_INCREMENT NOT NULL, nome VARCHAR(60), sigla CHAR(2), descricao TEXT, ativo BOOLEAN, salario_previsto FLOAT, mensalidade DOUBLE, data_inicio DATE, hora_inicio TIME, registro TIMESTAMP, PRIMARY KEY(id_curso));"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "INSERT",
+      "palavras-chave": [
+        "nome",
+        "sigla",
+        "descricao",
+        "ativo",
+        "salario_previsto",
+        "mensalidade",
+        "data_inicio",
+        "hora_inicio",
+        "registro"
+      ],
+      "conteudo": [
+        "Comando utilizado para inserir dados na tabela; Ex.: INSERT INTO curso(nome, sigla, descricao, ativo, salario_previsto, mensalidade, data_inicio, hora_inicio, registro) VALUES('Tecnologia da Informação', 'TI', 'Curso da área de tecnologia...', 1, 2000.00, 750.876, '2024-02-17','08:30:25', NOW());"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "SELECT",
+      "palavras-chave": [
+        "* FROM curso",
+        "WHERE",
+        "ORDER BY",
+        "LIMIT"
+      ],
+      "conteudo": [
+        "De forma geral, comando utilizado para trazer dados; Ex.: SELECT * FROM curso; WHERE; ORDER BY; LIMIT;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "UPDATE",
+      "palavras-chave": [
+        "nome",
+        "sigla"
+      ],
+      "conteudo": [
+        "Utilizado para atualizar/editar dados nas tabelas; Ex.: UPDATE curso SET nome = ‘Análise de Sistemas’, sigla = ‘AS’; X UPDATE curso SET nome = ‘Análise de Sistemas’, sigla = ‘AS’ WHERE id_curso = 1;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "DELETE",
+      "palavras-chave": [
+        "id_curso"
+      ],
+      "conteudo": [
+        "Utilizado para excluir registros das tabelas; Tomem bastante cuidado ao utilizar esse comando; Ex.: DELETE FROM curso WHERE id_curso = 1; X DELETE FROM curso;"
       ],
       "subsecoes": []
     }
   ],
   "exemplos": [
     {
-      "descricao": "É através dos comandos DDL, por exemplo,",
+      "descricao": "",
       "codigo": "",
       "explicacao": ""
     }

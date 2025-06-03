@@ -1,0 +1,61 @@
+
+
+---  
+**1. Pergunta:**  
+Qual é a definição correta de "abstração" no contexto da Orientação a Objetos?  
+
+a) Representação de objetos em linguagem de programação  
+b) Processo de identificar características essenciais de um objeto, ignorando detalhes irrelevantes  
+c) Relação entre uma classe e suas instâncias  
+d) Capacidade de um objeto de responder a mensagens  
+
+**Resposta correta:** b  
+**Explicação:** Abstração é o processo de simplificar a representação de objetos, focando em suas características essenciais e ignorando detalhes não relevantes para o problema em questão.  
+
+---  
+**2. Pergunta:**  
+Qual é a relação entre uma classe e uma instância?  
+
+a) Uma classe é uma instância de uma outra classe  
+b) Uma instância é um exemplo concreto de uma classe  
+c) Uma classe e uma instância são sinônimos  
+d) Uma instância é uma propriedade de uma classe  
+
+**Resposta correta:** b  
+**Explicação:** Uma classe é uma definição genérica, enquanto uma instância é um objeto específico criado a partir dessa classe. Por exemplo, "Carro" é uma classe, e "Fusca" é uma instância dessa classe.  
+
+---  
+**3. Pergunta:**  
+Qual é a diferença principal entre um atributo e uma operação em um objeto?  
+
+a) Atributos são comportamentos, e operações são características  
+b) Atributos são características estáticas, e operações são comportamentos dinâmicos  
+c) Atributos são definidos por mensagens, e operações são definidas por classes  
+d) Atributos são exclusivos de classes, e operações são exclusivas de instâncias  
+
+**Resposta correta:** b  
+**Explicação:** Atributos representam as características (estados) de um objeto, enquanto operações representam seus comportamentos (ações que pode realizar).  
+
+---  
+**4. Pergunta:**  
+Qual tipo de mensagem é usada para solicitar que um objeto execute uma ação?  
+
+a) Mensagem de comunicação  
+b) Mensagem de requisição  
+c) Mensagem de resposta  
+d) Mensagem de notificação  
+
+**Resposta correta:** b  
+**Explicação:** Mensagens de requisição são usadas para solicitar que um objeto execute uma operação específica, como "calcular total" em um carrinho de compras.  
+
+---  
+**5. Pergunta:**  
+Qual é um exemplo de polimorfismo em Orientação a Objetos?  
+
+a) Um método que tem o mesmo nome em diferentes classes, mas comportamentos distintos  
+b) Uma classe que herda características de outra classe  
+c) Uma instância que compõe outra instância  
+d) Uma mensagem que é enviada entre objetos de diferentes classes  
+
+**Resposta correta:** a  
+**Explicação:** Polimorfismo permite que métodos com o mesmo nome tenham comportamentos diferentes dependendo da classe que os invoca, como o método "desenhar" em formas geométricas (círculo, quadrado).

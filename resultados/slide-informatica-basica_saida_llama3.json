@@ -1,1 +1,135 @@
-""
+{
+  "titulo": "Introdução à Informática",
+  "disciplina": "Informática",
+  "ementa": [
+    "MÓDULO I INFORMÁTICA BÁSICA"
+  ],
+  "topicos": [
+    {
+      "titulo": "Hardware e Software",
+      "palavras-chave": [],
+      "conteudo": [
+        "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+        "Aplicação de planilha eletrônica.",
+        "Manutenção de Banco de dados.",
+        "Utilização de Intranet e Internet."
+      ]
+    },
+    {
+      "titulo": "Esquema do Computador",
+      "palavras-chave": [],
+      "conteudo": [
+        "Hardware - Conceitos Básicos"
+      ]
+    },
+    {
+      "titulo": "Principais componentes físicos",
+      "palavras-chave": [],
+      "conteudo": [
+        "Monitor de vídeo",
+        "Gabinete",
+        "Teclado",
+        "Mouse"
+      ]
+    },
+    {
+      "titulo": "Unidade Central de Processamento (CPU)",
+      "palavras-chave": [],
+      "conteudo": [
+        " CPU (Unidade Central de Processamento) - conjunto de chips de silício que controla o fluxo de funcionamento de toda a máquina."
+      ]
+    },
+    {
+      "titulo": "Memória RAM",
+      "palavras-chave": [],
+      "conteudo": [
+        "memória volátil, permite tanto a leitura como a gravação e regravação de dados."
+      ]
+    },
+    {
+      "titulo": "Read Only Memory (ROM)",
+      "palwares-chave": [],
+      "conteudo": [
+        "suas informações são gravadas pelo fabricante."
+      ]
+    },
+    {
+      "titulo": "Disco Rígido",
+      "palavras-chave": [],
+      "conteudo": [
+        "Dispositivo principal do computador para armazenamento de informações"
+      ]
+    },
+    {
+      "titulo": "Unidade de disco flexível",
+      "palavras-chave": [],
+      "conteudo": [
+        "armazena informações em discos removíveis."
+      ]
+    },
+    {
+      "titulo": "CD-ROM ou DVD-ROM",
+      "palavras-chave": [],
+      "conteudo": [
+        "Lê informações armazenadas em CDs e/ou DVDs"
+      ]
+    },
+    {
+      "titulo": "Periféricos",
+      "palavras-chave": [],
+      "conteudo": [
+        "todo equipamento utilizado pelo computador para intercambiar dados"
+      ]
+    },
+    {
+      "titulo": "Medidas de Dados",
+      "palavras-chave": [],
+      "conteudo": [
+        "bit, byte, Kilobyte (Kb), Megabyte (Mb), Gigabyte (Gb), Terabyte (Tb)"
+      ]
+    },
+    {
+      "titulo": "Software - Conceitos Básicos",
+      "palavras-chave": [],
+      "conteudo": [
+        "software, Sistema Operacional, Linguagem, Utilitário, Aplicativo"
+      ]
+    },
+    {
+      "titulo": "Vantagens do computador",
+      "palavras-chave": [],
+      "conteudo": [
+        "Facilidade de armazenamento e recuperação da informação; Racionalização da rotina."
+      ]
+    },
+    {
+      "titulo": "Armazenamento de Dados",
+      "palavras-chave": [],
+      "conteúdo": [
+        "Funcionamento básico – elaborar, salvar e carregar"
+      ]
+    },
+    {
+      "titulo": "Nomes de Arquivos e Pastas",
+      "palavras-chave": [],
+      "conteúdo": [
+        "nome pode possuir até 256 caracteres; Extensões geralmente apresentam 3 caracteres."
+      ]
+    },
+    {
+      "titulo": "Windows",
+      "palavras-chave": [],
+      "conteúdo": [
+        "Sistema Operacional – Software que controla toda a atividade do computador"
+      ]
+    },
+    {
+      "titulo": "Histórico: Evolução no Tempo",
+      "palavras-chave": [],
+      "conteúdo": [
+        "A palavra computar significa calcular. Portanto, de alguma forma computadores já existem há bastante tempo."
+      ]
+    }
+  ],
+  "exemplos": []
+}

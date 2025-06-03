@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "titulo": "Conceitos Básicos de Banco de Dados:",
   "autor": "Prof. Esp. Marcos Brito",
   "ementa": [
@@ -22,10 +23,28 @@
         "Conceito de SGBD",
         "Vantagens do SGBD",
         "Comparação com o Sistema de Arquivos"
+=======
+  "titulo": "Álgebra Relacional",
+  "disciplina": "Banco de Dados",
+  "ementa": [
+    "Conceitos Básicos de Banco de Dados:",
+    "Métodos e técnicas; Objetivo da modelagem;",
+    "Projeto e implementação de um Banco de Dados:",
+    "Proposta por Edgar Frank Codd;",
+    "Base para o entendimento das operações de um banco de dados relacional;"
+  ],
+  "topicos": [
+    {
+      "titulo": "Álgebra Relacional",
+      "palavras-chave": [],
+      "conteudo": [
+        "Parte teórica de como operar um banco de dados relacional;"
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
       ],
       "subsecoes": []
     },
     {
+<<<<<<< HEAD
       "titulo": "Aspectos de modelagem de dados:",
       "palavras-chave": [
         "Modelo de Dados",
@@ -46,10 +65,126 @@
         "Coleta de requisitos",
         "Análise de requisitos",
         "Categorias de modelos"
+=======
+      "titulo": "Ementa da Disciplina",
+      "palavras-chave": [],
+      "conteudo": [
+        "Definição de Banco de Dados;",
+        "Terminologia básica;",
+        "Usuários de Banco de Dados;",
+        "Aplicações;",
+        "Abstração de dados Esquema;",
+        "Instância.",
+        "Sistemas de Gerenciamento de Banco de Dados (SGBD):",
+        "Conceito de SGBD;",
+        "Vantagens do SGBD;",
+        "Comparação com o Sistema de Arquivos."
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Aspectos de modelagem de dados:",
+          "conteudo": [
+            "Conceito de Modelo de Dados; Conhecimento e especificação do minimundo;",
+            "Métodos e técnicas; Objetivo da modelagem;",
+            "Abstração; Coleta de requisitos;",
+            "Análise de requisitos; Categorias de modelos."
+          ],
+          "subsecoes": []
+        }
+      ]
+    },
+    {
+      "titulo": "Ementa da Disciplina",
+      "palavras-chave": [],
+      "conteudo": [
+        "Modelo Conceitual de dados:",
+        "Abordagem entidade-relacionamento (ER);",
+        "Entidades;Atributos; Relacionamentos;",
+        "Cardinalidade de relacionamentos;",
+        "Diagrama entidade-relacionamento (DER).",
+        "Modelo Relacional:",
+        "Nomenclatura do Modelo Relacional;",
+        "Domínio;",
+        "Relações;",
+        "Chaves;",
+        "Restrições de Integridade;",
+        "Esquemas de Relação."
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Mapeamento entre modelos de dados:",
+          "conteudo": [
+            "Equivalência entre os Modelos Entidade-Relacionamento e Relacional;",
+            "Regras para o mapeamento."
+          ],
+          "subsecoes": []
+        }
+      ]
+    },
+    {
+      "titulo": "Álgebra Relacional",
+      "palavras-chave": [
+        "Seleção",
+        "Projeção",
+        "União",
+        "Diferença",
+        "Produto Cartesiano",
+        "Junção",
+        "Renomear"
+      ],
+      "conteudo": [
+        "Conceito de Álgebra Relacional;",
+        "Operações: Seleção, Projeção, União, Diferença, Produto Cartesiano.",
+        "Renomear; ",
+        "Junção."
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Linguagem de Definição de Dados (DDL):",
+          "conteudo": [
+            "Tipo de Dados em SQL; ",
+            "Comandos: Create, Drop, Alter; ",
+            "Restrições: Integridade de Domínio, Integridade de entidade, Integridade de Chave, Integridade Referencial. ",
+            "Linguagem de Manipulação de Dados (DML): ",
+            "Comandos: Insert, Delete, Update, Select; ",
+            "Visões. ",
+            "Criação de um Banco de Dados a partir de um minimundo real escolhido"
+          ],
+          "subsecoes": []
+        }
+      ]
+    },
+    {
+      "titulo": "Edgar Frank Codd",
+      "palavras-chave": [],
+      "conteudo": [],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Operações",
+      "palavras-chave": [
+        "Seleção",
+        "Projeção",
+        "União",
+        "Diferença",
+        "Produto Cartesiano",
+        "Junção",
+        "Renomear"
+      ],
+      "conteudo": [
+        "Seleção(   );",
+        "Projeção (π);",
+        "União (   );",
+        "Diferença (-);",
+        "Produto Cartesiano (x);",
+        "Junção (⋈);",
+        "Renomear (    )."
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
       ],
       "subsecoes": []
     },
     {
+<<<<<<< HEAD
       "titulo": "Modelo Conceitual de dados:",
       "palavras-chave": [
         "Modelo Entidade-Relacionamento",
@@ -67,10 +202,18 @@
         "Relacionamentos",
         "Cardinalidade de relacionamentos",
         "Diagrama entidade-relacionamento (DER)"
+=======
+      "titulo": "Seleção",
+      "palavras-chave": [],
+      "conteudo": [
+        "Seleciona os registros de acordo com uma condição estabelecida;",
+        "id_estado = 2 (tab_cantor)"
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
       ],
       "subsecoes": []
     },
     {
+<<<<<<< HEAD
       "titulo": "Modelo Relacional:",
       "palavras-chave": [
         "Nomenclatura do Modelo Relacional",
@@ -87,10 +230,19 @@
         "Chaves",
         "Restrições de Integridade",
         "Esquemas de Relação"
+=======
+      "titulo": "Projeção",
+      "palavras-chave": [],
+      "conteudo": [
+        "Especificação de colunas; ",
+        "Linhas duplicadas são eliminadas; ",
+        "π nome (tab_estado)"
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
       ],
       "subsecoes": []
     },
     {
+<<<<<<< HEAD
       "titulo": "Mapeamento entre modelos de dados:",
       "palavras-chave": [
         "Equivalência entre os Modelos Entidade-Relacionamento e Relacional",
@@ -138,6 +290,51 @@
       "descricao": "Renomear",
       "codigo": "tab_cantor_nordeste (tab_cantor)",
       "explicacao": "Renomeia a tabela `tab_cantor` para `tab_cantor_nordeste`."
+=======
+      "titulo": "União",
+      "palavras-chave": [],
+      "conteudo": [
+        "União das tabelas envolvidas ",
+        " (π id(tab_cantor))        (π id(tab_estado))"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Diferença",
+      "palavras_chave": [],
+      "conteudo": [
+        "Retorna apenas os registros que contém na primeira tabela, mas que não contem na segunda.",
+        "(π id(tab_cantor)) - (π id(tab_estado))"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Produto Cartesiano",
+      "palavras_chave": [],
+      "conteudo": [
+        "Todas as linhas da primeira tabela com todas as linhas da outra tabela; ",
+        "tab_cantor x tab_estado"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Junção",
+      "palavras_chave": [],
+      "conteudo": [
+        "Junção de registros entre tabelas de forma organizada e estabelecida; ",
+        "tab_cantor ⋈ (tab_cantor.id_estado = tab_estado.id) tab_estado"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Renomear",
+      "palavras_chave": [],
+      "conteudo": [
+        "Renomear tabela; ",
+        " tab_cantor_nordeste (tab_cantor)"
+      ],
+      "subsecoes": []
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
     }
   ]
 }

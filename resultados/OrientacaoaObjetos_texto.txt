@@ -1,0 +1,390 @@
+--- Página 1 ---
+An´alise e Projeto de Sistemas
+Prof. Msc. Brenno de Mello
+brennomello@ifba.edu.br
+Instituto Federal da Bahia - IFBA
+Campus Barreiras
+25 de Mar¸co de 2024
+
+--- Página 2 ---
+1 Orienta¸c˜ao a Objetos
+Objetos
+Abstra¸c˜ao
+Classe
+Instˆancia
+Atributo
+Opera¸c˜ao
+Mensagem
+Evento
+Parˆametro
+Estado
+Transi¸c˜ao de Estado
+Associa¸c˜ao
+M´etodo
+Colabora¸c˜ao
+Encapsulamento
+Polimorfismo
+Heran¸ca
+Composi¸c˜ao
+A i id d P ´ i
+
+--- Página 3 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Orienta¸c˜ao a Objetos
+Orienta¸c˜ao a Objetos
+1/30
+
+--- Página 4 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Objetos
+Orienta¸c˜ao a Objetos
+Objetos
+Qualquer coisa concreta ou abstrata que existe no mundo real, em que se pode
+individualiz´a-la por possuir comportamentos e caracter´ısticas pr´oprias.
+Figure: Objetos
+Orienta¸c˜ao a Objetos
+2/30
+
+--- Página 5 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Abstra¸c˜ao
+Orienta¸c˜ao a Objetos
+Abstra¸c˜ao
+Abstra´ımos quando definimos um objeto conceitual partindo de OBJETOS do
+mundo real com os mesmos comportamentos e caracter´ısticas, os quais s˜ao
+classificados como de um mesmo tipo.
+Orienta¸c˜ao a Objetos
+3/30
+
+--- Página 6 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Abstra¸c˜ao
+Orienta¸c˜ao a Objetos
+Abstra¸c˜ao
+Fig re Abstrac˜ao de esporte
+Orienta¸c˜ao a Objetos
+4/30
+
+--- Página 7 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Classe
+Orienta¸c˜ao a Objetos
+Classe
+Representa a ABSTRAC¸ ˜AO de um conjunto de OBJETOS do mundo real que
+possui comportamentos e caracter´ısticas comuns.
+Classe ou classe de objeto ´e uma abstra¸c˜ao das caracter´ısticas relevantes de
+coisas do mundo real. ´E um conjunto de objetos que tˆem a mesma especifica¸c˜ao
+[6].
+Orienta¸c˜ao a Objetos
+5/30
+
+--- Página 8 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Classe
+Orienta¸c˜ao a Objetos
+Classe
+Figure: Classe
+Orienta¸c˜ao a Objetos
+6/30
+
+--- Página 9 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Instˆancia
+Orienta¸c˜ao a Objetos
+Instˆancia
+´E cada umas das ocorrˆencias de um OBJETO formado a partir da sua CLASSE.
+Fi
+I
+tˆ
+i
+Orienta¸c˜ao a Objetos
+7/30
+
+--- Página 10 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Atributo
+Orienta¸c˜ao a Objetos
+Atributo
+´E uma caracter´ıstica particular que os OBJETOS de uma CLASSE possuem,
+assumindo valores diferentes para cada OBJETO;
+Atributo ´e um conjunto de caracter´ısticas de um dado objeto.
+Figure: Atributo.
+Orienta¸c˜ao a Objetos
+8/30
+
+--- Página 11 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Opera¸c˜ao
+Orienta¸c˜ao a Objetos
+Opera¸c˜ao
+´E uma ordem que faz um OBJETO executar uma a¸c˜ao. As opera¸c˜oes s˜ao tudo o
+que os OBJETOS de uma CLASSE fazem e nada al´em do que esses objetos
+podem fazer.
+Figure: Opera¸c˜ao.
+Orienta¸c˜ao a Objetos
+9/30
+
+--- Página 12 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Opera¸c˜ao
+Orienta¸c˜ao a Objetos
+Opera¸c˜ao
+Figure: Opera¸c˜ao.
+Orienta¸c˜ao a Objetos
+10/30
+
+--- Página 13 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Mensagem
+Orienta¸c˜ao a Objetos
+Mensagem.
+Representa o mecanismo de chamada de uma OPERAC¸ ˜AO. ´E utilizada na
+solicita¸c˜ao de execu¸c˜ao de uma OPERAC¸ ˜AO. ´E a maneira como conseguimos
+que um m´etodo seja executado;
+Os objetos interagem atrav´es do envio de mensagens. Isso significa que os
+objetos est˜ao enviando mensagens uns aos outros com o objetivo de realizar
+alguma opera¸c˜ao (requisitando servi¸co) no sistema.
+Orienta¸c˜ao a Objetos
+11/30
+
+--- Página 14 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Mensagem
+Orienta¸c˜ao a Objetos
+Mensagem
+Figure: Mensagem.
+Orienta¸c˜ao a Objetos
+12/30
+
+--- Página 15 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Evento
+Orienta¸c˜ao a Objetos
+Evento
+Um tipo especial de OPERAC¸ ˜AO que faz com que os OBJETOS mudem de
+ESTADO.
+Figure: Evento.
+Orienta¸c˜ao a Objetos
+13/30
+
+--- Página 16 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Parˆametro
+Orienta¸c˜ao a Objetos
+Parˆametro
+´E um ou mais ATRIBUTOS que s˜ao carregados para dentro de uma
+MENSAGEM.
+Figure: Parˆametro.
+Orienta¸c˜ao a Objetos
+14/30
+
+--- Página 17 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Estado
+Orienta¸c˜ao a Objetos
+Estado
+´E a forma de apresenta¸c˜ao dos OBJETOS de uma CLASSE em um determinado
+instante.
+Figure: Estado.
+Orienta¸c˜ao a Objetos
+15/30
+
+--- Página 18 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Transi¸c˜ao de Estado
+Orienta¸c˜ao a Objetos
+Transi¸c˜ao de Estado
+Quando ocorre a mudan¸ca de ESTADO de um OBJETO de uma CLASSE como
+resposta `a chegada de um EVENTO.
+Figure: Transi¸c˜ao de estado.
+Orienta¸c˜ao a Objetos
+16/30
+
+--- Página 19 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Transi¸c˜ao de Estado
+Orienta¸c˜ao a Objetos
+Princ´ıpios da OO
+Figure: Princ´ıpios da Orientac˜ao a Objetos
+Orienta¸c˜ao a Objetos
+17/30
+
+--- Página 20 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Associa¸c˜ao
+Orienta¸c˜ao a Objetos
+Associa¸c˜ao
+´E a forma como os OBJETOS de uma mesma CLASSE ou de CLASSES
+diferentes se conectam.
+Figure: Associa¸c˜ao.
+Orienta¸c˜ao a Objetos
+18/30
+
+--- Página 21 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+M´etodo
+Orienta¸c˜ao a Objetos
+M´etodo
+´E o algoritmo (conjunto de passos) que um OBJETO executa quando reage a
+uma OPERAC¸ ˜AO. O m´etodo ´e a l´ogica interna de uma opera¸c˜ao.
+Figure: M´etodo.
+Orienta¸c˜ao a Objetos
+19/30
+
+--- Página 22 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Colabora¸c˜ao
+Orienta¸c˜ao a Objetos
+Colabora¸c˜ao
+´E a troca de MENSAGENS que acontece entre OBJETOS e atores.
+Figure: Colabora¸c˜ao.
+Orienta¸c˜ao a Objetos
+20/30
+
+--- Página 23 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Encapsulamento
+Orienta¸c˜ao a Objetos
+Encapsulamento
+´E a reuni˜ao de caracter´ısticas e comportamentos de OBJETOS em uma CLASSE.
+Figure: Encapsulamento.
+Orienta¸c˜ao a Objetos
+21/30
+
+--- Página 24 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Encapsulamento
+Orienta¸c˜ao a Objetos
+Encapsulamento
+Orienta¸c˜ao a Objetos
+22/30
+
+--- Página 25 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Polimorfismo
+Orienta¸c˜ao a Objetos
+Polimorfismo
+´E a capacidade que OBJETOS de CLASSES diferentes possuem de se
+comportarem de forma diferente em uma mesma opera¸c˜ao. A estrutura
+(ATRIBUTOS) de cada CLASSE ´e diferente.
+Figure: Polimorfismo.
+Orienta¸c˜ao a Objetos
+23/30
+
+--- Página 26 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Heran¸ca
+Orienta¸c˜ao a Objetos
+Heran¸ca
+´E a propriedade que possibilita que a CLASSE herde caracter´ısticas e
+comportamento de uma outra CLASSE.
+Fi
+e He a ca
+Orienta¸c˜ao a Objetos
+24/30
+
+--- Página 27 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Heran¸ca
+Orienta¸c˜ao a Objetos
+Heran¸ca
+Orienta¸c˜ao a Objetos
+25/30
+
+--- Página 28 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Composi¸c˜ao
+Orienta¸c˜ao a Objetos
+Composi¸c˜ao
+A composi¸c˜ao permite que criemos objetos a partir da reuni˜ao de outros objetos.
+Orienta¸c˜ao a Objetos
+26/30
+
+--- Página 29 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Atividade Pr´atica
+Exerc´ıcio Orienta¸c˜ao a Objetos
+Desenvolver um carrinho de compra utilizando os conceitos de orienta¸c˜ao a
+objetos. As funcionalidades do carrinho de compras s˜ao:
+- Adionar produto ao carrinho:
+* Caso o item j´a exista no carrinho para este mesmo produto, as seguintes regras
+dever˜ao ser seguidas:
+* A quantidade do item dever´a ser a soma da quantidade atual com a
+quantidade passada como parˆametro.
+* Se o valor unit´ario informado for diferente do valor unit´ario atual do item, o
+novo valor unit´ario do item dever´a ser o passado como parˆametro.
+- Remover produto do carrinho
+- Obter o valor total do carrinho de compras, que deve ser a soma dos valores
+totais de todos os itens que comp˜oem o carrinho.
+- Obter todos os produtos do carrinho
+Orienta¸c˜ao a Objetos
+27/30
+
+--- Página 30 ---
+An´alise e Projeto de Sistemas
+Orienta¸c˜ao a Objetos
+Atividade Pr´atica
+D´uvidas?
+D´uvidas?
+Orienta¸c˜ao a Objetos
+28/30
+
+--- Página 31 ---
+An´alise e Projeto de Sistemas
+Bibliografia
+Bibliografia I
+GUERRA, Eduardo.
+Design Patterns com Java: Projeto orientado a objetos guiado por padr˜oes.
+Editora Casa do C´odigo, 2014.
+CARVALHO, L. Thiago.
+Orienta¸c˜ao a Objetos: Aprenda seus Conceitos de Forma Efetiva.
+Editora Casa do C´odigo, 2016.
+BEZERRA, Eduardo.
+Princ´ıpios de an´alise e projeto de sistema com UML.
+3 edi¸c˜ao. Rio de Janeiro: CAMPUS: Elsevier Editora Ltda, 2015.
+Bibliografia
+29/30
+
+--- Página 32 ---
+An´alise e Projeto de Sistemas
+Bibliografia
+Bibliografia II
+SOMMERVILLE, I.
+Engenharia de Software.
+9 ed. S˜ao Paulo: Pearson Prentice Hall, 2011.
+RANDO, D´everson R.
+An´alise e Projeto Orientado a Objetos.
+Maring´a-Pr.: UniCesumar, 2016.
+PIRES, Eliana Rovay Detregiacchi.
+An´alise de Sistemas.
+Instituto Federal de Edu ca¸c˜ao, Ciˆencia e Tecnologia; Universidade Federal do
+Mato Grosso - Cuiab´a : UFMT; Porto Velho: IFRO, 2014.
+Bibliografia
+30/30

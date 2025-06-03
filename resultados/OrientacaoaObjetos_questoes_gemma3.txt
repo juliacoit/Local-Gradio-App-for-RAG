@@ -1,0 +1,61 @@
+
+
+---  
+**1. Pergunta:**  
+O que define um objeto na programação orientada a objetos?  
+
+a) Apenas os atributos  
+b) Apenas as operações  
+c) A combinação de atributos e operações  
+d) A relação com outras classes  
+
+**Resposta correta:** c  
+**Explicação:** Um objeto é caracterizado pela combinação de atributos (características) e operações (comportamentos), conforme definido na aula.  
+
+---  
+**2. Pergunta:**  
+Qual é a diferença entre uma classe e uma instância?  
+
+a) Classe é um objeto concreto, e instância é um modelo abstrato  
+b) Classe é um modelo abstrato, e instância é um objeto concreto  
+c) Classe e instância são sinônimos  
+d) Classe é um tipo de instância  
+
+**Resposta correta:** b  
+**Expândio:** Uma classe é um modelo abstrato que define a estrutura de objetos, enquanto uma instância é um objeto concreto criado a partir dessa classe.  
+
+---  
+**3. Pergunta:**  
+Qual princípio da orientação a objetos refere-se à proteção de dados internos de um objeto?  
+
+a) Abstração  
+b) Encapsulamento  
+c) Polimorfismo  
+d) Herança  
+
+**Resposta correta:** b  
+**Explicação:** O encapsulamento permite que os dados de um objeto sejam protegidos, sendo acessados apenas através de métodos específicos.  
+
+---  
+**4. Pergunta:**  
+Qual termo descreve a capacidade de um objeto de assumir múltiplas formas?  
+
+a) Herança  
+b) Polimorfismo  
+c) Associação  
+d) Composição  
+
+**Resposta correta:** b  
+**Explicação:** O polimorfismo permite que objetos de diferentes classes respondam a mesma mensagem de maneiras distintas.  
+
+---  
+**5. Pergunta:**  
+Qual relação indica que um objeto é parte de outro objeto?  
+
+a) Associação  
+b) Herança  
+c) Composição  
+d) Dependência  
+
+**Resposta correta:** c  
+**Explicação:** A composição representa uma relação de "parte de" entre objetos, onde um objeto é composto por outros objetos.

@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 Álgebra Relacional 
 Prof. Esp. Marcos Brito
+=======
+--- Página 1 ---
+Álgebra Relacional 
+Prof. Esp. Marcos Brito
+
+--- Página 2 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Ementa da Disciplina 
 Conceitos Básicos de Banco de Dados:  
 Definição de Banco de Dados;  
@@ -17,6 +25,11 @@ Aspectos de modelagem de dados:
 Métodos e técnicas;  Objetivo da modelagem;  
 Abstração; Coleta de requisitos;  
 Análise de requisitos; Categorias de modelos.
+<<<<<<< HEAD
+=======
+
+--- Página 3 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Ementa da Disciplina 
 Modelo Conceitual de dados:  
 Abordagem entidade-relacionamento (ER); 
@@ -33,6 +46,11 @@ Modelo Relacional:
 Mapeamento entre modelos de dados:  
 Equivalência entre os Modelos Entidade-Relacionamento e Relacional;  
 Regras para o mapeamento.
+<<<<<<< HEAD
+=======
+
+--- Página 4 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Ementa da Disciplina 
 Álgebra Relacional:  
 Conceito de Álgebra Relacional;  
@@ -49,6 +67,11 @@ Linguagem de Manipulação de Dados (DML):
 Visões.  
 Projeto e implementação de um Banco de Dados:  
 Criação de um Banco de Dados a partir de um minimundo real escolhido
+<<<<<<< HEAD
+=======
+
+--- Página 5 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Álgebra Relacional 
 Proposta por Edgar Frank Codd; 
 Base para o entendimento das operações de 
@@ -57,7 +80,15 @@ um banco de dados relacional;
 conjuntos da Matemática; 
 Parte teórica de como operar um banco de 
 dados relacional;
+<<<<<<< HEAD
 Edgar Frank Codd
+=======
+
+--- Página 6 ---
+Edgar Frank Codd
+
+--- Página 7 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Operações 
 Seleção(   ); 
 Projeção (π);  
@@ -67,35 +98,90 @@ Operações
 Junção (⋈); 
 Renomear (    ).
 
+<<<<<<< HEAD
 
+=======
+--- Página 8 ---
+
+
+--- Página 9 ---
+
+
+--- Página 10 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Seleção 
 Seleciona os registros de acordo com uma 
 condição estabelecida; 
      id_estado = 2 (tab_cantor)
+<<<<<<< HEAD
+=======
+
+--- Página 11 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Projeção 
 Especificação de colunas; 
 Linhas duplicadas são eliminadas; 
 π nome (tab_estado)
+<<<<<<< HEAD
 União 
 União das tabelas envolvidas 
   (π id(tab_cantor))        (π id(tab_estado))
+=======
+
+--- Página 12 ---
+União 
+União das tabelas envolvidas 
+  (π id(tab_cantor))        (π id(tab_estado))
+
+--- Página 13 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Diferença 
 Retorna apenas os registros que contém na 
 primeira tabela, mas que não contem na 
 segunda. 
 (π id(tab_cantor)) - (π id(tab_estado))
+<<<<<<< HEAD
+=======
+
+--- Página 14 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Produto Cartesiano 
 Todas as linhas da primeira tabela com todas 
 as linhas da outra tabela; 
 tab_cantor x tab_estado
+<<<<<<< HEAD
 Produto Cartesiano
+=======
+
+--- Página 15 ---
+Produto Cartesiano
+
+--- Página 16 ---
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4
 Junção 
 Junção de registros entre tabelas de forma 
 organizada e estabelecida; 
 tab_cantor ⋈ (tab_cantor.id_estado = 
 tab_estado.id) tab_estado
+<<<<<<< HEAD
 Renomear 
 Renomear tabela; 
     tab_cantor_nordeste (tab_cantor)
 Exercícios
 
+=======
+
+--- Página 17 ---
+Renomear 
+Renomear tabela; 
+    tab_cantor_nordeste (tab_cantor)
+
+--- Página 18 ---
+Exercícios
+
+--- Página 19 ---
+
+
+--- Página 20 ---
+
+>>>>>>> 044d001b73859abdd1cff760f930515be303dfd4

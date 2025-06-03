@@ -1,0 +1,34 @@
+{
+  "titulo": "Conceitos Básicos de Banco de Dados",
+  "autor": "Prof. Marcos Brito",
+  "disciplina": "Modelagem e Gestão em Sistemas Eletrônicos para Aplicações Web & Mobile; PPA",
+  "data": "",
+  "ementa": [
+    "Definição de Banco de Dados; Terminologia básica; Usuários do Banco de Dados.",
+    "Aplicações em várias áreas. ",
+    "Abstração e Instância Esquema."
+  ],
+  "topicos": [
+    {
+      "secao": "Introdução",
+      "subsecoes": []
+    },
+    {
+      "titulo": "",
+      "conteudo": [
+        "Sistemas de Gerenciamento de Banco de Dados (SGBD): Conceito; Vantagens do SGBD. Comparação com o sistema de arquivos."
+      ]
+    }
+  ],
+  "exampleos": [
+    {
+      "descricao": "",
+      "codigo": "",
+      "explicacao": ""
+    }
+  ],
+  "referencias": [
+    "SILBERSCHATZ, A.; KORTH, H. F.; SUDARSHAN, S.  'Sistemas de banco de dados'. São Paulo: Campus, 2006.",
+    "'Projeto de Banco de Dados', C.A HEUSER 6a edição, Porto Alegre: Bookman, 2010."
+  ]
+}

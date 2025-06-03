@@ -1,1 +1,195 @@
-""
+{
+  "titulo": "Introdução à Informática",
+  "disciplina": "Informática",
+  "ementa": [
+    "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+    "Aplicação de planilha eletrônica.",
+    "Manutenção de Banco de dados.",
+    "Utilização de Intranet e Internet.",
+    "Facilidade de armazenamento e recuperação da informação; Racionalização da rotina, tarefas rotineiras podem ser automatizadas; Velocidade das respostas; Planejamento e controle; Segurança; Redução de custos.",
+    "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+    "Aplicação de planilha eletrônica.",
+    "Manutenção de Banco de dados.",
+    "Utilização de Intranet e Internet.",
+    "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+    "Aplicação de planilha eletrônica.",
+    "Manutenção de Banco de dados.",
+    "Utilização de Intranet e Internet.",
+    "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+    "Aplicação de planilha eletrônica.",
+    "Manutenção de Banco de dados.",
+    "Utilização de Intranet e Internet."
+  ],
+  "topicos": [
+    {
+      "titulo": "MÓDULO I INFORMÁTICA BÁSICA",
+      "palavras-chave": [
+        "informática",
+        "computador",
+        "tratamento automático da informação",
+        "hardware",
+        "software"
+      ],
+      "conteudo": [
+        "Utilização de aplicativos para editoração de textos, confecção de gráficos e tabelas e cálculos estatísticos.",
+        "Aplicação de planilha eletrônica.",
+        "Manutenção de Banco de dados.",
+        "Utilização de Intranet e Internet."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Compromissos",
+      "palavras-chave": [
+        "aula",
+        "presença",
+        "atendimento",
+        "estudo",
+        "exercícios"
+      ],
+      "conteudo": [
+        "Não faltar aulas; Não chegar atrasado e nem sair mais cedo; Tolerância para entrada na sala: 15 minutos; Tirar todas as dúvidas em sala de aula; Não deixar para estudar somente perto do dia das provas; Fazer TODOS os exercícios que o for solicitado; Estudar em casa; Fazer estudos em grupos; Participar da aulas; Evitar conversas paralelas;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Conceitos Básicos sobre Sistema de Computação",
+      "palavras-chave": [
+        "sistema de computação",
+        "informática",
+        "hardware",
+        "software",
+        "computador"
+      ],
+      "conteudo": [
+        "INFORMÁTICA - É Ciência que estuda o tratamento automático da informação.",
+        "COMPUTADOR – Equipamento Eletrônico capaz de ordenar, calcular, testar, pesquisar e editar informações de acordo com instruções estabelecidas."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Conceitos Básicos",
+      "palavras-chave": [
+        "sistemas computacionais",
+        "hardware",
+        "software",
+        "componentes"
+      ],
+      "conteudo": [
+        "Sistemas computacionais– 2 partes básicas: hardware e software",
+        "HARDWAREÉ a parte mecânica e física da máquina, com seus componentes eletrônicos e peças.",
+        "SOFTWAREsão conjuntos de procedimentos básicos que fazem que o computador seja útil executando alguma função. A essas “ordens” preestabelecidas chamamos também de programas."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Hardware – Conceitos Básicos",
+      "palavras-chave": [
+        "hardware",
+        "monitor",
+        "gabinete",
+        "teclado",
+        "mouse"
+      ],
+      "conteudo": [
+        "Principais componentes físicosMonitor de vídeoGabineteTecladoMouse"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Hardware – Conceitos Básicos",
+      "palavras-chave": [
+        "entrada",
+        "saída",
+        "processamento",
+        "dados"
+      ],
+      "conteudo": [
+        "ENTRADAENTRADASAÍDAPROCESSAMENTOPROCESSAMENTO•Processamento de Dados"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Hardware – Conceitos Básicos",
+      "palavras-chave": [
+        "cpu",
+        "memória principal",
+        "unidades de entrada e saída"
+      ],
+      "conteudo": [
+        "É constituído por elementos básicos, ditos UNIDADES FUNCIONAIS BÁSICAS:– Unidade Central de Processamento (CPU).– Memória Principal.– Unidades de Entrada e Saída."
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "CPU (Unidade Central de Processamento)",
+      "palavras-chave": [
+        "cpu",
+        "cérebro",
+        "chips de silício",
+        "fluxo de funcionamento"
+      ],
+      "conteudo": [
+        "“cérebro” do computador– conjunto de chips de silício que controla o fluxo de funcionamento de toda a máquina– localizada na placa-mãe"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Memória RAM",
+      "palavras-chave": [
+        "memória ram",
+        "volátil",
+        "leitura",
+        "gravação",
+        "armazenamento temporário"
+      ],
+      "conteudo": [
+        "memória volátil, permite tanto a leitura como a gravação e regravação de dados.– utilizada apenas para trabalho.– armazenamento temporário de programas e dados"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "ROM",
+      "palavras-chave": [
+        "rom",
+        "read only memory",
+        "fabricante",
+        "bios",
+        "i/o"
+      ],
+      "conteudo": [
+        "É sigla para Read Only Memory (memória somente de leitura). Suas informações são gravadas pelo fabricante. O CD-ROM é memória RAM, BIOS (Basic Input/Output System): checa o sistema de I/O;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Hardware – Conceitos Básicos",
+      "palavras-chave": [
+        "hardware",
+        "computadores pessoais",
+        "microprocessador",
+        "it8, 12mhz"
+      ],
+      "conteudo": [
+        "1981 – IBM-PC XT – Um dos primeiros computadores pessoais (Microprocessador Intel 4,77 Mhz.",
+        "1986 – IBM PC AT 286 ( Microprocessador Intel de 6 a 12 Mhz"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "A QUINTA GERAÇÃO (1981....)",
+      "palavras_chave": [
+        "hardware",
+        "computadores",
+        "microprocessador",
+        "it8, 12mhz"
+      ],
+      "conteudo": [
+        " 1981 – IBM-PC XT – Um dos primeiros computadores pessoais(Microprocessador Intel 4,77 Mhz.",
+        "1986 – IBM PC AT 286 ( Microprocessador Intel de 6 a 12 Mhz"
+      ],
+      "subsecoes": []
+    }
+  ],
+  "subsecoes": []
+}

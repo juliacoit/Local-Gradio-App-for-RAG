@@ -1,9 +1,61 @@
-<think>
-Okay, the user wants me to create 5 multiple-choice questions based on the lesson content provided in JSON. But wait, the JSON content is empty. Hmm, maybe there was a mistake in the input. The user mentioned the lesson content is in JSON, but the example shows an empty string. I need to check if there's any actual content there. Since it's empty, I can't generate questions based on it. 
 
-Wait, maybe the user intended to include the JSON but forgot. In that case, I should inform them that the content is missing. Alternatively, perhaps the JSON was supposed to be part of the message but didn't come through. Either way, without the actual lesson content, I can't create the questions. 
 
-I should respond by letting the user know that the JSON content is missing and ask them to provide it so I can proceed. That way, they can correct the input and give me the necessary information to generate the questions as requested.
-</think>
+---  
+**1. Pergunta:**  
+Qual é a definição correta de informática conforme apresentada na aula?  
 
-O conteúdo da aula em JSON está vazio ou não foi fornecido corretamente. Por favor, forneça o conteúdo da aula em formato JSON válido para que eu possa gerar as questões educacionais com base nele.
+a) Estudo da utilização de computadores para processamento de dados  
+b) Ciência que estuda o tratamento automático da informação  
+c) Arte de programar computadores  
+d) Técnica de armazenamento de dados em dispositivos físicos  
+
+**Resposta correta:** b  
+**Explicação:** A informática é definida como a ciência que estuda o tratamento automático da informação, conforme explicado no conteúdo sobre "Conceitos Básicos sobre Sistema de Computação".  
+
+---  
+**2. Pergunta:**  
+Quais são as duas partes básicas de um sistema computacional?  
+
+a) Hardware e Software  
+b) Memória e Processador  
+c) Periféricos e Interfaces  
+d) Sistemas Operacionais e Aplicativos  
+
+**Resposta correta:** a  
+**Explicação:** O sistema computacional é composto por hardware (parte física) e software (conjunto de instruções que permitem o funcionamento do computador), conforme explicado no tópico "Conceitos Básicos".  
+
+---  
+**3. Pergunta:**  
+Qual é a característica principal da memória RAM?  
+
+a) Armazenamento permanente de dados  
+b) Memória volátil, usada para processamento temporário  
+c) Armazenamento de dados em disco rígido  
+d) Execução de instruções do sistema operacional  
+
+**Resposta correta:** b  
+**Explicação:** A RAM (Random Access Memory) é uma memória volátil, utilizada para armazenar dados e programas temporariamente durante o processamento, conforme descrito no tópico "Memória RAM".  
+
+---  
+**4. Pergunta:**  
+O que é a CPU e qual sua função principal?  
+
+a) Um periférico responsável por entrada de dados  
+b) A unidade de armazenamento de longo prazo  
+c) O "cérebro" do computador, responsável por processar dados  
+d) Um software que gerencia a interface do usuário  
+
+**Resposta correta:** c  
+**Explicação:** A CPU (Unidade Central de Processamento) é chamada de "cérebro" do computador, pois controla e executa as operações de processamento de dados, conforme explicado no tópico "CPU (Unidade Central de Processamento)".  
+
+---  
+**5. Pergunta:**  
+Qual é a diferença fundamental entre ROM e RAM?  
+
+a) ROM é volátil e RAM é não volátil  
+b) ROM é usada para armazenamento temporário e RAM para permanente  
+c) ROM armazena dados permanentemente, enquanto RAM é volátil  
+d) ROM é usada para processamento e RAM para entrada/saída  
+
+**Resposta correta:** c  
+**Explicação:** A ROM (Read Only Memory) armazena dados permanentemente e é não volátil, enquanto a RAM é volátil e usada para processamento temporário, conforme explicado nos tópicos "ROM" e "Memória RAM".

@@ -1,0 +1,61 @@
+
+
+---  
+**1. Pergunta:**  
+Qual dos seguintes termos refere-se a uma instância específica de uma classe em programação orientada a objetos?  
+
+a) Classe  
+b) Objeto  
+c) Atributo  
+d) Instanciação  
+
+**Resposta correta:** b) Objeto  
+**Explicação:** Um objeto é uma instância concreta de uma classe, representando um entidade específica no sistema.  
+
+---  
+**2. Pergunta:**  
+Qual princípio da orientação a objetos permite que dados e métodos relacionados sejam encapsulados em uma única unidade?  
+
+a) Herança  
+b) Encapsulamento  
+c) Polimorfismo  
+d) Associacao  
+
+**Resposta correta:** b) Encapsulamento  
+**Explicação:** O encapsulamento agrupa dados (atributos) e operações (métodos) em uma classe, ocultando detalhes de implementação.  
+
+---  
+**3. Pergunta:**  
+O exemplo do "Carrinho de compras" ilustra qual conceito da orientação a objetos?  
+
+a) Herança  
+b) Polimorfismo  
+c) Composição  
+d) Abstração  
+
+**Resposta correta:** c) Composição  
+**Explicação:** A composição representa uma relação "parte-de", como produtos que compõem um carrinho de compras.  
+
+---  
+**4. Pergunta:**  
+Qual das seguintes atividades **não** está incluída no exercício prático da aula?  
+
+a) Adicionar produto ao carrinho  
+b) Remover produto do carrinho  
+c) Obter o valor total do carrinho  
+d) Atualizar produto no carrinho  
+
+**Resposta correta:** d) Atualizar produto no carrinho  
+**Explicação:** As atividades listadas são "Adicionar", "Remover", "Obter total" e "Obter todos os produtos". "Atualizar" não está mencionada.  
+
+---  
+**5. Pergunta:**  
+Qual livro da bibliografia foi publicado em 2014?  
+
+a) "Orientaçao a Objetos: Aprenda seus Conceitos de Forma Efetiva"  
+b) "Design Patterns com Java: Projeto orientado a objetos guiado por padrões"  
+c) "Princípios de análise e projeto de sistema com UML"  
+d) "Engenharia de Software"  
+
+**Resposta correta:** b) "Design Patterns com Java: Projeto orientado a objetos guiado por padrões"  
+**Explicação:** O livro da opção b tem ano de publicação 2014, conforme indicado na bibliografia.

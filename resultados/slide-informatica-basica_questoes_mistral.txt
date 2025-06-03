@@ -1,7 +1,61 @@
-<think>
-Okay, the user wants me to generate 5 multiple-choice questions based on the provided JSON structure of a lesson. Wait, the JSON content is empty here. That's a problem. Without the actual lesson content, I can't create relevant questions. Maybe the user made a mistake in pasting the JSON. Let me check again.
 
-Looking at the user's message, the JSON is empty. So there's no data to base the questions on. I need to inform them that the JSON content is missing. They probably intended to include the lesson material but forgot. I should ask them to provide the actual JSON content so I can proceed. That way, I can create accurate questions aligned with the lesson topics. Let me draft a response to clarify this.
-</think>
 
-O conteúdo da aula em JSON está vazio ou não foi fornecido corretamente. Para gerar questões educacionais, é necessário que o JSON contenha os dados da aula (como tópicos, conceitos, exemplos etc.). Por favor, forneça o conteúdo da aula em formato JSON válido para que eu possa criar as questões de acordo.
+---  
+**1. Pergunta:**  
+O que é Informática, segundo o conteúdo da aula?  
+
+a) Estudo de máquinas mecânicas para processamento de dados  
+b) Ciência que estuda o tratamento automático da informação  
+c) Técnica de armazenamento de dados em discos rígidos  
+d) Arte de programar computadores  
+
+**Resposta correta:** b  
+**Explicação:** O conteúdo define Informática como "Ciência que estuda o tratamento automático da informação".  
+
+---  
+**2. Pergunta:**  
+Qual é a função principal da Unidade Central de Processamento (CPU)?  
+
+a) Armazenar dados permanentemente  
+b) Executar cálculos e processar dados  
+c) Gerenciar a conexão com a Internet  
+d) Controlar a entrada de dados via teclado  
+
+**Resposta correta:** b  
+**Explicação:** A CPU é responsável por processar dados e executar instruções, conforme descrito nas seções sobre componentes do computador.  
+
+---  
+**3. Pergunta:**  
+Qual característica distingue a Memória RAM da Memória ROM?  
+
+a) A RAM é volátil e a ROM é não volátil  
+b) A RAM armazena dados permanentemente e a ROM é temporária  
+c) A RAM é usada para armazenar programas e a ROM para dados  
+d) A RAM é mais lenta que a ROM  
+
+**Resposta correta:** a  
+**Explicação:** A Memória RAM (volátil) perde seus dados ao desligar, enquanto a ROM (não volátil) mantém informações mesmo após o desligamento.  
+
+---  
+**4. Pergunta:**  
+Qual componente é responsável por armazenar grandes quantidades de dados de forma permanente?  
+
+a) CPU  
+b) Memória RAM  
+c) Disco Rígido  
+d) Unidade de CD-ROM  
+
+**Resposta correta:** c  
+**Explicação:** O Disco Rígido é um dispositivo de armazenamento de longo prazo, conforme mencionado no conteúdo.  
+
+---  
+**5. Pergunta:**  
+Qual é um exemplo de periférico de entrada?  
+
+a) Monitor  
+b) Impressora  
+c) Teclado  
+d) Alto-falante  
+
+**Resposta correta:** c  
+**Explicação:** O teclado é um dispositivo de entrada, enquanto os outros são periféricos de saída ou de comunicação.

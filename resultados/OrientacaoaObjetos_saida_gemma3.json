@@ -1,0 +1,53 @@
+{
+  "titulo": "Análise e Projeto de Sistemas",
+  "disciplina": "Orientação a Objetos",
+  "ementa": [
+    "1 Orienta¸c˜ao a Objetos",
+    "Objetos",
+    "Associa¸c˜ao",
+    "Princ´ıpios da Orientac˜ao a Objetos",
+    "Atividade Pr´atica"
+  ],
+  "topicos": [
+    {
+      "titulo": "1 Orienta¸c˜ao a Objetos",
+      "palavras-chave": [
+        "Objetos",
+        "Abstra¸c˜ao",
+        "Classe",
+        "Instˆancia",
+        "Atributo",
+        "Opera¸c˜ao",
+        "Mensagem",
+        "Evento",
+        "Parˆametro",
+        "Estado",
+        "Transi¸c˜ao de Estado",
+        "Associa¸c˜ao",
+        "M´etodo",
+        "Colabora¸c˜ao",
+        "Encapsulamento",
+        "Polimorfismo",
+        "Heran¸ca",
+        "Composi¸c˜ao"
+      ],
+      "conteudo": [
+        "An´alise e Projeto de Sistemas",
+        "Prof. Msc. Brenno de Mello",
+        "Instituto Federal da Bahia - IFB",
+        "Campus Barreiras",
+        "25 de Mar¸co de 2024"
+      ],
+      "subsecoes": [
+        {
+          "titulo": "Objetos",
+          "conteudo": [
+            "Objetos abstratos ou concretos que existem no mundo real, em que se pode individualiz´a-los por possuir comportamentos e caracter´ısticas pr´oprias.",
+            "Cada objeto possui atributos (caracter´ısticas) e opera¸c˜ao (comportamento)."
+          ]
+        }
+      ]
+    }
+  ],
+  "exemplos": []
+}

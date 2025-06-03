@@ -1,75 +1,66 @@
-<think>
-Okay, I need to create 5 multiple-choice questions based on the provided JSON content about SQL. Let me start by understanding the structure of the JSON. The main topics are Types of Data, DDL, and DML. Each has keywords and content. 
 
-First, I'll focus on the "Tipos de Dados" section. The keywords include Char, Varchar, Text, Int, Float, Double, Boolean, Date, Time, Timestamp. The content explains each type. So, a question could be about the difference between Char and Varchar. That's a good candidate for question 1.
 
-Next, for DDL, the keywords are Data Definition Language. The content mentions commands like Create, Drop, Alter. So a question about which command is used to create a table would fit here. That's question 2.
-
-For DML, the keywords are Data Manipulation Language. The commands are Insert, Update, Select, Delete. A question about which command is used to retrieve data would be question 3.
-
-Looking at the "Tipos de Dados" again, there's a mention of Boolean, Date, Time, Timestamp. Maybe a question comparing Date and Timestamp. That could be question 4.
-
-The examples section mentions DDL commands for creating tables. So a question about which command is used to create a table would be question 5. Wait, but I already have question 2 about DDL commands. Maybe another angle. Maybe which command is used to delete a table, which is Drop. That could be question 5.
-
-Now, I need to make sure each question has four options, the correct answer, and a short explanation. Let me check each question to ensure they are based on the content provided and avoid any outside knowledge. Also, make sure the explanations are clear and concise. Alright, time to structure each question in the required format.
-</think>
-
----  
+---
 **1. Pergunta:**  
-Qual dos seguintes tipos de dados é utilizado para armazenar texto longo em SQL?  
+Qual é a diferença principal entre os tipos de dados `CHAR` e `VARCHAR` em SQL?  
 
-a) Char  
-b) Varchar  
-c) Text  
-d) Int  
+a) `CHAR` armazena texto fixo, enquanto `VARCHAR` armazena texto variável.  
+b) `CHAR` é usado apenas para datas, enquanto `VARCHAR` é usado para números.  
+c) `VARCHAR` é usado para armazenar imagens, enquanto `CHAR` é usado para armazenar som.  
+d) `CHAR` é uma abreviação de `CHARACTER`, enquanto `VARCHAR` é uma abreviação de `VARIABLE CHARACTER`.  
 
-**Resposta correta:** c) Text  
-**Explicação:** O tipo **Text** é usado para armazenar grandes volumes de texto, enquanto **Char** e **Varchar** são utilizados para strings com limites de caracteres definidos ou variáveis, respectivamente. O **Int** é para números inteiros.  
+**Resposta correta:** a)  
+**Explicação:** `CHAR` armazena uma quantidade fixa de caracteres, enquanto `VARCHAR` permite que o tamanho da string varie.  
 
----  
+---
+
 **2. Pergunta:**  
-Qual comando do DDL é utilizado para criar uma nova tabela no banco de dados?  
+Qual comando do DDL é utilizado para modificar a estrutura de uma tabela existente?  
 
-a) Select  
-b) Drop  
-c) Create  
-d) Alter  
+a) `CREATE`  
+b) `DROP`  
+c) `ALTER`  
+d) `SELECT`  
 
-**Resposta correta:** c) Create  
-**Explicação:** O comando **Create** pertence ao DDL (Data Definition Language) e é responsável por definir a estrutura de tabelas, índices e outros objetos no banco de dados.  
+**Resposta correta:** c)  
+**Explicação:** O comando `ALTER` é usado para modificar tabelas, como adicionar ou remover colunas.  
 
----  
+---
+
 **3. Pergunta:**  
-Qual dos seguintes comandos é usado para recuperar dados de uma tabela em SQL?  
+Qual comando do DML é usado para recuperar dados de uma tabela?  
 
-a) Insert  
-b) Update  
-c) Select  
-d) Delete  
+a) `INSERT`  
+b) `UPDATE`  
+c) `SELECT`  
+d) `DELETE`  
 
-**Resposta correta:** c) Select  
-**Explicação:** O comando **Select** faz parte do DML (Data Manipulation Language) e é utilizado para buscar e recuperar dados de uma tabela. Os outros comandos são usados para inserir, atualizar ou excluir registros.  
+**Resposta correta:** c)  
+**Explicação:** O comando `SELECT` é utilizado para consultar e recuperar dados armazenados em tabelas.  
 
----  
+---
+
 **4. Pergunta:**  
-Qual tipo de dado é adequado para armazenar datas e horas em SQL?  
+Qual comando é necessário para criar um banco de dados no SQL?  
 
-a) Date  
-b) Time  
-c) Timestamp  
-d) Boolean  
+a) `USE`  
+b) `ALTER DATABASE`  
+c) `CREATE DATABASE`  
+d) `DROP DATABASE`  
 
-**Resposta correta:** c) Timestamp  
-**Explicação:** O tipo **Timestamp** armazena tanto a data quanto a hora, enquanto **Date** só armazena datas e **Time** só armazena horários. O **Boolean** é usado para valores lógicos (verdadeiro/falso).  
+**Resposta correta:** c)  
+**Explicação:** O comando `CREATE DATABASE` é usado para criar um novo banco de dados.  
 
----  
+---
+
 **5. Pergunta:**  
-Qual comando do DDL é usado para excluir uma tabela existente?  
+Qual função é utilizada para registrar automaticamente a data e hora atual em um campo do tipo `TIMESTAMP`?  
 
-a) Alter  
-b) Drop  
-c) Create  
-d) Select  
+a) `NOW()`  
+b) `CURRENT_DATE()`  
+c) `DATE()`  
+d) `TIME()`  
 
-**Resposta correta:** b) Drop  
-**Explicação:** O comando **Drop** pertence ao DDL e é utilizado para remover objetos do banco de dados, como tabelas, índices ou constraints. O **Alter** modifica a estrutura de objetos existentes.
+**Resposta correta:** a)  
+**Explicação:** A função `NOW()` retorna a data e hora atuais, ideal para campos `TIMESTAMP`.  
+---

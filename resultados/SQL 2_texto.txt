@@ -1,5 +1,8 @@
+--- Página 1 ---
 SQL 
 Prof. Esp. Marcos Brito
+
+--- Página 2 ---
 Tipos de Dados 
 Char: quantidade de caracteres definida; 
 Varchar: quantidade de caracteres variável; 
@@ -11,8 +14,12 @@ Tipos de Dados
 Date: data; 
 Time: hora; 
 Timestamp: data e hora.
+
+--- Página 3 ---
 DDL 
 Data Definition Language
+
+--- Página 4 ---
 DDL 
 Linguagem de definição de dados; 
 Ligado a parte estrutural de um banco de 
@@ -22,14 +29,20 @@ dados;
 É através dos comandos DDL, por exemplo, 
 que se cria uma tabela, adiciona novas 
 colunas, etc.
+
+--- Página 5 ---
 DML 
 Data Manipulation Language
+
+--- Página 6 ---
 DML 
 Linguagem de manipulação de dados; 
 Relacionada com a operação dos dados; 
 Comandos: Insert, Update, Select, Delete; 
 É através dos comandos DML que inserimos, 
 atualizamos, selecionamos e excluímos dados.
+
+--- Página 7 ---
 Primeiros Passos 
 Inicialmente é necessário criar uma base de 
 dados, para isso, utiliza-se o comando: 
@@ -39,6 +52,8 @@ CREATE DATABASE nomeDatabase;
 dados é necessário executar o seguinte 
 comando: 
 USE nomeDatabase;
+
+--- Página 8 ---
 CREATE TABLE 
 CREATE TABLE  curso( 
 id_curso INT AUTO_INCREMENT NOT NULL, 
@@ -52,6 +67,8 @@ data_inicio DATE,
 hora_inicio TIME, 
 registro TIMESTAMP, 
 PRIMARY KEY(id_curso));
+
+--- Página 9 ---
 INSERT 
 Comando utilizado para inserir dados na 
 tabela; 
@@ -62,6 +79,8 @@ hora_inicio, registro)
 VALUES('Tecnologia da Informação', 'TI', 'Curso 
 da área de tecnologia...', 1, 2000.00, 750.876, 
 '2024-02-17','08:30:25', NOW());
+
+--- Página 10 ---
 SELECT 
 De forma geral, comando utilizado para trazer 
 dados; 
@@ -70,6 +89,8 @@ SELECT * FROM curso;
 WHERE; 
 ORDER BY; 
 LIMIT;
+
+--- Página 11 ---
 UPDATE 
 Utilizado para atualizar/editar dados nas 
 tabelas; 
@@ -79,6 +100,8 @@ sigla = ‘AS’;
 X 
 UPDATE curso SET nome = ‘Análise de Sistemas’, 
 sigla = ‘AS’ WHERE id_curso = 1;
+
+--- Página 12 ---
 DELETE 
 Utilizado para excluir registros das tabelas; 
 Tomem bastante cuidado ao utilizar esse 

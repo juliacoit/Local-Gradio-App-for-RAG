@@ -1,14 +1,16 @@
 {
   "titulo": "SQL",
-  "disciplina": "Prof. Esp. Marcos Brito",
+  "disciplina": "Banco de Dados",
   "ementa": [
-    "Tipos de Dados",
-    "DDL",
-    "DML"
+    "Tipos de Dados em SQL",
+    "DDL (Data Definition Language)",
+    "DML (Data Manipulation Language)",
+    "Primeiros Passos em SQL",
+    "Comandos SQL: CREATE, INSERT, UPDATE, DELETE, SELECT, WHERE, ORDER BY, LIMIT"
   ],
   "topicos": [
     {
-      "titulo": "Tipos de Dados",
+      "titulo": "Tipos de Dados",
       "palavras-chave": [
         "Char",
         "Varchar",
@@ -22,50 +24,85 @@
         "Timestamp"
       ],
       "conteudo": [
-        "Char: quantidade de caracteres definida;",
-        "Varchar: quantidade de caracteres variável;",
-        "Text: texto longo;",
-        "Int: número inteiro;",
-        "Float: números reais;",
-        "Double: números reais (maior precisão);",
-        "Boolean: booleano;",
-        "Date: data;",
-        "Time: hora;",
-        "Timestamp: data e hora."
+        "Char: quantidade de caracteres definida;",
+        "Varchar: quantidade de caracteres variável;",
+        "Text: texto longo;",
+        "Int: número inteiro;",
+        "Float: números reais;",
+        "Double: números reais (maior precisão);",
+        "Boolean: booleano;",
+        "Date: data;",
+        "Time: hora;",
+        "Timestamp: data e hora."
       ],
       "subsecoes": []
     },
     {
-      "titulo": "DDL",
+      "titulo": "DDL (Data Definition Language)",
       "palavras-chave": [
-        "Data Definition Language"
+        "Linguagem de definição de dados",
+        "Restrições de Integridade",
+        "Create",
+        "Drop",
+        "Alter"
       ],
       "conteudo": [
-        "Linguagem de definição de dados;",
-        "Ligado a parte estrutural de um banco de dados;",
-        "Restrições de Integridade;",
-        "Comandos: Create, Drop, Alter;"
+        "DDL: Linguagem de definição de dados;",
+        "Ligado a parte estrutural de um banco de dados;",
+        "Restrições de Integridade;",
+        "Comandos: Create, Drop, Alter;"
       ],
       "subsecoes": []
     },
     {
-      "titulo": "DML",
+      "titulo": "DML (Data Manipulation Language)",
       "palavras-chave": [
-        "Data Manipulation Language"
+        "Linguagem de manipulação de dados",
+        "Insert",
+        "Update",
+        "Select",
+        "Delete"
       ],
       "conteudo": [
-        "Linguagem de manipulação de dados;",
-        "Relacionada com a operação dos dados;",
-        "Comandos: Insert, Update, Select, Delete;"
+        "DML: Linguagem de manipulação de dados;",
+        "Relacionada com a operação dos dados;",
+        "Comandos: Insert, Update, Select, Delete;"
+      ],
+      "subsecoes": []
+    },
+    {
+      "titulo": "Primeiros Passos em SQL",
+      "palavras-chave": [
+        "CREATE DATABASE",
+        "USE"
+      ],
+      "conteudo": [
+        "Inicialmente é necessário criar uma base de dados, para isso, utiliza-se o comando: CREATE DATABASE nomeDatabase;",
+        "Sempre que quisermos utilizar uma base de dados é necessário executar o seguinte comando: USE nomeDatabase;"
       ],
       "subsecoes": []
     }
   ],
   "exemplos": [
     {
-      "descricao": "É através dos comandos DDL, por exemplo, que se cria uma tabela, adiciona novas colunas, etc.",
-      "codigo": "",
-      "explicacao": ""
+      "descricao": "Criação de uma tabela 'curso' com os tipos de dados especificados.",
+      "codigo": "CREATE TABLE curso( id_curso INT AUTO_INCREMENT NOT NULL, nome VARCHAR(60), sigla CHAR(2), descricao TEXT, ativo BOOLEAN, salario_previsto FLOAT, mensalidade DOUBLE, data_inicio DATE, hora_inicio TIME, registro TIMESTAMP, PRIMARY KEY(id_curso));",
+      "explicacao": "Este exemplo demonstra a criação de uma tabela chamada 'curso' com colunas de diferentes tipos de dados, incluindo `id_curso` como chave primária auto-incrementável."
+    },
+    {
+      "descricao": "Inserção de dados na tabela 'curso'.",
+      "codigo": "INSERT INTO curso(nome, sigla, descricao, ativo, salario_previsto, mensalidade, data_inicio, hora_inicio, registro) VALUES('Tecnologia da Informação', 'TI', 'Curso da área de tecnologia...', 1, 2000.00, 750.876, '2024-02-17','08:30:25', NOW());",
+      "explicacao": "Este exemplo ilustra a inserção de dados em uma linha da tabela 'curso', preenchendo as colunas com valores apropriados, incluindo o uso da função `NOW()` para registrar a data e hora."
+    },
+    {
+      "descricao": "Atualização de dados na tabela 'curso'.",
+      "codigo": "UPDATE curso SET nome = ‘Análise de Sistemas’, sigla = ‘AS’ WHERE id_curso = 1;",
+      "explicacao": "Este exemplo mostra como atualizar os valores de algumas colunas na tabela 'curso', especificando a condição `WHERE` para identificar a linha a ser modificada."
+    },
+    {
+      "descricao": "Exclusão de dados na tabela 'curso'.",
+      "codigo": "DELETE FROM curso WHERE id_curso = 1;",
+      "explicacao": "Este exemplo demonstra a exclusão de um registro específico da tabela 'curso', usando a condição `WHERE` para identificar a linha a ser removida."
     }
   ]
 }
