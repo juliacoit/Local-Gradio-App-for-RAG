@@ -25,7 +25,6 @@ def load_template():
     with open(TEMPLATE_PATH, "r", encoding="utf-8") as file:
         return json.load(file)
 
-# Função para extrair texto puro do PDF
 def extract_text_from_pdf(pdf_file_path):
     if not os.path.exists(pdf_file_path):
         raise FileNotFoundError(f"Arquivo PDF não encontrado: {pdf_file_path}")
@@ -38,7 +37,6 @@ def extract_text_from_pdf(pdf_file_path):
         textos.append(f"--- Página {i + 1} ---\n{doc.page_content.strip()}\n")
     return "\n".join(textos)
 
-# Função para dividir o documento em chunks de forma otimizada
 def split_document(document, window_size=MAX_INPUT_SIZE, overlap=OVERLAP):
     words = document.split()
     chunks = []
@@ -320,7 +318,7 @@ interface = gr.Interface(
         gr.File(label="Download Questões - mistral")
     ],
     title="Extração + Questões Educacionais com 3 Modelos + Qwen3",
-    description="Faça upload de um PDF, gere JSONs estruturados com phi3, llama3 e mistral e compare as questões geradas com Deepseek."
+    description="Faça upload de um PDF, gere JSONs estruturados com Gemma3, Llama3 e Mistral e compare as questões geradas com Qwen3."
 )
 
 if __name__ == "__main__":
